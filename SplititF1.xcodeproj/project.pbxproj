@@ -45,7 +45,6 @@
 		23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FA2A14B7800001853B /* Onboarding.swift */; };
 		23FC80FD2A14BB350001853B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FC2A14BB350001853B /* Splash.swift */; };
 		23FC81042A153BB40001853B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC81032A153BB40001853B /* Order.swift */; };
-		F5C7BBD22A1A5B66007AEB3A /* test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBD12A1A5B66007AEB3A /* test1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,7 +88,6 @@
 		23FC80FC2A14BB350001853B /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		23FC81022A15303B0001853B /* SplititF1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplititF1.entitlements; sourceTree = "<group>"; };
 		23FC81032A153BB40001853B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		F5C7BBD12A1A5B66007AEB3A /* test1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +130,6 @@
 				23CD7CB32A1A129E00260B15 /* SendButton.swift */,
 				23CD7CB52A1A12A600260B15 /* OpenButton.swift */,
 				23CD7CAF2A1A128C00260B15 /* PaymentProfile.swift */,
-				F5C7BBD12A1A5B66007AEB3A /* test1.swift */,
 				23CD7CAD2A1A128200260B15 /* MyAccountP.swift */,
 				23CD7CAB2A1A127200260B15 /* OrderStatusPage.swift */,
 				23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */,
@@ -297,7 +294,6 @@
 				23FC80FD2A14BB350001853B /* Splash.swift in Sources */,
 				23297DFF2A18B71A0035658B /* RName.swift in Sources */,
 				23CD7CC62A1A130300260B15 /* MotivationalPopUp.swift in Sources */,
-				F5C7BBD22A1A5B66007AEB3A /* test1.swift in Sources */,
 				23CD7CBC2A1A12F500260B15 /* checkbox.swift in Sources */,
 				23CD7CB22A1A129500260B15 /* JoinButton.swift in Sources */,
 				23CD7CB62A1A12A600260B15 /* OpenButton.swift in Sources */,

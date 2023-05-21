@@ -12,13 +12,7 @@ struct MyAccountP: View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: {
-                    
-                }) {
-                    Image(systemName: "chevron.left")
-                        .padding(.leading, 8)
-                        .foregroundColor(Color("Color1"))
-                }
+                
                 Spacer()
                 Text("My Account")
                 
