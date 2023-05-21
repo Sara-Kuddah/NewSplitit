@@ -11,7 +11,8 @@ import SwiftUI
 struct SplititF1App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Mapp().environmentObject(LocalSearchService())
+
         }
     }
 }
