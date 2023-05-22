@@ -13,7 +13,7 @@ struct test2: View {
         var body: some View {
             VStack {
                 HStack {
-                    Text("McDonald's")
+                    Text("My Order")
                         .font(.system(size: 15, weight: .semibold, design: .default))
                         .font(.title)
                         .padding(.leading, 10)
