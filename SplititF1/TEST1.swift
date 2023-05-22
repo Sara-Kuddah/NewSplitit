@@ -16,21 +16,29 @@ struct TEST1: View {
        var body: some View {
            VStack {
                ZStack(alignment: .trailing) {
-                   Rectangle()
-                       .fill(Color.white) // Set the background color of the box here
-                       .frame(width: 146, height: 52)
-                       .overlay( RoundedRectangle(cornerRadius: 11)
-                           .stroke(Color("Color1"))  )
+                   VStack {
+                       
+                       Text("Size")
+                           .padding(.leading, -65)
+                           .font(.system(size: 14, weight: .semibold, design: .default))
+                       Rectangle()
+                           .fill(Color.white)
+                           .frame(width: 146, height: 52)
+                           .overlay( RoundedRectangle(cornerRadius: 11)
+                            .stroke(Color("Color1"))  )
+                   }
                    
                    HStack {
                        Text(selectedOption)
                            .foregroundColor(.black)
                            .frame(maxWidth: .infinity, alignment: .center)
+                           .padding(.top, 20)
                        
                        Image(systemName: "chevron.down")
                            .resizable()
                            .frame(width: 12, height: 6)
-                           .padding(8)
+                           .padding(.top, 30)
+                           .padding(.leading, -30)
                            .foregroundColor(.black)
                    }
                }

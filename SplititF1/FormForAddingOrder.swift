@@ -87,22 +87,20 @@ struct FormForAddingOrder: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color("Color1"))                        )}
-                    .padding(.trailing, -30)
+                    .padding(.trailing, -40)
                     
                     
                     
-                    VStack(alignment: .leading, spacing: 10)
-                    {
-                        Text("Size")
-                            .font(.system(size: 14, weight: .semibold, design: .default))
-                        HStack {
-                            TEST1()
+                    
+                        TEST1()
+                            //.padding(.leading)
+                        
                             
                             
-                        }
                         
                         
-                    }
+                        
+                    
                     
                 }
                 .padding()
