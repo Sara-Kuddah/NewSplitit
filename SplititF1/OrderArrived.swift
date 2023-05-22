@@ -18,18 +18,23 @@ struct OrderArrived: View {
                         .font(.system(size:28))
                         .fontWeight(.bold)
                         .padding(.trailing, 100.0)
-                    
+                        .padding(.top, 30.0)
+                       .padding(.leading, -100)
                     
                 }
-                .padding(.top, -200.0)
-                .padding(.leading, -100)
+               
                 
+                VStack {
+                    Text("Once You set Order please click Confirm to let others know you’ve ordered ")
+                        .multilineTextAlignment(.leading)
+                        .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                        .padding(.top, 00.1)
+                }
                 
-                Text("Once You set Order please click Confirm to let others know you’ve ordered ")
-                    .multilineTextAlignment(.leading)
-                    .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
-                    .padding(.top, -180.0)
-                
+                VStack{
+                    TimelineTrack()
+                        .padding(.top, 10.0)
+                }
                 
                 HStack{
                     
@@ -53,23 +58,23 @@ struct OrderArrived: View {
                             }
                     }
                     .padding(.trailing, -170.0)
-                    .padding(.top, -150.0)
+                    .padding(.top, -300.0)
                 }
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+               
                 Divider()
-                    .padding(.top, -100.0)
+                    .padding(.top, -240.0)
                 
                 
                 Text("Orders Summary:")
-                    .font(.system(size:20))
+                    .font(.system(size:23))
                     .fontWeight(.bold)
-                    .padding(.trailing, 200.0)
-                    .padding(.top, -100.0)
+                    .padding(.trailing, 180.0)
+                    .padding(.top, -230.0)
                 
                 VStack{
                     VStack{
                         Order()
-                            .padding(.top, -90.0)
+                            .padding(.top, -210.0)
                         
                     }
                     

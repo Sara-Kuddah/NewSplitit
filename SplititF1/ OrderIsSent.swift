@@ -29,15 +29,16 @@ struct  OrderIsSent: View {
         NavigationView {
             VStack{
                 HStack{
-                    HStack{
+                    VStack{
                         
                         Text("Order Status")
                             .font(.system(size:28))
                             .fontWeight(.bold)
-                            .padding(.trailing, 100.0)
+                            .padding(.trailing, 90.0)
                         
                         
                     }
+                    .padding(.top, 290.0)
                     HStack{
                         Text(convertSecondsToTime(timeInSeconds : timeRemaining))
                             .padding()
@@ -48,87 +49,96 @@ struct  OrderIsSent: View {
                                 timeRemaining -= 1
                             }
                     }
+                    .padding(.top, 290.0)
+                    
                     
                 }
                 .padding(/*@START_MENU_TOKEN@*/.top, -250.0/*@END_MENU_TOKEN@*/)
                 
-                Text("You can Close Group to continue with current orders only  ")
-                    .multilineTextAlignment(.leading)
-                    .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
-                    .padding(.top, -200.0)
+                VStack{
+                    Text("You can Close Group to continue with current orders only  ")
+                        .multilineTextAlignment(.leading)
+                       
+                    
+                }
                 
+                VStack{
+                    TimelineTrack()
+                    
+                }
+                .padding(.top, 20.0)
                 
-                HStack{
-                            
+                VStack{
+                    
+                    
                     Button {
                         
                     } label: {
-                        Text("Close Group")
-                            .bold()
-                            .foregroundColor(.black)
-                            .frame(width: 200)
-                            .frame(height: 50)
-                            .background(.orange)
-                            .cornerRadius(10)
-                        
+                        NavigationLink(destination: OrderArrived()) {
+                            Text("Close Group")
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: 200)
+                                .frame(height: 50)
+                                .background(.orange)
+                                .cornerRadius(10)
+                            
+                        }.navigationBarBackButtonHidden(true)
                     }
                     .padding(.trailing, -170.0)
-                    .padding(.top, -180.0)
+                    .padding(.top, -420.0)
+                    
+                    
+                    
                 }
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                
                 Divider()
-                    .padding(.top, -120.0)
+                    .padding(.top, -350.0)
+                
                 VStack{
                     
                     Text("Orders Summary:")
-                        .font(.system(size:20))
-                        .fontWeight(.bold)
+                        .font(.system(size:23))
+                        .fontWeight(.semibold)
                         .padding(.trailing, 200.0)
-                        .padding(.top, -100.0)
+                    .padding(.top, -340.0)
+                }
                     
-                    VStack{
                         VStack{
                             Order()
-                                .padding(.top, -90.0)
+                                .padding(.top, -310.0)
                             
                         }
-//                        VStack{
-//                            Order()
-//                                .padding(.top, -20.0)
-//                            
-//                        }
-                      
-                    }
+                        
+                    
                     
                    
- 
- 
-                       
-                        .navigationBarTitleDisplayMode(.inline)
-                        .toolbar {
-                            ToolbarItem(placement: .principal) { // <3>
-                                VStack {
-                                    Text("McDonald's").font(.title).fontWeight(.bold)
-                                    Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
-                                    Divider()
-                                    
-                                    
-                                    
-                                }
-                                .padding(.top)
+                    
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .principal) { // <3>
+                            VStack {
+                                Text("McDonald's").font(.title).fontWeight(.bold)
+                                Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
+                                Divider()
+                                
+                                
+                                
                             }
-                            
+                            .padding(.top)
                         }
+                        
+                    }
                     
                     
                     
                 }
                 
             }
-            //  .padding(/*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
+            
         }
     }
-}
+
 struct  OrderIsSent_Previews: PreviewProvider {
     static var previews: some View {
         OrderIsSent()

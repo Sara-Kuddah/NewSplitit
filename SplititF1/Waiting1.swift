@@ -35,8 +35,10 @@ struct Waiting1: View {
                             Text("Order Status")
                                 .font(.system(size:28))
                                 .fontWeight(.bold)
-                                .padding(.trailing, 100.0)
+                                .padding(.trailing, 90.0)
+                            
                         }
+                        .padding(.top)
                         HStack{
                             Text(convertSecondsToTime(timeInSeconds : timeRemaining))
                                 .padding()
@@ -49,48 +51,43 @@ struct Waiting1: View {
                             
                             
                         }
-                    } .padding(.top, -120.0)
+                        .padding(.top)
+                    } //.padding(.top, -120.0)
                 
-                    Text("You only can cancel announcement when no one  joined yet ")
-                        .multilineTextAlignment(.leading)
-                        .padding(/*@START_MENU_TOKEN@*/.horizontal, 1.0/*@END_MENU_TOKEN@*/)
-                        .padding(.top, -80.0)
-                    
-                    
-                    
+                    Text("You only can cancel announcement when no one  joined yet")
+                        .padding(.leading, 20.0)
+                        
+                       
+                    VStack{
+                        TimelineTrack()
+                            .padding(.top, 10.0)
+                    }
                     
                     Button {
                         
                     } label: {
-                        Text("Cancel")
-                            .bold()
-                            .foregroundColor(.black)
-                            .frame(width: 200)
-                            .frame(height: 50)
-                            .background(.orange)
-                            .cornerRadius(10)
-                        
+                        NavigationLink(destination: TabBar()) {
+                            Text("Cancel")
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: 200)
+                                .frame(height: 50)
+                                .background(.orange)
+                                .cornerRadius(10)
+                            
+                        }.navigationBarBackButtonHidden(false)
                     }
-                    .padding(.trailing, -170.0)
-                    .padding(.top, -50.0)
+                .padding(.trailing, -170.0)
+                   .padding(.top, -50.0)
                     
                     Divider()
                     
                     Text("Waiting for others to join :")
                         .font(.system(size:25))
                         .fontWeight(.semibold)
-                        .padding(.leading, -100.0)
+                        .padding(.leading, -90.0)
                     
-                    //                    VStack
-                    //                    .padding(/*@START_MENU_TOKEN@*/.leading, -150.0/*@END_MENU_TOKEN@*/)
-                    //                    .foregroundColor(.black)
-                    //                    .frame(width: 350)
-                    //                    .frame(height: 210)
                     
-                    //                    .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
-                    //  .cornerRadius(1)
-                    
-                    //
                     
                     
                     
@@ -117,7 +114,7 @@ struct Waiting1: View {
                 
                 
             }
-            .padding(.bottom, 250.0)
+            .padding(.bottom, 400.0)
         }
     }
 }
