@@ -201,11 +201,14 @@ struct Profile_: View {
                             .frame(width: 20, height: 20)
                         //.padding(.leading, 10)
                         
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text("Logout")
-                                .foregroundColor(.red)
-                                .font(.system(size: 15, weight: .semibold, design: .default))
-                            
+                        Button(action: {
+                            // Button action here
+                        }) {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text("Logout")
+                                    .foregroundColor(.red)
+                                    .font(.system(size: 15, weight: .semibold, design: .default))
+                            }
                         }
                         
                         .padding(.leading, 10)

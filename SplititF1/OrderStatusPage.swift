@@ -129,7 +129,9 @@ struct OrderStatusPage: View {
                             
                         }
                     })
-            
+            checkbox()
+                .padding(.leading, -180)
+
             
             
         }

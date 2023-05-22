@@ -34,7 +34,6 @@
 		23CD7CBC2A1A12F500260B15 /* checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBB2A1A12F500260B15 /* checkbox.swift */; };
 		23CD7CC22A1A130300260B15 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBD2A1A130300260B15 /* test2.swift */; };
 		23CD7CC32A1A130300260B15 /* test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBE2A1A130300260B15 /* test3.swift */; };
-		23CD7CC42A1A130300260B15 /* test4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBF2A1A130300260B15 /* test4.swift */; };
 		23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CC02A1A130300260B15 /* TimelineTrack.swift */; };
 		23CD7CC62A1A130300260B15 /* MotivationalPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */; };
 		23CD7CCC2A1A140400260B15 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CCB2A1A140400260B15 /* NewOrder.swift */; };
@@ -45,6 +44,7 @@
 		23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FA2A14B7800001853B /* Onboarding.swift */; };
 		23FC80FD2A14BB350001853B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FC2A14BB350001853B /* Splash.swift */; };
 		23FC81042A153BB40001853B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC81032A153BB40001853B /* Order.swift */; };
+		F5C7BBDB2A1B548E007AEB3A /* TEST1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +76,6 @@
 		23CD7CBB2A1A12F500260B15 /* checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkbox.swift; sourceTree = "<group>"; };
 		23CD7CBD2A1A130300260B15 /* test2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		23CD7CBE2A1A130300260B15 /* test3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test3.swift; sourceTree = "<group>"; };
-		23CD7CBF2A1A130300260B15 /* test4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test4.swift; sourceTree = "<group>"; };
 		23CD7CC02A1A130300260B15 /* TimelineTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrack.swift; sourceTree = "<group>"; };
 		23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotivationalPopUp.swift; sourceTree = "<group>"; };
 		23CD7CCB2A1A140400260B15 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		23FC80FC2A14BB350001853B /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		23FC81022A15303B0001853B /* SplititF1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplititF1.entitlements; sourceTree = "<group>"; };
 		23FC81032A153BB40001853B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,7 @@
 				23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */,
 				23CD7CBD2A1A130300260B15 /* test2.swift */,
 				23CD7CBE2A1A130300260B15 /* test3.swift */,
-				23CD7CBF2A1A130300260B15 /* test4.swift */,
+				F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */,
 				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
 				23CD7CBB2A1A12F500260B15 /* checkbox.swift */,
 				23CD7CB92A1A12EA00260B15 /* joinCard.swift */,
@@ -314,10 +314,10 @@
 				23CD7CA82A1A121B00260B15 /* Profile .swift in Sources */,
 				23297E2F2A1902A70035658B /* LandmarkListView.swift in Sources */,
 				23297E2E2A1902A70035658B /* MKCoordinateRegion+Extensions.swift in Sources */,
-				23CD7CC42A1A130300260B15 /* test4.swift in Sources */,
 				23297E2C2A1902A70035658B /* LocationManager.swift in Sources */,
 				23297E2D2A1902A70035658B /* Landmark.swift in Sources */,
 				230A1E302A0B6C9100832244 /* Form.swift in Sources */,
+				F5C7BBDB2A1B548E007AEB3A /* TEST1.swift in Sources */,
 				23CD7CC32A1A130300260B15 /* test3.swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
