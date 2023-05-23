@@ -45,7 +45,7 @@ struct TabBar: View {
             OrderHistory_()
             .tabItem {
                 Image(uiImage: UIImage(named: "image3")!)
-                Text("Order History")
+                Text("My Orders")
             }
             .tag(1)
             

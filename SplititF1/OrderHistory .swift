@@ -11,7 +11,7 @@ struct OrderHistory_: View {
     var body: some View {
        
             VStack(alignment: .leading) {
-                        Text("Orders History")
+                        Text("My Orders")
                     .font(.system(size: 24, weight: .semibold, design: .default))
 
                             .frame(maxWidth: .infinity, alignment: .center)
