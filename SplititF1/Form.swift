@@ -91,6 +91,18 @@ struct Form: View {
                      
                 }
                 
+                HStack {
+                    Spacer(minLength: 8)
+                    CheckP()
+                    Spacer(minLength: 8)
+                    CheckT()
+                    Spacer(minLength: 8)
+                    
+                    
+                }
+                .padding(.top, -10.0)
+               
+                
                 VStack {
                     Text("Notes")
                         .font(.system(size: 18))
@@ -106,6 +118,8 @@ struct Form: View {
                         .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
                         .padding([.horizontal], 24)
                 }
+                .padding(.top, -10.0)
+                
                 
                 Button {
 
@@ -119,17 +133,7 @@ struct Form: View {
                         .cornerRadius(10)
                         
                 }
-//                Text("Send")
-//                    .padding(.all)
-//                    .foregroundColor(.white)
-//                    .frame(maxWidth: .infinity)
-//                    .background(.orange)
-//                    .cornerRadius(15)
-//                    .cornerRadius(15)
-//                    .padding()
-//
-//                    .offset(x:1 ,y:1)
-                
+         
             }
             
             
