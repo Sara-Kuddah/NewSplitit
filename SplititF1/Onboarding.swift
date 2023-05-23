@@ -62,6 +62,8 @@ struct Onboarding: View {
                 .padding()
                 .cornerRadius(10)
                 
+                SkipButton()
+                
             }
         }
     }
