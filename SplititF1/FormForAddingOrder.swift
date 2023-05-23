@@ -52,10 +52,7 @@ struct FormForAddingOrder: View {
                     .font(.title3)
                     .padding(.trailing, 50)
                 
-                Text("Item 1")
-                    .font(.system(size: 16, weight: .semibold, design: .default))
-                    .padding(.top, 20)
-                    .padding(.trailing, 300)
+               
                 Text("Order Name")
                     .font(.system(size: 14, weight: .semibold, design: .default))
                     .padding(.top, 35)

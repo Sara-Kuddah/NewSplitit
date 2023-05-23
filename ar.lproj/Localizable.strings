@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  SplititF1
+
+  Created by Dina Alhajj Ibrahim on 23/05/2023.
+  
+*/
+"Street 1" = "شارع 1";
+"My Orders" = "طلباتي";
+"Couldn’t find what you look for ? Start new order now!" = "لم تجد ما تبحث عنه؟ ابدأ طلب جديد الآن!";
+"Active Orders Near Me" = "طلبات نشطة بالقرب مني";
+"McDonald's" = "ماكدونالدز";
+"Note: I only have 55 Riyals" = "ملاحظة: لدي 55 ريالاً فقط";
+"15 minutes" = "15 دقيقة";
+"20 Riyals" = " ٢٠ ريال";
+"Jahez" = "جاهز";
+"Join" = "انضم";
+"Discover" = "اكتشف";
+"Order History" = "تاريخ الطلبات";
+"My Account" = "حسابي";
+"New Order" = "طلب جديد";
+"My Orders" = "طلباتي";
+"13/04/2023" = "13/04/2023";
+"Active Order" = "طلبات نشطة" ;
+"Make changes to your account" = "إجراء تغييرات على حسابك";
+"Payment " = "الدفع" ;
+"Manage How People Can Pay You" = "إدارة كيف يمكن للأشخاص الدفع لك" ;
+"Privacy and Policy" = "سياسة الخصوصية " ;
+"About Split it" = "عن قسمها" ;
+"Help And Support" = "مساعدة و دعم" ;
+"Logout" = "تسجيل خروج" ; 
+"Name" = "اسم" ;
+"Enter Name" = "أدخل اسمك" ;
+"Phone " = "هاتف " ;
+"Email" = "بريد إلكتروني" ;
+"Enter Your Email " = "أدخل بريدك الإلكتروني" ;
+"Transfer : " = "تحويل : " ;
+"Bank Name" = "اسم البنك" ;
+"IBAN " = "رقم الحساب " ;
+"STC pay : " = "STC pay:" ;
+"Enter your number " = "أدخل رقمك " ;
+"Save"= "حفظ" ;
+"20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4" = "20 ريال ، جاهز ، شركة الاتصالات السعودية باي- الراجحي ، PNU-A4" ;
+"Add Your Order" = "أضف طلبك" ;
+"Order Name" = "اسم الطلب";
+"Please write your order " = "الرجاء كتابة طلبك" ;
+"Price" = "سعر";
+"Price SR" = "السعر ريال سعودي";
+"Add New Item" = "أضف أداة جديدة";
+"Please note: Once you Click Send, you will not be ableto Edit or Cancel your order" = "يرجى ملاحظة: بمجرد النقر فوق إرسال ، لن تتمكن من تحرير أو إلغاء طلبك" ;
+"Send" = "ارسل" ;
+"Size" = "مقاس";
+"Order Status" = "حالة الطلب";
+"Check-in Point" = "نقطة الوصول" ;
+"Abeer’s Payment Info:" = "معلومات دفع عبير:";
+"Total :" = "المجموع :";
+"35 Riyals" = "٣٥ ريال";
+"STC Pay" = "STC Pay";
+"Al rajhi" = "ألراجحي";
+"Waiting" = "انتظار";
+"Group Completed" = "اكتملت المجموعة";
+"Order Sent" = "تم إرسال الطلب";
+"Order Arrived" = "وصل الطلب";
+"1 McChicken"= "1 ماك تشيكن";
+"20 Riyals" = "٢٠ ريال";
+"1 large Fries  "= "1 بطاطس كبير";
+"Total Without Delivery Fee "= "الإجمالي بدون رسوم التوصيل";
+"30 Riyals "= "٣٠ ريال";
+"Payment Completed" = "تم الدفع";
+"My Order" = "طلبي";
+
+
+
+
