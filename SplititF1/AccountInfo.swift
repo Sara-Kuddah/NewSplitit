@@ -112,6 +112,9 @@ struct AccountInfo: View {
                         .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
                         .padding([.horizontal], 24)
                 }
+                
+                
+                
                 Button {
 
                 } label: {
@@ -124,6 +127,7 @@ struct AccountInfo: View {
                         .cornerRadius(10)
                         
                 }
+                .padding(.top, 50.0)
                 
                 
                 

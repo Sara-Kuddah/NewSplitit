@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230520C32A1C92EB006ED1D5 /* CheckP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230520C22A1C92EB006ED1D5 /* CheckP.swift */; };
+		230520C52A1C98F4006ED1D5 /* CheckT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230520C42A1C98F4006ED1D5 /* CheckT.swift */; };
 		230A1E302A0B6C9100832244 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A1E2F2A0B6C9100832244 /* Form.swift */; };
 		230A1E342A0B841100832244 /*  OrderIsSent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A1E332A0B841100832244 /*  OrderIsSent.swift */; };
 		231174342A0AB5FB003916F0 /* SplititF1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231174332A0AB5FB003916F0 /* SplititF1App.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230520C22A1C92EB006ED1D5 /* CheckP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckP.swift; sourceTree = "<group>"; };
+		230520C42A1C98F4006ED1D5 /* CheckT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckT.swift; sourceTree = "<group>"; };
 		230A1E2F2A0B6C9100832244 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		230A1E332A0B841100832244 /*  OrderIsSent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " OrderIsSent.swift"; sourceTree = "<group>"; };
 		231174302A0AB5FB003916F0 /* SplititF1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplititF1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +142,8 @@
 				F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */,
 				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
 				23CD7CBB2A1A12F500260B15 /* checkbox.swift */,
+				230520C22A1C92EB006ED1D5 /* CheckP.swift */,
+				230520C42A1C98F4006ED1D5 /* CheckT.swift */,
 				23CD7CB92A1A12EA00260B15 /* joinCard.swift */,
 				23CD7CA52A1A120C00260B15 /* OrderHistory .swift */,
 				23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */,
@@ -302,6 +308,7 @@
 				23CD7CB82A1A12D600260B15 /* CardNewOrder.swift in Sources */,
 				23297E2B2A1902A70035658B /* Mapp.swift in Sources */,
 				23CD7CC22A1A130300260B15 /* test2.swift in Sources */,
+				230520C32A1C92EB006ED1D5 /* CheckP.swift in Sources */,
 				23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */,
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,
 				23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */,
@@ -313,6 +320,7 @@
 				23CD7CA42A1A11F000260B15 /* TabBar.swift in Sources */,
 				23CD7CA82A1A121B00260B15 /* Profile .swift in Sources */,
 				23297E2F2A1902A70035658B /* LandmarkListView.swift in Sources */,
+				230520C52A1C98F4006ED1D5 /* CheckT.swift in Sources */,
 				23297E2E2A1902A70035658B /* MKCoordinateRegion+Extensions.swift in Sources */,
 				23297E2C2A1902A70035658B /* LocationManager.swift in Sources */,
 				23297E2D2A1902A70035658B /* Landmark.swift in Sources */,
