@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CardNewOrder: View {
+    @State private var navigateToAnotherPage = false
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
