@@ -51,7 +51,7 @@ struct ContentView: View {
                             .padding(.bottom, -10)
                         VStack {
                             CardNewOrder()
-                                .padding(.bottom, 25)
+                               // .padding(.bottom, 25)
                             Text("Active Orders Near Me")
                             
                                 .padding(.trailing, 150)
