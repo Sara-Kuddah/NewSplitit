@@ -73,7 +73,7 @@ struct TabBar: View {
             //
                
             
-        }
+        }.navigationBarBackButtonHidden(true)
        
     }
   

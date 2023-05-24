@@ -25,6 +25,7 @@ struct  OrderIsSent: View {
         return String(format: "%02i:%02i" , minutes,
                       seconds)
     }
+    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationView {
             VStack{
@@ -87,7 +88,9 @@ struct  OrderIsSent: View {
                                 .background(Color("Color1"))
                                 .cornerRadius(10)
                             
-                        }.navigationBarBackButtonHidden(true)
+                        }
+                        
+//                        .navigationBarBackButtonHidden(true)
                     }
                     .padding(.trailing, -170.0)
                     .padding(.top, -500.0)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OrderArrived: View {
     @State private var showingAlert = false
+    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationView {
             VStack{
@@ -54,7 +55,9 @@ struct OrderArrived: View {
                                 .background(Color("Color1"))
                                 .cornerRadius(10)
                             
-                        }.navigationBarBackButtonHidden(true)
+                        }
+                        
+//                        .navigationBarBackButtonHidden(true)
                     }
                     .padding(.trailing, -170.0)
                     .padding(.top, -350.0)
@@ -108,6 +111,7 @@ struct OrderArrived: View {
             }
             .padding(.bottom, 150.0)
         }
+        .navigationBarBackButtonHidden(true)
         
     }
 }

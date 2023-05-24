@@ -77,7 +77,10 @@ struct Waiting1: View {
                             .cornerRadius(10)
                         
                         
-                    }.navigationBarBackButtonHidden(true)
+                    }
+                    
+                    
+//                    .navigationBarBackButtonHidden(true)
                     
                 .padding(.trailing, -170.0)
                    .padding(.top, -90.0)
