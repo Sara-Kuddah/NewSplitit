@@ -43,6 +43,7 @@ struct Form: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
+                            .padding(.top, -6.0)
                     }
                     .padding(.vertical,5.0)
                     VStack{
@@ -60,6 +61,7 @@ struct Form: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
+                            .padding(.top, -6.0)
                     }
                     .padding(.vertical, 5.0)
                     VStack{
@@ -78,6 +80,7 @@ struct Form: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
+                            .padding(.top, -6.0)
                     }
                     .padding(.vertical, 5.0)
                     //
@@ -102,6 +105,7 @@ struct Form: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
+                            .padding(.top, -6.0)
                     }
                     .padding(.top, -10.0)
                     

@@ -26,8 +26,7 @@ struct AccountInfo: View {
                     Spacer()
                     VStack{
                         Text("Complete Your account informations")
-                            .font(.title3)
-                            .font(.system(size: 15))
+                            .font(.system(size:20))
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.leading)
                             .padding(.leading, -27.0)
@@ -47,7 +46,8 @@ struct AccountInfo: View {
                     }
                     VStack{
                         Text("Phone Number")
-                            .fontWeight(.semibold)
+                            .font(.system(size: 15))
+                            .fontWeight(.medium)
                             .padding(.leading, -165.0)
                         TextField("What App Are You Ordering From?", text: $PhoneN)
                             .font(.system(size: 15))
@@ -57,7 +57,7 @@ struct AccountInfo: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
-                        
+                            .padding(.top, -6.0)
                         CheckP()
                             .padding(.trailing, 100.0)
                             .padding(.vertical, -10.0)
@@ -69,14 +69,15 @@ struct AccountInfo: View {
                     VStack{
                         Text("Add How you want others to pay you")
                             .font(.system(size: 20))
-                            .fontWeight(.bold)
-                        //.padding(.leading, -40.0)
+                            .fontWeight(.semibold)
+                        .padding(.leading, -27.0)
                         
                     }
-                    .padding(.bottom, 2.0)
+                    .padding(.bottom, 5.0)
                     VStack{
                         Text("Bank Name")
-                            .fontWeight(.semibold)
+                            .font(.system(size: 15))
+                            .fontWeight(.medium)
                             .padding(.leading, -165.0)
                         TextField("Bank name", text: $BankN)
                             .font(.system(size: 15))
@@ -89,13 +90,13 @@ struct AccountInfo: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
+                            .padding(.top, -6.0)
                     }
-                    
+                    .padding(.bottom, 10.0)
                     VStack{
                         Text("IBAN")
-                        
-                        
-                            .fontWeight(.semibold)
+                            .font(.system(size: 15))
+                            .fontWeight(.medium)
                             .padding(.leading, -165.0)
                         TextField("Enter your IBAN", text: $IBAN)
                             .font(.system(size: 15))
@@ -108,12 +109,13 @@ struct AccountInfo: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
+                            .padding(.top, -6.0)
                     }
-                    
+                    .padding(.bottom, 10.0)
                 VStack {
                         Text("Account Number")
-                    
-                            .fontWeight(.semibold)
+                        .font(.system(size: 15))
+                        .fontWeight(.medium)
                             .padding(.leading, -165.0)
                         TextField("Enter your Account Number", text: $AccountN)
                             .font(.system(size: 15))
@@ -126,18 +128,22 @@ struct AccountInfo: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
+                            .padding(.top, -6.0)
                     }
                     
-                    
+                .padding(.bottom, 10.0)
                     VStack{
                         HStack{
                             Text("STC PAY ")
-                            
+                                .font(.system(size: 15))
+                                .fontWeight(.medium)
                             Text("(Optional)")
-                                .fontWeight(.regular)
+                                .font(.system(size: 15))
+                                .fontWeight(.semibold)
+
                                 .foregroundColor(Color.gray)
                         }
-                        .fontWeight(.semibold)
+                        .fontWeight(.medium)
                         .padding(.leading, -165.0)
                         TextField("Enter your number", text: $STCp)
                             .font(.system(size: 15))
@@ -150,8 +156,9 @@ struct AccountInfo: View {
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
                             .padding([.horizontal], 24)
+                            .padding(.top, -6.0)
                     }
-                    
+                    .padding(.bottom, 10.0)
                     
                     VStack{
                         
@@ -185,14 +192,13 @@ struct AccountInfo: View {
                                 
                                 //.offset(x:1 ,y:1)
                             }.navigationBarBackButtonHidden(true)
-//                            Text("Skip")
-//                                .foregroundColor(Color.gray)
+
                         }
                     }
                 }
                 
             }
-            .padding(.bottom, 110.0)
+
         }
     }
 }

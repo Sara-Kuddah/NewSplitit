@@ -29,10 +29,12 @@ struct RName: View {
                         
                 }
             }
+            
             .frame(height: 50)
                 .frame(width: 350)
                 .textFieldStyle(PlainTextFieldStyle())
                 .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
+                .padding(.top, -4.0)
                 
         }
         
