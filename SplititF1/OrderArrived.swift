@@ -47,7 +47,7 @@ struct OrderArrived: View {
                             .foregroundColor(.black)
                             .frame(width: 200)
                             .frame(height: 50)
-                            .background(.orange)
+                            .background(Color("Color1"))
                             .cornerRadius(10)
                             .alert("Please Confirm who have payed you ", isPresented: $showingAlert) {
                                 

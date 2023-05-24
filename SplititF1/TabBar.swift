@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBar: View {
     @State private var selection = 0
-    
+    @State private var isPresentedFullScreenCover = false
 //    init() {
 //            let appearance = UITabBarAppearance()
 //            appearance.configureWithOpaqueBackground()

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		230520C32A1C92EB006ED1D5 /* CheckP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230520C22A1C92EB006ED1D5 /* CheckP.swift */; };
 		230520C52A1C98F4006ED1D5 /* CheckT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230520C42A1C98F4006ED1D5 /* CheckT.swift */; };
+		230520EF2A1D32D4006ED1D5 /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230520EE2A1D32D3006ED1D5 /* SkipButton.swift */; };
+		230520F12A1D3755006ED1D5 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230520F02A1D3755006ED1D5 /* SaveButton.swift */; };
 		230A1E302A0B6C9100832244 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A1E2F2A0B6C9100832244 /* Form.swift */; };
 		230A1E342A0B841100832244 /*  OrderIsSent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A1E332A0B841100832244 /*  OrderIsSent.swift */; };
 		231174342A0AB5FB003916F0 /* SplititF1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231174332A0AB5FB003916F0 /* SplititF1App.swift */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		230520C22A1C92EB006ED1D5 /* CheckP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckP.swift; sourceTree = "<group>"; };
 		230520C42A1C98F4006ED1D5 /* CheckT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckT.swift; sourceTree = "<group>"; };
+		230520EE2A1D32D3006ED1D5 /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
+		230520F02A1D3755006ED1D5 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		230A1E2F2A0B6C9100832244 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		230A1E332A0B841100832244 /*  OrderIsSent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " OrderIsSent.swift"; sourceTree = "<group>"; };
 		231174302A0AB5FB003916F0 /* SplititF1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplititF1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,8 @@
 				23CD7CA92A1A125700260B15 /* FormForAddingOrder.swift */,
 				23CD7CB12A1A129500260B15 /* JoinButton.swift */,
 				23CD7CB32A1A129E00260B15 /* SendButton.swift */,
+				230520F02A1D3755006ED1D5 /* SaveButton.swift */,
+				230520EE2A1D32D3006ED1D5 /* SkipButton.swift */,
 				23CD7CB52A1A12A600260B15 /* OpenButton.swift */,
 				23CD7CAF2A1A128C00260B15 /* PaymentProfile.swift */,
 				23CD7CAD2A1A128200260B15 /* MyAccountP.swift */,
@@ -314,6 +320,8 @@
 				23CD7CB82A1A12D600260B15 /* CardNewOrder.swift in Sources */,
 				23297E2B2A1902A70035658B /* Mapp.swift in Sources */,
 				23CD7CC22A1A130300260B15 /* test2.swift in Sources */,
+				230520EF2A1D32D4006ED1D5 /* SkipButton.swift in Sources */,
+				230520F12A1D3755006ED1D5 /* SaveButton.swift in Sources */,
 				230520C32A1C92EB006ED1D5 /* CheckP.swift in Sources */,
 				23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */,
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,

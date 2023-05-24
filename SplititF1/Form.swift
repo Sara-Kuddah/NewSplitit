@@ -41,7 +41,8 @@ struct Form: View {
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(.horizontal, 4)
                     
-                        .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
+                        .overlay( RoundedRectangle(cornerRadius: 11)
+                            .stroke(Color("Color1"))  )
                         .padding([.horizontal], 24)
                 }
                 VStack{
@@ -57,7 +58,8 @@ struct Form: View {
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(.horizontal, 4)
                     
-                        .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
+                        .overlay( RoundedRectangle(cornerRadius: 11)
+                            .stroke(Color("Color1"))  )
                         .padding([.horizontal], 24)
                 }
                 VStack{
@@ -74,34 +76,11 @@ struct Form: View {
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(.horizontal, 4)
                     
-                        .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
+                        .overlay( RoundedRectangle(cornerRadius: 11)
+                            .stroke(Color("Color1"))  )
                         .padding([.horizontal], 24)
                 }
-                VStack{
-                    Text("Please choose how people can pay you  ")
-                    
-                        .font(.system(size: 20))
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
-                    Text("*Based On Your Payment Options in Your profile")
-                        .font(.callout)
-                        .fontWeight(.thin)
-                        .padding(/*@START_MENU_TOKEN@*/.trailing, 35.0/*@END_MENU_TOKEN@*/)
-                     
-                }
-                
-                HStack {
-                    Spacer(minLength: 8)
-                    CheckP()
-                    Spacer(minLength: 8)
-                    CheckT()
-                    Spacer(minLength: 8)
-                    
-                    
-                }
-                .padding(.top, -10.0)
-               
+//
                 
                 VStack {
                     Text("Notes")
@@ -115,29 +94,19 @@ struct Form: View {
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(.horizontal, 4)
                     
-                        .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
+                        .overlay( RoundedRectangle(cornerRadius: 11)
+                            .stroke(Color("Color1"))  )
                         .padding([.horizontal], 24)
                 }
-                .padding(.top, -10.0)
+                .padding(.top, 10.0)
                 
-                
-                Button {
-
-                } label: {
-                    Text("Send")
-                        .bold()
-                        .foregroundColor(.black)
-                        .frame(width: 350, height: 350)
-                        .frame(height: 50)
-                        .background(.orange)
-                        .cornerRadius(10)
-                        
+                VStack{
+                    SendButton()
+                    
                 }
-         
+                .padding(.top)
             }
-            
-            
-                .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) { // <3>
                         VStack {

@@ -25,6 +25,7 @@ struct Waiting1: View {
         return String(format: "%02i:%02i" , minutes,
                       seconds)
     }
+    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationView {
             VStack {
@@ -63,20 +64,20 @@ struct Waiting1: View {
                             .padding(.top, 10.0)
                     }
                     
-                    Button {
+                    NavigationLink(destination: TabBar()) {
+                        Text("Cansel")
+                            .padding(.all)
+                            .bold()
+                            .foregroundColor(.black)
+                            .frame(width: 200)
+                            .frame(height: 50)
+                            .background(Color("Color1"))
+                            .cornerRadius(10)
                         
-                    } label: {
-                        NavigationLink(destination: TabBar()) {
-                            Text("Cancel")
-                                .bold()
-                                .foregroundColor(.black)
-                                .frame(width: 200)
-                                .frame(height: 50)
-                                .background(.orange)
-                                .cornerRadius(10)
-                            
-                        }.navigationBarBackButtonHidden(false)
-                    }
+                        
+                            .offset(x:1 ,y:1)
+                    }.navigationBarBackButtonHidden(true)
+                    
                 .padding(.trailing, -170.0)
                    .padding(.top, -50.0)
                     

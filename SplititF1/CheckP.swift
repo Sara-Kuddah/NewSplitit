@@ -22,7 +22,7 @@ struct CheckP: View {
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color("Color1"))
                     
-                    Text("STC Pay")
+                    Text("Use this Number for STC Pay")
                         .font(.system(size: 14, weight: .regular, design: .default))
                         .foregroundColor(.black)
                 }
