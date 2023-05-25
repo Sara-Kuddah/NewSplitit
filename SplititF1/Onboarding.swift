@@ -75,6 +75,7 @@ struct Onboarding: View {
                         TabBar()
                     }
                 }
+                Spacer()
             }
         }
     }

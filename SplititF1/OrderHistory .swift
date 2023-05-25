@@ -16,40 +16,77 @@ struct OrderHistory: View {
 
                             .frame(maxWidth: .infinity, alignment: .center)
                         
+                
+                
                         Divider()
-                        
-                        HStack {
-                            VStack {
-                                Text("McDonald's")
-                                    .font(.system(size: 18, weight: .semibold, design: .default))
-
-                                Text("13/04/2023")
-                                    .padding(.leading, -35)
-                                    .padding(.top, 0)
-                                    .font(.system(size:12, weight: .regular, design: .default))
-                                
-
-                                Text("Active Order")
-                                    .padding(.leading, -10)
-                                    .padding(.top, 3)
-                                    .font(.system(size: 15, weight: .semibold, design: .default))
-                                    .foregroundColor(Color("ourgreen"))
-
-                            }
+                VStack{
+                    HStack {
+                        VStack {
+                            Text("McDonald's")
+                                .font(.system(size: 18, weight: .semibold, design: .default))
                             
-                            Spacer()
+                            Text("13/04/2023")
+                                .padding(.leading, -35)
+                                .padding(.top, 0)
+                                .font(.system(size:12, weight: .regular, design: .default))
                             
-                            Button(action: {
-                                // Button action here
-                            }) {
-                                Image(systemName: "chevron.right")
-                                    .font(.system(size: 20))
-                                    .foregroundColor(.gray)
-                                    .font(.title)
-                            }
+                            
+                            Text("Active Order")
+                                .padding(.leading, -10)
+                                .padding(.top, 3)
+                                .font(.system(size: 15, weight: .semibold, design: .default))
+                                .foregroundColor(Color("ourgreen"))
+                            
                         }
                         
-                        Divider()
+                        Spacer()
+                        
+                        Button(action: {
+                            // Button action here
+                        }) {
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 20))
+                                .foregroundColor(.gray)
+                                .font(.title)
+                        }
+                    }
+                    
+                    Divider()
+                }
+                VStack{
+                    HStack {
+                        VStack {
+                            Text("McDonald's")
+                                .font(.system(size: 18, weight: .semibold, design: .default))
+                            
+                            Text("13/04/2023")
+                                .padding(.leading, -35)
+                                .padding(.top, 0)
+                                .font(.system(size:12, weight: .regular, design: .default))
+                            
+                            
+                            Text("Inactive Order")
+//                                .padding(.leading, -10)
+                                .padding(.top, 3)
+                                .font(.system(size: 15, weight: .semibold, design: .default))
+                                .foregroundColor(Color.black.opacity(0.5))
+                            
+                        }
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            // Button action here
+                        }) {
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 20))
+                                .foregroundColor(.gray)
+                                .font(.title)
+                        }
+                    }
+                    
+                    Divider()
+                }
                 Spacer()
                     }
                     .padding()

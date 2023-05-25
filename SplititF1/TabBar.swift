@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TabBar: View {
     @State private var selection = 0
-    //@State private var isPresentedFullScreenCover = false
 
     var body: some View {
         TabView(selection: $selection) {
