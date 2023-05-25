@@ -17,7 +17,7 @@ struct Form: View {
     @State var firstMarked = false
     //   @State var secondMarked = true
     @State var thirdMarked = false
-    
+    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationView {
             ScrollView{
@@ -131,7 +131,7 @@ struct Form: View {
                 }
             }
         }
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
 

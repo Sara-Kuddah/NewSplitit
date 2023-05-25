@@ -142,7 +142,7 @@ struct  OrderIsSent: View {
                 }
                 
             }
-            
+        .navigationBarBackButtonHidden(true)
         }
     }
 

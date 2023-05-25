@@ -142,6 +142,7 @@ struct FormForAddingOrder: View {
             .navigationBarTitle("")
             Spacer()
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     

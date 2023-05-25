@@ -122,6 +122,7 @@ struct Waiting1: View {
             }
             .padding(.bottom, 400.0)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

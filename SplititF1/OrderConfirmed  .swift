@@ -110,7 +110,7 @@ struct OrderConfirmed__: View {
             }
             .padding(.bottom, 150.0)
         }
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
 
