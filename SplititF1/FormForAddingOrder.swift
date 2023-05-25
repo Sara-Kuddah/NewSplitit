@@ -18,7 +18,7 @@ struct FormForAddingOrder: View {
     //let colorOptions = ["Original", "Medium", "Large"]
     @State private var selectedOption: String = ""
         @State private var isShowingOptions: Bool = false
-    
+    @State private var showOrderIsSent = false
     var body: some View {
         NavigationView {
             VStack(spacing: 8) {
@@ -127,13 +127,18 @@ struct FormForAddingOrder: View {
                         .font(.system(size: 12, weight: .regular, design: .default))
                         .foregroundColor(Color.gray)
                         .padding(.top, 50)
-                    SendButton()
+                    LargeButton(title: "Send") {
+                        showOrderIsSent = true
+                    }
+                    .fullScreenCover(isPresented: $showOrderIsSent) {
+                        OrderIsSent()
+                    }
                         .padding(.top, 30)
                 }
                 
                 
                 
-                
+                // i got a lot of things to do
                 // .padding()
                 Spacer()
                 

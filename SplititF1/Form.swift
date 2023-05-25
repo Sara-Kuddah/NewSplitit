@@ -17,7 +17,7 @@ struct Form: View {
     @State var firstMarked = false
     //   @State var secondMarked = true
     @State var thirdMarked = false
-    @State private var isPresentedFullScreenCover = false
+    @State private var showOrder = false
     var body: some View {
         NavigationView {
             ScrollView{
@@ -136,7 +136,12 @@ struct Form: View {
                     .padding(.top, 10.0)
                     
                     VStack{
-                        SendButton()
+                        LargeButton(title: "Send") {
+                            showOrder = true
+                        }
+                        .fullScreenCover(isPresented: $showOrder) {
+                            Waiting1()
+                        }
                         
                     }
                     .padding(.top, 45.0)

@@ -14,9 +14,11 @@ struct Onboarding: View {
     @AppStorage("lastName") var lastName: String = ""
     @AppStorage("userId") var usertId: String = ""
     
+    @State private var showTabBar = false
     var body: some View {
         NavigationView{
             VStack{
+                Spacer()
                 Image("pic")
                 Text("Place an order with people nearby.")
                     .font(.system(size: 20, weight: .bold, design: .default))
@@ -26,46 +28,53 @@ struct Onboarding: View {
                     .font(.system(size: 15, weight: .medium, design: .default))
                     .foregroundColor(.gray)
                    
-                
-                
-                SignInWithAppleButton(.continue){ request in
-                    request.requestedScopes = [.email, .fullName]
-                } onCompletion: { result in
-                    switch result{
-                    case .success(let auth):
-                       
-                        
-                        switch auth.credential {
-                        case let credential as ASAuthorizationAppleIDCredential:
-                            let userId = credential.user
-                            let email = credential.email
-                            let firstName = credential.fullName?.givenName
-                            let lastName = credential.fullName?.familyName
+                Spacer()
+                VStack{
+                    
+                    SignInWithAppleButton(.continue){ request in
+                        request.requestedScopes = [.email, .fullName]
+                    } onCompletion: { result in
+                        switch result{
+                        case .success(let auth):
                             
-                            self.email = email ?? ""
-                           // self.userId = userId
-                            self.firstName = firstName ?? ""
-                            self.lastName ?? ""
                             
-                        default:
-                            break
+                            switch auth.credential {
+                            case let credential as ASAuthorizationAppleIDCredential:
+                                let userId = credential.user
+                                let email = credential.email
+                                let firstName = credential.fullName?.givenName
+                                let lastName = credential.fullName?.familyName
+                                
+                                self.email = email ?? ""
+                                // self.userId = userId
+                                self.firstName = firstName ?? ""
+                                self.lastName ?? ""
+                                
+                            default:
+                                break
+                            }
+                            
+                            
+                            
+                        case .failure(let error):
+                            print(error)
                         }
                         
-                        
-                        
-                    case .failure(let error):
-                        print(error)
                     }
+                    //                .signInWithAppleButtonStyle( colorScheme == .dark ? .white : .black
+                    //                )
+                    .frame(height: 50)
+                    .padding()
+                    .cornerRadius(10)
                     
+                    
+                    LargeButton(title: "Skip") {
+                        showTabBar = true
+                    }
+                    .fullScreenCover(isPresented: $showTabBar) {
+                        TabBar()
+                    }
                 }
-//                .signInWithAppleButtonStyle( colorScheme == .dark ? .white : .black
-//                )
-                .frame(height: 50)
-                .padding()
-                .cornerRadius(10)
-                
-                SkipButton()
-                
             }
         }
     }

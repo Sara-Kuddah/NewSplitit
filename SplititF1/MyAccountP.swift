@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyAccountP: View {
     @State private var text: String = ""
+    @State private var showTabBar = false
     var body: some View {
         VStack {
             HStack {
@@ -72,19 +73,27 @@ struct MyAccountP: View {
                 
                 
                 
-                Button(action: {
-                    // Handle button action
-                }) {
-                    Text("Save")
-                        .foregroundColor(.black)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(Color("Color1"))
-                                .frame(width: 343, height: 61))
-                    
-                        .padding(.top, 30)
+//                Button(action: {
+//                    // Handle button action
+//                }) {
+//                    Text("Save")
+//                        .foregroundColor(.black)
+//                        .padding()
+//                        .background(
+//                            RoundedRectangle(cornerRadius: 10)
+//                                .foregroundColor(Color("Color1"))
+//                                .frame(width: 343, height: 61))
+//
+//                        .padding(.top, 30)
+//                }
+                LargeButton(title: "Save"){
+                    showTabBar = true
                 }
+                .fullScreenCover(isPresented: $showTabBar) {
+                    TabBar()
+                }
+                
+                    .padding(.top, 30)
             }
             
             Spacer()

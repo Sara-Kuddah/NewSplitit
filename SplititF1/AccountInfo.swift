@@ -18,7 +18,7 @@ struct AccountInfo: View {
     @State var firstMarked = false
     
     @State var thirdMarked = false
-    @State private var isPresentedFullScreenCover = false
+    @State private var showTabBar = false
     var body: some View {
         NavigationView {
             ScrollView{
@@ -162,7 +162,13 @@ struct AccountInfo: View {
                     
                     VStack{
                         
-                        SaveButton()
+//                        SaveButton()
+                        LargeButton(title: "Save") {
+                            showTabBar = true
+                        }
+                        .fullScreenCover(isPresented: $showTabBar) {
+                            TabBar()
+                        }
                             .padding(.top, 20)
                     }
                 }
