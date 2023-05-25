@@ -10,21 +10,9 @@ import SwiftUI
 struct TabBar: View {
     @State private var selection = 0
     @State private var isPresentedFullScreenCover = false
-//    init() {
-//            let appearance = UITabBarAppearance()
-//            appearance.configureWithOpaqueBackground()
-//            appearance.backgroundColor = .blue
-//            UITabBar.appearance().scrollEdgeAppearance = appearance
-//            UITabBar.appearance().standardAppearance = appearance
-//        }
-//
+
     var body: some View {
         TabView(selection: $selection) {
-//            NavigationView {
-//                // View for the first tab
-//                //Text("First Tab")
-//
-//            }
             
             ContentView()
                
@@ -39,8 +27,7 @@ struct TabBar: View {
             
             
             NavigationView {
-                // View for the second tab
-               // Text("Second Tab")
+               
             }
             OrderHistory_()
             .tabItem {

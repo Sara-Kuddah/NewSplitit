@@ -63,7 +63,7 @@ struct Form: View {
                         .padding([.horizontal], 24)
                 }
                 VStack{
-                    Text("Check Point Fee")
+                    Text("Check-in Point")
                         .font(.system(size: 20))
                     
                         .fontWeight(.semibold)

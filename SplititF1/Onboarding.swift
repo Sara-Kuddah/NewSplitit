@@ -19,11 +19,13 @@ struct Onboarding: View {
             VStack{
                 Image("pic")
                 Text("Place an order with people nearby.")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                Text("Order with nearby family, friends and other persons.")
+                    .font(.system(size: 20, weight: .bold, design: .default))
+                   
+                Text("Order with nearby family, friends and others")
                     .multilineTextAlignment(.center)
-                
+                    .font(.system(size: 15, weight: .medium, design: .default))
+                    .foregroundColor(.gray)
+                   
                 
                 
                 SignInWithAppleButton(.continue){ request in

@@ -69,7 +69,7 @@ struct AccountInfo: View {
                     VStack{
                         Text("Add How you want others to pay you")
                             .font(.system(size: 20))
-                            .fontWeight(.bold)
+                            .fontWeight(.semibold)
                         //.padding(.leading, -40.0)
                         
                     }
@@ -156,7 +156,7 @@ struct AccountInfo: View {
                     VStack{
                         
                         SaveButton()
-                            .padding(.top)
+                            .padding(.top, 20)
                     }
                 }
                 
@@ -192,7 +192,7 @@ struct AccountInfo: View {
                 }
                 
             }
-            .padding(.bottom, 110.0)
+           // .padding(.bottom, 110.0)
         }
     }
 }

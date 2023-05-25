@@ -9,6 +9,7 @@ import SwiftUI
 
 struct JoinButton: View {
     var body: some View {
+        
         Button(action: {
             // Handle button action
         }) {
@@ -19,8 +20,7 @@ struct JoinButton: View {
                 .background(
                     RoundedRectangle(cornerRadius: 7)
                         .foregroundColor(Color("Color1"))
-                        .frame(width:70, height: 33)
-                )
+                        .frame(width:70, height: 33))
         }
     }
     struct JoinButton_Previews: PreviewProvider {
