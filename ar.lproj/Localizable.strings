@@ -12,7 +12,7 @@
 "McDonald's" = "ماكدونالدز";
 "Note: I only have 55 Riyals" = "ملاحظة: لدي 55 ريالاً فقط";
 "15 minutes" = "15 دقيقة";
-"20 Riyals" = " ٢٠ ريال";
+"20 Riyals" = " 20 ريال";
 "Jahez" = "جاهز";
 "Join" = "انضم";
 "Discover" = "اكتشف";
@@ -40,7 +40,7 @@
 "STC pay : " = "STC pay:" ;
 "Enter your number " = "أدخل رقمك " ;
 "Save"= "حفظ" ;
-"20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4" = "20 ريال ، جاهز ، شركة الاتصالات السعودية باي- الراجحي ، PNU-A4" ;
+"20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4" = "20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4" ;
 "Add Your Order" = "أضف طلبك" ;
 "Order Name" = "اسم الطلب";
 "Please write your order " = "الرجاء كتابة طلبك" ;
@@ -49,14 +49,14 @@
 "Add New Item" = "اضف منتج جديد";
 "Please note: Once you Click Send, you will not be able to Edit or Cancel your order" = "ملاحظة : بمجرد تأكيد الطلب ، لن تتمكن من تحرير أو إلغاء طلبك" ;
 "Send" = "تأكيد الطلب" ;
-"Size" = "حجم";
+"Size" = "الحجم";
 "Order Status" = "حالة الطلب";
 "Check-in Point" = "مكان استلام الطلب" ;
 "Abeer’s Payment Info:" = "معلومات الدفع:";
 "Total :" = "الإجمالي";
 "35 Riyals" = "35 ريال";
 "STC Pay" = "STC Pay";
-"Al rajhi" = "ألراجحي";
+"Al rajhi" = "الراجحي";
 "Waiting" = "رجاء الإنتظار";
 "Group Completed" = "اكتملت المجموعة";
 "Order Sent" = "تم إرسال الطلب";
@@ -85,7 +85,7 @@
 "Restaurant Name" = "اسم المطعم";
 "Delivery Fee" = "رسوم التوصيل";
 "Check-in Point" = "مكان استلام الطلب" ;
-"Notes"= "ملحظات";
+"Notes"= "ملاحظات";
 "Create Order" = "إنشاء الطلب";
 "Order Status"= "حالة الطلب";
 "You only can cancel announcement when no one  joined yet" = "يمكنك إلغاء الإعلان في حال عدم إتضمام اي احد";
@@ -97,7 +97,7 @@
 "Orders Summary:" = "ملخص الطلبات:" ;
 "You can Close Group to continue with current orders only  " = "يمكنك إغلاق المجموعة لمتابعة الطلبات الحالية فقط";
 "Once You set Order please click Confirm to let others know you’ve ordered " = "بمجرد تعيين الطلب ، يُرجى النقر فوق تأكيد لإعلام الآخرين بأنك طلبت";
-"Use this Number for STC Pay" = "استخدم هذا الرقم مع STC Pay";
+"Use this Number for STC Pay" = "استخدم هذا الرقم ل STC PAY";
 "Transfer" = "تحويل";
 "Search" = "بحث";
 "Location Name" = " الموقع";
