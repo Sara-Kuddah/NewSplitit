@@ -26,8 +26,10 @@ struct FormForAddingOrder: View {
                     Button(action: {
                         
                     }) {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(Color("Color1")) // change color of back button
+                        NavigationLink(destination:  TabBar()) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(Color("Color1")) // change color of back button
+                        }
                     }
                     Spacer()
                     VStack(alignment: .center, spacing: 2) {

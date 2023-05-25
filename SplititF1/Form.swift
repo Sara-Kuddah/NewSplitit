@@ -21,6 +21,32 @@ struct Form: View {
     var body: some View {
         NavigationView {
             ScrollView{
+                VStack(spacing: 8) {
+                    HStack(spacing: 8) {
+                        Button(action: {
+                            
+                        }) {
+                            NavigationLink(destination:  TabBar()) {
+                                Image(systemName: "chevron.left")
+                                    .foregroundColor(Color("Color1")) // change color of back button
+                                    .padding(.leading, 10.0)
+                            }
+                           
+                        }
+                        Spacer()
+                        VStack(alignment: .center, spacing: 2) {
+                            Text("McDonald's")
+                            // .font(.headline)
+                                .font(.system(size: 25, weight: .bold, design: .default))
+                                .padding(.trailing, 40.0)
+                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+                            //.font(.subheadline)
+                                .font(.system(size: 13, weight: .regular, design: .default))
+                                .foregroundColor(.secondary)
+                                .padding(.trailing, 40.0)
+                        }
+                        Spacer()                    }
+                    Divider()
                 VStack //(alignment: .leading)
                 {
                     VStack{
@@ -107,32 +133,36 @@ struct Form: View {
                             .padding([.horizontal], 24)
                             .padding(.top, -6.0)
                     }
-                    .padding(.top, -10.0)
+                    .padding(.top, 10.0)
                     
                     VStack{
                         SendButton()
                         
                     }
-                    .padding(.top)
+                    .padding(.top, 45.0)
                 }
                 .padding(.top, 25.0)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) { // <3>
-                        VStack {
-                            Text("Create Order").font(.title).fontWeight(.bold)
-                            Divider()
-                            
-                            
-                            
-                        }
-                        .padding(.top)
-                    }
+                
+              
                 }
+                
+                
+                
+                
+                
+                
+                
+                
+               // Divider()
+                
+                    .padding(.top)
             }
         }
         .navigationBarBackButtonHidden(true)
     }
+    
+        //.navigationBarBackButtonHidden(true)
+    
 }
 
 struct Form_Previews: PreviewProvider {

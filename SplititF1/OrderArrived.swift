@@ -47,7 +47,7 @@ struct OrderArrived: View {
                         
                     } label: {
                         NavigationLink(destination: OrderConfirmed__()) {
-                            Text("Close Group")
+                            Text("Order Confirmed")
                                 .bold()
                                 .foregroundColor(.black)
                                 .frame(width: 200)
