@@ -28,7 +28,6 @@ struct NewOrder: View {
         }
     }
 }
-}
 
 struct NewOrder_Previews: PreviewProvider {
 static var previews: some View {
