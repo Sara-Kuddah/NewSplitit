@@ -1,15 +1,14 @@
 //
-//  OrderArrived.swift
+//  OrderConfirmed  .swift
 //  SplititF1
 //
-//  Created by Abeer on 24/10/1444 AH.
+//  Created by Abeer on 04/11/1444 AH.
 //
 
 import SwiftUI
 
-struct OrderArrived: View {
+struct OrderConfirmed__: View {
     @State private var showingAlert = false
-    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationView {
             VStack{
@@ -20,17 +19,17 @@ struct OrderArrived: View {
                         .fontWeight(.bold)
                         .padding(.trailing, 150.0)
                         .padding(.top, 40.0)
-                       .padding(.leading, -100)
+                       .padding(.leading, -90)
                     
                 }
                
                 
                 VStack {
-                    Text("Once You set Order please click Confirm to let others know you’ve ordered ")
+                    Text("Please click Order Arrived once the order arrive so other’s can go to pick their items")
                         .font(.system(size:12))
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.leading)
-                        .padding(.leading, -10.0)
+                        .padding(.leading)
                         .padding(.top, -5.0)
 
                 }
@@ -40,30 +39,30 @@ struct OrderArrived: View {
                         .padding(.top, 10.0)
                 }
                 
-                VStack{
-                    
+                HStack{
                     
                     Button {
+                        showingAlert = true
                         
                     } label: {
-                        NavigationLink(destination: OrderConfirmed__()) {
-                            Text("Close Group")
-                                .bold()
-                                .foregroundColor(.black)
-                                .frame(width: 200)
-                                .frame(height: 50)
-                                .background(Color("Color1"))
-                                .cornerRadius(10)
-                            
-                        }
+                        Text("Order Arrived")
                         
-//                        .navigationBarBackButtonHidden(true)
+                            .bold()
+                            .foregroundColor(.black)
+                            .frame(width: 200)
+                            .frame(height: 50)
+                            .background(Color("Color1"))
+                            .cornerRadius(10)
+                            .alert("Please Confirm who have payed you ", isPresented: $showingAlert) {
+                                
+                                VStack{
+                                    
+                                    Button("OK", role: .cancel) { }
+                                }
+                            }
                     }
                     .padding(.trailing, -170.0)
-                    .padding(.top, -350.0)
-                    
-                    
-                    
+                    .padding(.top, -340.0)
                 }
                
                 Divider()
@@ -112,12 +111,11 @@ struct OrderArrived: View {
             .padding(.bottom, 150.0)
         }
         .navigationBarBackButtonHidden(true)
-        
     }
 }
 
-struct OrderArrived_Previews: PreviewProvider {
+struct OrderConfirmed___Previews: PreviewProvider {
     static var previews: some View {
-        OrderArrived()
+        OrderConfirmed__()
     }
 }

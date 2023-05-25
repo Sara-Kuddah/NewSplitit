@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct SaveButton: View {
+    @State private var isPresentedFullScreenCover = false
     var body: some View {
+        
         Button(action: {
             // Handle button action
         }) {
-            Text("Save")
-                .foregroundColor(.black)
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color("Color1"))
-                        .frame(width: 343, height: 61)
-                )
+            NavigationLink(destination: TabBar()) {
+                Text("Save")
+                    .foregroundColor(.black)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(Color("Color1"))
+                            .frame(width: 343, height: 61)
+                    )
+            }
         }
     }
 }

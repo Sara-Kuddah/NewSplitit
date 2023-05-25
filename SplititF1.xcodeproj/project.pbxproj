@@ -23,6 +23,9 @@
 		23297E2E2A1902A70035658B /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23297E262A1902A70035658B /* MKCoordinateRegion+Extensions.swift */; };
 		23297E2F2A1902A70035658B /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23297E282A1902A70035658B /* LandmarkListView.swift */; };
 		23297E302A1902A70035658B /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23297E2A2A1902A70035658B /* LocalSearchService.swift */; };
+		23CA5FC42A1DE6AA00289A3B /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */; };
+		23CA5FC62A1DE99400289A3B /* test4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC52A1DE99400289A3B /* test4.swift */; };
+		23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */; };
 		23CD7CA42A1A11F000260B15 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CA32A1A11F000260B15 /* TabBar.swift */; };
 		23CD7CA62A1A120C00260B15 /* OrderHistory .swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CA52A1A120C00260B15 /* OrderHistory .swift */; };
 		23CD7CA82A1A121B00260B15 /* Profile .swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CA72A1A121B00260B15 /* Profile .swift */; };
@@ -70,6 +73,9 @@
 		23297E262A1902A70035658B /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 		23297E282A1902A70035658B /* LandmarkListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
 		23297E2A2A1902A70035658B /* LocalSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
+		23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
+		23CA5FC52A1DE99400289A3B /* test4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test4.swift; sourceTree = "<group>"; };
+		23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderConfirmed  .swift"; sourceTree = "<group>"; };
 		23CD7CA32A1A11F000260B15 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		23CD7CA52A1A120C00260B15 /* OrderHistory .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderHistory .swift"; sourceTree = "<group>"; };
 		23CD7CA72A1A121B00260B15 /* Profile .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile .swift"; sourceTree = "<group>"; };
@@ -149,12 +155,14 @@
 				23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */,
 				23CD7CBD2A1A130300260B15 /* test2.swift */,
 				23CD7CBE2A1A130300260B15 /* test3.swift */,
+				23CA5FC52A1DE99400289A3B /* test4.swift */,
 				F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */,
 				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
 				23CD7CBB2A1A12F500260B15 /* checkbox.swift */,
 				230520C22A1C92EB006ED1D5 /* CheckP.swift */,
 				230520C42A1C98F4006ED1D5 /* CheckT.swift */,
 				23CD7CB92A1A12EA00260B15 /* joinCard.swift */,
+				23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */,
 				23CD7CA52A1A120C00260B15 /* OrderHistory .swift */,
 				23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */,
 				23FC80FC2A14BB350001853B /* Splash.swift */,
@@ -164,6 +172,7 @@
 				23EDEB652A0FDFB70096DA21 /* Waiting1.swift */,
 				230A1E332A0B841100832244 /*  OrderIsSent.swift */,
 				23DAF6A42A10C77800B68DF4 /* OrderArrived.swift */,
+				23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */,
 				23FC81032A153BB40001853B /* Order.swift */,
 				F57B089F2A1F3CC3002A8913 /* NewOrder.swift */,
 				23297DFE2A18B71A0035658B /* RName.swift */,
@@ -323,6 +332,7 @@
 				230520EF2A1D32D4006ED1D5 /* SkipButton.swift in Sources */,
 				230520F12A1D3755006ED1D5 /* SaveButton.swift in Sources */,
 				230520C32A1C92EB006ED1D5 /* CheckP.swift in Sources */,
+				23CA5FC62A1DE99400289A3B /* test4.swift in Sources */,
 				23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */,
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,
 				23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */,
@@ -340,9 +350,11 @@
 				230A1E302A0B6C9100832244 /* Form.swift in Sources */,
 				F5C7BBDB2A1B548E007AEB3A /* TEST1.swift in Sources */,
 				23CD7CC32A1A130300260B15 /* test3.swift in Sources */,
+				23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
 				23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */,
+				23CA5FC42A1DE6AA00289A3B /* PaymentCard.swift in Sources */,
 				23CD7CBA2A1A12EA00260B15 /* joinCard.swift in Sources */,
 				23CD7CA62A1A120C00260B15 /* OrderHistory .swift in Sources */,
 				23CD7CB42A1A129E00260B15 /* SendButton.swift in Sources */,

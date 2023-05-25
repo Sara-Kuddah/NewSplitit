@@ -34,16 +34,16 @@ struct Waiting1: View {
                     HStack{
                         HStack{
                             Text("Order Status")
-                                .font(.system(size:28))
+                                .font(.system(size:20))
                                 .fontWeight(.bold)
-                                .padding(.trailing, 90.0)
+                                .padding(.trailing, 150.0)
                             
                         }
                         .padding(.top)
                         HStack{
                             Text(convertSecondsToTime(timeInSeconds : timeRemaining))
                                 .padding()
-                                .font(.system(size:25))
+                                .font(.system(size:20))
                                 .fontWeight(.bold)
                                 .onReceive(timer) {
                                     _ in
@@ -56,7 +56,9 @@ struct Waiting1: View {
                     } //.padding(.top, -120.0)
                 
                     Text("You only can cancel announcement when no one  joined yet")
-                        .padding(.leading, 20.0)
+                        .font(.system(size:12))
+                        .fontWeight(.semibold)
+                        .padding(.leading, -10.0)
                         
                        
                     VStack{
@@ -75,24 +77,27 @@ struct Waiting1: View {
                             .cornerRadius(10)
                         
                         
-                            .offset(x:1 ,y:1)
-                    }.navigationBarBackButtonHidden(true)
+                    }
+                    
+                    
+//                    .navigationBarBackButtonHidden(true)
                     
                 .padding(.trailing, -170.0)
-                   .padding(.top, -50.0)
-                    
-                    Divider()
-                    
+                   .padding(.top, -90.0)
+                   
+                        Divider()
+                   
                     Text("Waiting for others to join :")
-                        .font(.system(size:25))
-                        .fontWeight(.semibold)
-                        .padding(.leading, -90.0)
-                    
+                        .font(.system(size:20))
+                        .fontWeight(.bold)
+                        .padding(.leading, -130.0)
+                        .padding(.top, 10.0)
                     
                     
                     
                     
                 }
+                .padding(.top, 10.0)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) { // <3>
@@ -117,6 +122,7 @@ struct Waiting1: View {
             }
             .padding(.bottom, 400.0)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

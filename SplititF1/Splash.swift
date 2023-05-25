@@ -20,7 +20,7 @@ struct Splash: View {
                     .font(.system(size: 100))
                     .background(Splash.Mycolor)
             if isActive {
-                Form()
+                Onboarding()
             }
             else{
                 VStack {

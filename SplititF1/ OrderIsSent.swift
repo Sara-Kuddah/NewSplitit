@@ -25,6 +25,7 @@ struct  OrderIsSent: View {
         return String(format: "%02i:%02i" , minutes,
                       seconds)
     }
+    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationView {
             VStack{
@@ -32,24 +33,24 @@ struct  OrderIsSent: View {
                     VStack{
                         
                         Text("Order Status")
-                            .font(.system(size:28))
+                            .font(.system(size:20))
                             .fontWeight(.bold)
-                            .padding(.trailing, 90.0)
+                            .padding(.trailing, 150.0)
                         
                         
                     }
-                    .padding(.top, 290.0)
+                    .padding(.top, 270.0)
                     HStack{
                         Text(convertSecondsToTime(timeInSeconds : timeRemaining))
                             .padding()
-                            .font(.system(size:25))
+                            .font(.system(size:20))
                             .fontWeight(.bold)
                             .onReceive(timer) {
                                 _ in
                                 timeRemaining -= 1
                             }
                     }
-                    .padding(.top, 290.0)
+                    .padding(.top, 270.0)
                     
                     
                 }
@@ -57,7 +58,11 @@ struct  OrderIsSent: View {
                 
                 VStack{
                     Text("You can Close Group to continue with current orders only  ")
+                        .font(.system(size:12))
+                        .fontWeight(.semibold)
                         .multilineTextAlignment(.leading)
+                        .padding(.leading, -10.0)
+
                        
                     
                 }
@@ -83,30 +88,32 @@ struct  OrderIsSent: View {
                                 .background(Color("Color1"))
                                 .cornerRadius(10)
                             
-                        }.navigationBarBackButtonHidden(true)
+                        }
+                        
+//                        .navigationBarBackButtonHidden(true)
                     }
                     .padding(.trailing, -170.0)
-                    .padding(.top, -420.0)
+                    .padding(.top, -500.0)
                     
                     
                     
                 }
                 
                 Divider()
-                    .padding(.top, -350.0)
+                    .padding(.top, -430.0)
                 
                 VStack{
                     
                     Text("Orders Summary:")
-                        .font(.system(size:23))
-                        .fontWeight(.semibold)
+                        .font(.system(size:20))
+                        .fontWeight(.bold)
                         .padding(.trailing, 200.0)
-                    .padding(.top, -340.0)
+                    .padding(.top, -430.0)
                 }
                     
                         VStack{
                             Order()
-                                .padding(.top, -310.0)
+                                .padding(.top, -410.0)
                             
                         }
                         
@@ -135,7 +142,7 @@ struct  OrderIsSent: View {
                 }
                 
             }
-            
+        .navigationBarBackButtonHidden(true)
         }
     }
 
