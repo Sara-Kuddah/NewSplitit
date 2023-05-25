@@ -35,7 +35,7 @@ struct RName: View {
                 .textFieldStyle(PlainTextFieldStyle())
                 .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
                 .padding(.top, -4.0)
-                
+            
         }
         
     }
