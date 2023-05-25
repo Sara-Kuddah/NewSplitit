@@ -16,19 +16,20 @@ struct Order: View {
                HStack {
                    VStack{
                        Text("Reem")
-                           .font(.system(size: 15, weight: .semibold, design: .default))
+                           .font(.system(size: 14, weight: .regular, design: .default))
+                           .foregroundColor(.gray)
                            .font(.title)
-                           .padding(.leading, -30.0)
+                           .padding(.leading, -47)
                        
-                       Text("McDonald's")
-                           .font(.system(size: 15, weight: .semibold, design: .default))
+                       Text("(123) 456-7890")
+                           .font(.system(size: 15, weight: .regular, design: .default))
                            .font(.title)
                            .padding(.leading, 10)
                        
-                       Text ("(123) 456-7890")
+                       Text ("Order Name")
                            .font(.system(size: 15, weight: .semibold, design: .default))
                            .font(.title)
-                           .padding(.leading, 20)
+                           .padding(.leading, -10)
                    }
                    
                    Spacer()
@@ -36,7 +37,7 @@ struct Order: View {
                    Image(systemName: isDropdownExpanded ? "chevron.up" : "chevron.down")
                        .font(.system(size: 15, weight: .semibold, design: .default))
                        .padding(.trailing, 10)
-                       .foregroundColor(.black)
+                       .foregroundColor(Color("Color1"))
                        .onTapGesture {
                            isDropdownExpanded.toggle()
                        }

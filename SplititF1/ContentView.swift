@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         
        
-            NavigationView {
+//            NavigationView {
                
                 VStack(spacing: 0) {
                     HStack {
@@ -86,7 +86,7 @@ struct ContentView: View {
                 }
                
                 //.ignoresSafeArea(.container)
-            }
+//            }
         
         }
     

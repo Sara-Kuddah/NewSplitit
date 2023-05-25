@@ -10,6 +10,7 @@ import SwiftUI
 struct JoinButton: View {
     @State private var isPresentedFullScreenCover = false
     var body: some View {
+        
         Button(action: {
             // Handle button action
         }) {

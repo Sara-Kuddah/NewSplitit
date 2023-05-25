@@ -38,7 +38,7 @@ struct Mapp: View {
                 Map(coordinateRegion: $localSearchService.region, showsUserLocation: true, annotationItems: localSearchService.landmarks) { landmark in
                     
                     MapAnnotation(coordinate: landmark.coordinate) {
-                        Image(systemName: "heart.fill")
+                        Image(systemName: "circle.fill")
                             .foregroundColor(localSearchService.landmark == landmark ? .purple: .red)
                             .scaleEffect(localSearchService.landmark == landmark ? 2: 1)
                     }

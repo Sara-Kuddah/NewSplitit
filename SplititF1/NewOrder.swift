@@ -2,7 +2,7 @@
 //  NewOrder.swift
 //  SplititF1
 //
-//  Created by Abeer on 01/11/1444 AH.
+//  Created by Dina Alhajj Ibrahim on 25/05/2023.
 //
 
 import SwiftUI
@@ -28,9 +28,10 @@ struct NewOrder: View {
         }
     }
 }
+}
 
 struct NewOrder_Previews: PreviewProvider {
-    static var previews: some View {
-        NewOrder()
-    }
+static var previews: some View {
+NewOrder()
+}
 }

@@ -67,7 +67,7 @@ struct Waiting1: View {
                     }
                     
                     NavigationLink(destination: TabBar()) {
-                        Text("Cansel")
+                        Text("Cancel")
                             .padding(.all)
                             .bold()
                             .foregroundColor(.black)
