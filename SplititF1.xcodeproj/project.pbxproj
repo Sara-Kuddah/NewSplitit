@@ -48,6 +48,7 @@
 		23FC80FD2A14BB350001853B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FC2A14BB350001853B /* Splash.swift */; };
 		23FC81042A153BB40001853B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC81032A153BB40001853B /* Order.swift */; };
 		F5255C152A1C9D6A0073AF14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5255C172A1C9D6A0073AF14 /* Localizable.strings */; };
+		F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57B089F2A1F3CC3002A8913 /* NewOrder.swift */; };
 		F5C7BBDB2A1B548E007AEB3A /* TEST1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		23FC81032A153BB40001853B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F5255C162A1C9D6A0073AF14 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5255C182A1C9D9B0073AF14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F57B089F2A1F3CC3002A8913 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				230A1E332A0B841100832244 /*  OrderIsSent.swift */,
 				23DAF6A42A10C77800B68DF4 /* OrderArrived.swift */,
 				23FC81032A153BB40001853B /* Order.swift */,
+				F57B089F2A1F3CC3002A8913 /* NewOrder.swift */,
 				23297DFE2A18B71A0035658B /* RName.swift */,
 				23297E1F2A1902A70035658B /* Map */,
 				231174372A0AB5FC003916F0 /* Assets.xcassets */,
@@ -343,6 +346,7 @@
 				23CD7CBA2A1A12EA00260B15 /* joinCard.swift in Sources */,
 				23CD7CA62A1A120C00260B15 /* OrderHistory .swift in Sources */,
 				23CD7CB42A1A129E00260B15 /* SendButton.swift in Sources */,
+				F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
