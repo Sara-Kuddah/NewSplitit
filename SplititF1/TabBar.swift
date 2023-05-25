@@ -29,7 +29,7 @@ struct TabBar: View {
             NavigationView {
                
             }
-            OrderHistory_()
+            OrderHistory()
             .tabItem {
                 Image(uiImage: UIImage(named: "image3")!)
                 Text("My Orders")
@@ -40,7 +40,7 @@ struct TabBar: View {
                 // View for the third tab
                 //Text("Third Tab")
             }
-            Profile_()
+            Profile()
             .tabItem {
                 Image(uiImage: UIImage(named: "image1")!)
                 Text("My Account")
@@ -49,7 +49,7 @@ struct TabBar: View {
         }
 
         .accentColor(Color("Color1"))
-        .cornerRadius(30)
+//        .cornerRadius(30)
         //.padding()
         .ignoresSafeArea()
         .onAppear {

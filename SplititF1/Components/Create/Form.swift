@@ -50,7 +50,7 @@ struct Form: View {
                 VStack //(alignment: .leading)
                 {
                     VStack{
-                        RName()
+                        AppNamePicker()
                         
                     }
                     

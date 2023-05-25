@@ -2,7 +2,7 @@
 //  JoinedOrder.swift
 //  SplititF1
 //
-//  Created by Alaa Alabdullah on 25/05/2023.
+//  Created by Abeer & Dina on 25/05/2023.
 //
 
 import SwiftUI

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Profile_: View {
+struct Profile: View {
     var body: some View {
         
         NavigationView {
@@ -231,7 +231,7 @@ struct Profile_: View {
     
     struct Profile__Previews: PreviewProvider {
         static var previews: some View {
-            Profile_()
+            Profile()
         }
     }
 }

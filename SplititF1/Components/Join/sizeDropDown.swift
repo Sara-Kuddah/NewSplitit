@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TEST1: View {
+struct sizeDropDown: View {
     @State private var selectedOption = ""
        @State private var isDropdownExpanded = false
        
@@ -75,6 +75,6 @@ struct TEST1: View {
 
 struct TEST1_Previews: PreviewProvider {
     static var previews: some View {
-        TEST1()
+        sizeDropDown()
     }
 }

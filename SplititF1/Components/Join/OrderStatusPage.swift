@@ -45,7 +45,7 @@ struct OrderStatusPage: View {
                 
                 TimelineTrack()
                 Spacer()
-                test2()
+                myOrderSummary()
                 
                 
                 
@@ -114,14 +114,14 @@ struct OrderStatusPage: View {
                                 HStack {
                                     Text("                   0593491213")
                                         .font(.system(size: 13, weight: .semibold, design: .default))
-                                    test3()
+                                    copyButton()
                                     
                                 }
                                 .padding(.top, 140)
                                 HStack {
                                     Text("SA144495930005887")
                                         .font(.system(size: 13, weight: .semibold, design: .default))
-                                    test3()
+                                    copyButton()
                                 }
                             }
                             .font(.headline)

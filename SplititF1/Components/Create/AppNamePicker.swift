@@ -2,7 +2,7 @@
 //  AppNamePicker.swift
 //  SplititF1
 //
-//  Created by Alaa Alabdullah on 25/05/2023.
+//  Created by Abeer on 25/05/2023.
 //
 
 import SwiftUI

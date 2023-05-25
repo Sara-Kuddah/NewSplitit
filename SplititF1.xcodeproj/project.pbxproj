@@ -24,7 +24,7 @@
 		23297E2F2A1902A70035658B /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23297E282A1902A70035658B /* LandmarkListView.swift */; };
 		23297E302A1902A70035658B /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23297E2A2A1902A70035658B /* LocalSearchService.swift */; };
 		23CA5FC42A1DE6AA00289A3B /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */; };
-		23CA5FC62A1DE99400289A3B /* test4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC52A1DE99400289A3B /* test4.swift */; };
+		23CA5FC62A1DE99400289A3B /* editButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC52A1DE99400289A3B /* editButton.swift */; };
 		23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */; };
 		23CD7CA42A1A11F000260B15 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CA32A1A11F000260B15 /* TabBar.swift */; };
 		23CD7CA62A1A120C00260B15 /* OrderHistory .swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CA52A1A120C00260B15 /* OrderHistory .swift */; };
@@ -39,8 +39,8 @@
 		23CD7CB82A1A12D600260B15 /* CardNewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */; };
 		23CD7CBA2A1A12EA00260B15 /* joinCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CB92A1A12EA00260B15 /* joinCard.swift */; };
 		23CD7CBC2A1A12F500260B15 /* checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBB2A1A12F500260B15 /* checkbox.swift */; };
-		23CD7CC22A1A130300260B15 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBD2A1A130300260B15 /* test2.swift */; };
-		23CD7CC32A1A130300260B15 /* test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBE2A1A130300260B15 /* test3.swift */; };
+		23CD7CC22A1A130300260B15 /* myOrderSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBD2A1A130300260B15 /* myOrderSummary.swift */; };
+		23CD7CC32A1A130300260B15 /* copyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBE2A1A130300260B15 /* copyButton.swift */; };
 		23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CC02A1A130300260B15 /* TimelineTrack.swift */; };
 		23CD7CC62A1A130300260B15 /* MotivationalPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */; };
 		23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CCD2A1A147800260B15 /* ContentView.swift */; };
@@ -54,9 +54,10 @@
 		59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */; };
 		59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */; };
 		59A0B4DA2A1FEEB600250403 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D92A1FEEB600250403 /* LargeButton.swift */; };
+		59A0B4DE2A2016F900250403 /* newJoinCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4DD2A2016F900250403 /* newJoinCard.swift */; };
 		F5255C152A1C9D6A0073AF14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5255C172A1C9D6A0073AF14 /* Localizable.strings */; };
 		F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57B089F2A1F3CC3002A8913 /* NewOrder.swift */; };
-		F5C7BBDB2A1B548E007AEB3A /* TEST1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */; };
+		F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +79,7 @@
 		23297E282A1902A70035658B /* LandmarkListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
 		23297E2A2A1902A70035658B /* LocalSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
 		23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
-		23CA5FC52A1DE99400289A3B /* test4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test4.swift; sourceTree = "<group>"; };
+		23CA5FC52A1DE99400289A3B /* editButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editButton.swift; sourceTree = "<group>"; };
 		23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderConfirmed  .swift"; sourceTree = "<group>"; };
 		23CD7CA32A1A11F000260B15 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		23CD7CA52A1A120C00260B15 /* OrderHistory .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderHistory .swift"; sourceTree = "<group>"; };
@@ -93,8 +94,8 @@
 		23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardNewOrder.swift; sourceTree = "<group>"; };
 		23CD7CB92A1A12EA00260B15 /* joinCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = joinCard.swift; sourceTree = "<group>"; };
 		23CD7CBB2A1A12F500260B15 /* checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkbox.swift; sourceTree = "<group>"; };
-		23CD7CBD2A1A130300260B15 /* test2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
-		23CD7CBE2A1A130300260B15 /* test3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test3.swift; sourceTree = "<group>"; };
+		23CD7CBD2A1A130300260B15 /* myOrderSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myOrderSummary.swift; sourceTree = "<group>"; };
+		23CD7CBE2A1A130300260B15 /* copyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = copyButton.swift; sourceTree = "<group>"; };
 		23CD7CC02A1A130300260B15 /* TimelineTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrack.swift; sourceTree = "<group>"; };
 		23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotivationalPopUp.swift; sourceTree = "<group>"; };
 		23CD7CCD2A1A147800260B15 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,10 +110,11 @@
 		59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedOrder.swift; sourceTree = "<group>"; };
 		59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusButton.swift; sourceTree = "<group>"; };
 		59A0B4D92A1FEEB600250403 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		59A0B4DD2A2016F900250403 /* newJoinCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newJoinCard.swift; sourceTree = "<group>"; };
 		F5255C162A1C9D6A0073AF14 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5255C182A1C9D9B0073AF14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F57B089F2A1F3CC3002A8913 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
-		F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST1.swift; sourceTree = "<group>"; };
+		F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sizeDropDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,29 +152,9 @@
 				231174332A0AB5FB003916F0 /* SplititF1App.swift */,
 				23CD7CCD2A1A147800260B15 /* ContentView.swift */,
 				23CD7CA32A1A11F000260B15 /* TabBar.swift */,
-				23CD7CA72A1A121B00260B15 /* Profile .swift */,
-				23CD7CA92A1A125700260B15 /* FormForAddingOrder.swift */,
-				230520F02A1D3755006ED1D5 /* SaveButton.swift */,
-				23CD7CAF2A1A128C00260B15 /* PaymentProfile.swift */,
-				23CD7CAD2A1A128200260B15 /* MyAccountP.swift */,
-				23CD7CAB2A1A127200260B15 /* OrderStatusPage.swift */,
-				23CD7CBD2A1A130300260B15 /* test2.swift */,
-				23CD7CBE2A1A130300260B15 /* test3.swift */,
-				23CA5FC52A1DE99400289A3B /* test4.swift */,
-				F5C7BBDA2A1B548E007AEB3A /* TEST1.swift */,
-				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
-				23CD7CB92A1A12EA00260B15 /* joinCard.swift */,
-				23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */,
 				23CD7CA52A1A120C00260B15 /* OrderHistory .swift */,
-				23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */,
 				23FC80FC2A14BB350001853B /* Splash.swift */,
 				23FC80FA2A14B7800001853B /* Onboarding.swift */,
-				23FC80F82A14A82D0001853B /* AccountInfo.swift */,
-				230A1E2F2A0B6C9100832244 /* Form.swift */,
-				23EDEB652A0FDFB70096DA21 /* Waiting1.swift */,
-				230A1E332A0B841100832244 /*  OrderIsSent.swift */,
-				23DAF6A42A10C77800B68DF4 /* OrderArrived.swift */,
-				23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */,
 				59A0B4CE2A1FE9C900250403 /* Components */,
 				59A0B4CD2A1FE9BC00250403 /* To Be Deleted */,
 				23297E1F2A1902A70035658B /* Map */,
@@ -247,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */,
+				230520F02A1D3755006ED1D5 /* SaveButton.swift */,
 				F57B089F2A1F3CC3002A8913 /* NewOrder.swift */,
 				230520EE2A1D32D3006ED1D5 /* SkipButton.swift */,
 				23CD7CB32A1A129E00260B15 /* SendButton.swift */,
@@ -263,6 +246,9 @@
 		59A0B4CE2A1FE9C900250403 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
+				59A0B4DC2A20069C00250403 /* account */,
+				59A0B4DB2A20063D00250403 /* main */,
 				59A0B4D02A1FEA6600250403 /* Join */,
 				59A0B4CF2A1FEA5B00250403 /* Create */,
 			);
@@ -272,6 +258,13 @@
 		59A0B4CF2A1FEA5B00250403 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				230A1E332A0B841100832244 /*  OrderIsSent.swift */,
+				23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */,
+				23EDEB652A0FDFB70096DA21 /* Waiting1.swift */,
+				23DAF6A42A10C77800B68DF4 /* OrderArrived.swift */,
+				230A1E2F2A0B6C9100832244 /* Form.swift */,
+				23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */,
+				23CA5FC52A1DE99400289A3B /* editButton.swift */,
 				59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */,
 				59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */,
 				59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */,
@@ -283,9 +276,35 @@
 		59A0B4D02A1FEA6600250403 /* Join */ = {
 			isa = PBXGroup;
 			children = (
+				23CD7CA92A1A125700260B15 /* FormForAddingOrder.swift */,
+				23CD7CAB2A1A127200260B15 /* OrderStatusPage.swift */,
+				23CD7CBD2A1A130300260B15 /* myOrderSummary.swift */,
+				F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */,
+				23CD7CBE2A1A130300260B15 /* copyButton.swift */,
 				23CD7CB12A1A129500260B15 /* JoinButton.swift */,
 			);
 			path = Join;
+			sourceTree = "<group>";
+		};
+		59A0B4DB2A20063D00250403 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */,
+				23CD7CB92A1A12EA00260B15 /* joinCard.swift */,
+				59A0B4DD2A2016F900250403 /* newJoinCard.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		59A0B4DC2A20069C00250403 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				23FC80F82A14A82D0001853B /* AccountInfo.swift */,
+				23CD7CAF2A1A128C00260B15 /* PaymentProfile.swift */,
+				23CD7CA72A1A121B00260B15 /* Profile .swift */,
+				23CD7CAD2A1A128200260B15 /* MyAccountP.swift */,
+			);
+			path = account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,11 +392,12 @@
 				23CD7CB02A1A128C00260B15 /* PaymentProfile.swift in Sources */,
 				23CD7CB82A1A12D600260B15 /* CardNewOrder.swift in Sources */,
 				23297E2B2A1902A70035658B /* Mapp.swift in Sources */,
-				23CD7CC22A1A130300260B15 /* test2.swift in Sources */,
+				23CD7CC22A1A130300260B15 /* myOrderSummary.swift in Sources */,
 				230520EF2A1D32D4006ED1D5 /* SkipButton.swift in Sources */,
 				230520F12A1D3755006ED1D5 /* SaveButton.swift in Sources */,
+				59A0B4DE2A2016F900250403 /* newJoinCard.swift in Sources */,
 				230520C32A1C92EB006ED1D5 /* CheckP.swift in Sources */,
-				23CA5FC62A1DE99400289A3B /* test4.swift in Sources */,
+				23CA5FC62A1DE99400289A3B /* editButton.swift in Sources */,
 				59A0B4DA2A1FEEB600250403 /* LargeButton.swift in Sources */,
 				23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */,
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,
@@ -394,8 +414,8 @@
 				23297E2C2A1902A70035658B /* LocationManager.swift in Sources */,
 				23297E2D2A1902A70035658B /* Landmark.swift in Sources */,
 				230A1E302A0B6C9100832244 /* Form.swift in Sources */,
-				F5C7BBDB2A1B548E007AEB3A /* TEST1.swift in Sources */,
-				23CD7CC32A1A130300260B15 /* test3.swift in Sources */,
+				F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */,
+				23CD7CC32A1A130300260B15 /* copyButton.swift in Sources */,
 				23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,

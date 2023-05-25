@@ -23,7 +23,7 @@ struct PaymentCard: View {
                         .font(.system(size: 13))
                         .fontWeight(.semibold)
                     HStack{
-                        test4()
+                        editButton()
                             .padding(.leading, 10.0)
                     }
                     
@@ -39,7 +39,7 @@ struct PaymentCard: View {
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.leading)
                     HStack{
-                        test4()
+                        editButton()
                             .padding(.leading, 0.0)
                     }
                 }

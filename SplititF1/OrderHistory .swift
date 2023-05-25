@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OrderHistory_: View {
+struct OrderHistory: View {
     var body: some View {
        
             VStack(alignment: .leading) {
@@ -58,6 +58,6 @@ struct OrderHistory_: View {
 
 struct OrderHistory__Previews: PreviewProvider {
     static var previews: some View {
-        OrderHistory_()
+        OrderHistory()
     }
 }

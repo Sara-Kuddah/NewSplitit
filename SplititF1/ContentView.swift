@@ -60,15 +60,20 @@ struct ContentView: View {
                             // Spacer()
                             //.padding(.bottom, 480)
                             
-                            VStack(spacing: 30) {
+                            VStack(spacing: 15) {
                                 
-                                joinCard()
-                                    .padding(.top, 3)
-                                joinCard()
-                                    .padding(.top, -20)
-                                joinCard()
-                                    .padding(.top, -20)
-                                joinCard()
+//                                joinCard()
+////                                    .padding(.top, 3)
+//                                joinCard()
+////                                    .padding(.top, -20)
+//                                joinCard()
+////                                    .padding(.top, -20)
+//                                joinCard()
+                                
+                                newJoinCard()
+                                newJoinCard()
+                                newJoinCard()
+                                newJoinCard()
                                
                             }
                            
@@ -78,7 +83,7 @@ struct ContentView: View {
                         
                         
                      .offset(y: 20)
-                       Spacer()
+//                       Spacer()
                         
                     }
                     
