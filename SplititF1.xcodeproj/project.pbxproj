@@ -237,12 +237,8 @@
 				F57B089F2A1F3CC3002A8913 /* NewOrder.swift */,
 				230520EE2A1D32D3006ED1D5 /* SkipButton.swift */,
 				23CD7CB32A1A129E00260B15 /* SendButton.swift */,
-				23CD7CB52A1A12A600260B15 /* OpenButton.swift */,
-				23FC81032A153BB40001853B /* Order.swift */,
 				23297DFE2A18B71A0035658B /* RName.swift */,
-				23CD7CBB2A1A12F500260B15 /* checkbox.swift */,
 				230520C42A1C98F4006ED1D5 /* CheckT.swift */,
-				230520C22A1C92EB006ED1D5 /* CheckP.swift */,
 			);
 			path = "To Be Deleted";
 			sourceTree = "<group>";
@@ -274,6 +270,7 @@
 				59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */,
 				59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */,
 				59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */,
+				23FC81032A153BB40001853B /* Order.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -288,6 +285,7 @@
 				59A0B4E12A21E70800250403 /* newSizeDropDown.swift */,
 				23CD7CBE2A1A130300260B15 /* copyButton.swift */,
 				23CD7CB12A1A129500260B15 /* JoinButton.swift */,
+				23CD7CBB2A1A12F500260B15 /* checkbox.swift */,
 			);
 			path = Join;
 			sourceTree = "<group>";
@@ -298,6 +296,8 @@
 				23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */,
 				23CD7CB92A1A12EA00260B15 /* joinCard.swift */,
 				59A0B4DD2A2016F900250403 /* newJoinCard.swift */,
+				230520C22A1C92EB006ED1D5 /* CheckP.swift */,
+				23CD7CB52A1A12A600260B15 /* OpenButton.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
