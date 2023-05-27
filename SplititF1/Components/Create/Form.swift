@@ -21,7 +21,7 @@ struct Form: View {
     var body: some View {
         NavigationView {
             ScrollView{
-                VStack(spacing: 8) {
+                VStack(alignment: .leading, spacing: 8) {
                     HStack(spacing: 8) {
                         Button(action: {
                             
@@ -29,112 +29,77 @@ struct Form: View {
                             NavigationLink(destination:  TabBar()) {
                                 Image(systemName: "chevron.left")
                                     .foregroundColor(Color("Color1")) // change color of back button
-                                    .padding(.leading, 10.0)
                             }
-                           
                         }
                         Spacer()
                         VStack(alignment: .center, spacing: 2) {
                             Text("McDonald's")
-                            // .font(.headline)
                                 .font(.system(size: 25, weight: .bold, design: .default))
-                                .padding(.trailing, 40.0)
                             Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
-                            //.font(.subheadline)
                                 .font(.system(size: 13, weight: .regular, design: .default))
                                 .foregroundColor(.secondary)
-                                .padding(.trailing, 40.0)
                         }
-                        Spacer()                    }
+                        Spacer()
+                    }
                     Divider()
-                VStack //(alignment: .leading)
-                {
-                    VStack{
-                        AppNamePicker()
+                VStack {
+                        VStack{
+                            AppNamePicker()
+                            
+                        }
+      
+                    VStack(alignment: .leading){
+                            Text("Restaurant Name")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                            TextField("", text: $restaurantN)
+                                .frame(height: 50)
+                                .textFieldStyle(PlainTextFieldStyle())
+                            
+                                .overlay( RoundedRectangle(cornerRadius: 11)
+                                    .stroke(Color("Color1"))  )
+
+                        }
+                    VStack(alignment: .leading){
+                            Text("Delivery Fee")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                            TextField("", text: $DeliveryF)
+                            
+                                .frame(height: 50)
+                                .textFieldStyle(PlainTextFieldStyle())
+                                .overlay( RoundedRectangle(cornerRadius: 11)
+                                    .stroke(Color("Color1"))  )
+                        }
+                    VStack(alignment: .leading){
+                            Text("Check Point Fee")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                            TextField("Where others will find the order ? ", text: $checkP)
+                            .padding()
+                                .font(.system(size: 15))
+                                .frame(height: 50)
+                                .textFieldStyle(PlainTextFieldStyle())
+                            
+                                .overlay( RoundedRectangle(cornerRadius: 11)
+                                    .stroke(Color("Color1"))  )
+                                
+                        }
+                        
+                        VStack{
+                            PaymentCard()
+                                .padding(.vertical, 10.0)
+                        }
+                        VStack(alignment: .leading) {
+                            Text("Notes")
+                                .font(.system(size: 18))
+                                .fontWeight(.medium)
+                                .padding()
+                            inputField(placeholder: "", text: note)
+                        }
                         
                     }
-                    
-                    .padding(.vertical, 5.0)
-                    VStack{
-                        Text("Restaurant Name")
-                            .font(.system(size: 18))
-                            .fontWeight(.medium)
-                            .padding(.leading, -165.0)
-                            .padding(.bottom, 1.0)
-                        TextField("", text: $restaurantN)
-                            .frame(height: 50)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 4)
-                        
-                            .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
-                    }
-                    .padding(.vertical,5.0)
-                    VStack{
-                        Text("Delivery Fee")
-                            .font(.system(size: 18))
-                            .fontWeight(.medium)
-                            .padding(.leading, -165.0)
-                            .padding(.bottom, 1.0)
-                        TextField("", text: $DeliveryF)
-                        
-                            .frame(height: 50)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 4)
-                        
-                            .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
-                    }
-                    .padding(.vertical, 5.0)
-                    VStack{
-                        Text("Check Point Fee")
-                            .font(.system(size: 18))
-                            .fontWeight(.medium)
-                            .padding(.leading, -165.0)
-                            .padding(.bottom, 1.0)
-                        TextField("Where others will find the order ? ", text: $checkP)
-                            .font(.system(size: 15))
-                        
-                            .frame(height: 50)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 4)
-                        
-                            .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
-                    }
-                    .padding(.vertical, 5.0)
-                    //
-                    VStack{
-                        PaymentCard()
-                            .padding(.vertical, 10.0)
-                    }
-                    .padding(.vertical, 5.0)
-                    VStack {
-                        Text("Notes")
-                            .font(.system(size: 18))
-                            .fontWeight(.medium)
-                            .padding(.leading, -165.0)
-                            .padding(.bottom, 1.0)
-                        TextField("", text: $note)
-                            .font(.system(size: 15))
-                        
-                            .frame(height: 50)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 4)
-                        
-                            .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
-                    }
-                    .padding(.top, 10.0)
-                    
+                    .padding()
                     VStack{
                         LargeButton(title: "Send") {
                             showOrder = true
@@ -144,29 +109,13 @@ struct Form: View {
                         }
                         
                     }
-                    .padding(.top, 45.0)
                 }
-                .padding(.top, 25.0)
-                
-              
-                }
-                
-                
-                
-                
-                
-                
-                
-                
-               // Divider()
                 
                     .padding(.top)
             }
         }
         .navigationBarBackButtonHidden(true)
     }
-    
-        //.navigationBarBackButtonHidden(true)
     
 }
 

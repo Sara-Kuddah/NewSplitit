@@ -21,7 +21,7 @@ struct FormForAddingOrder: View {
     @State private var showOrderIsSent = false
     var body: some View {
         NavigationView {
-            VStack(spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 8) {
                     Button(action: {
                         
@@ -32,7 +32,7 @@ struct FormForAddingOrder: View {
                         }
                     }
                     Spacer()
-                    VStack(alignment: .center, spacing: 2) {
+                    VStack(spacing: 2) {
                         Text("McDonald's")
                         // .font(.headline)
                             .font(.system(size: 25, weight: .bold, design: .default))
@@ -47,60 +47,54 @@ struct FormForAddingOrder: View {
                     //.background(Color.gray)
                     //.shadow(color: Color.black.opacity(0.4), radius: 3, x: 0, y: 2)
                 //Spacer()
-                Text("Add Your Order")
-                    .padding(.top, 20)
-                    .padding(.trailing, 160)
-                    .font(.system(size: 20, weight: .bold, design: .default))
-                    .font(.title3)
-                    .padding(.trailing, 50)
-                
-               
-                Text("Order Name")
-                    .font(.system(size: 14, weight: .semibold, design: .default))
-                    .padding(.top, 35)
-                    .padding(.trailing, 265)
-                
-                
-                
-                VStack {TextField("Please write your order ", text: $text)
+                VStack {
+                    Text("Add Your Order")
+                        .padding(.top, 20)
+                        .padding(.trailing, 160)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .font(.title3)
+                        .padding(.trailing, 50)
                     
-                        .padding()
-                    //.border(Color("Color1"))
-                        .background(Color.white)
-                        .cornerRadius(10)
-                    
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))
-                        )
-                }
-                HStack(spacing: 60) {
-                    
-                    VStack(alignment: .leading, spacing: 10)
-                    {
-                        Text("Price")
+                    Text("Order Name")
                         .font(.system(size: 14, weight: .semibold, design: .default))
-                        TextField("Price SR", text: $text2)
-                            .padding(.leading, 10)
-                            .frame(width: 146, height: 52)
+                        .padding(.top, 35)
+                        .padding(.trailing, 265)
+                    VStack {
+                        TextField("Please write your order ", text: $text)
+                        
+                            .padding()
+                        //.border(Color("Color1"))
+                            .background(Color.white)
+                            .cornerRadius(10)
+                        
                             .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color("Color1"))                        )}
-                    .padding(.trailing, -40)
-                    
-                    
-                    
-                    
-                        sizeDropDown()
-                            //.padding(.leading)
+                                RoundedRectangle(cornerRadius: 11)
+                                    .stroke(Color("Color1"))
+                            )
+                    }
+                }
+                .padding(.horizontal)
+                VStack(alignment: .leading) {
+                    HStack(spacing: 60)
+                    {
                         
-                            
-                            
+                        VStack(alignment: .leading, spacing: 10)
+                        {
+                            Text("Price")
+                                .font(.system(size: 14, weight: .semibold, design: .default))
+                            TextField("Price SR", text: $text2)
+                                .padding(.leading, 10)
+                                .frame(width: 146, height: 52)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color("Color1"))                        )}
+                        .padding(.trailing, -40)
                         
+                        //                        sizeDropDown()
+                        //.padding(.leading)
+                        newSizeDropDown()
                         
-                        
-                    
-                    
+                    }
                 }
                 .padding()
                 HStack {
@@ -122,6 +116,7 @@ struct FormForAddingOrder: View {
                         .offset(y: 22)
                     
                 }
+                .padding()
                 VStack {
                     Text("Please note: Once you Click Send, you will not be ableto Edit or Cancel your order")
                         .font(.system(size: 12, weight: .regular, design: .default))
@@ -136,15 +131,11 @@ struct FormForAddingOrder: View {
                         .padding(.top, 30)
                 }
                 
-                
-                
-                // i got a lot of things to do
-                // .padding()
                 Spacer()
                 
             }
             
-            .padding(.horizontal)
+//            .padding(.horizontal)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
             Spacer()

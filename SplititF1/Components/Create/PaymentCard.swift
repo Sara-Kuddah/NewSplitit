@@ -9,11 +9,11 @@ import SwiftUI
 
 struct PaymentCard: View {
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.white)
-                .frame(width: 343, height: 132)
-                .shadow(radius: 5)
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 8)
+//                .fill(Color.white)
+//                .frame(width: 343, height: 132)
+//                .shadow(radius: 5)
             VStack {
                 HStack (spacing: 50) {
                     Text("STC Pay")
@@ -50,9 +50,16 @@ struct PaymentCard: View {
                 
                 
                 
-            }
+//            }
             
         }
+            .frame(maxWidth: .infinity)
+            .frame(height: 140)
+            
+            .background(Color.white)
+            .cornerRadius(15)
+            .shadow(color: .black.opacity(0.1), radius: 20)
+            
         
     }
 }

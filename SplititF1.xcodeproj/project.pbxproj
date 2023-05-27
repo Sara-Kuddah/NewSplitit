@@ -55,6 +55,8 @@
 		59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */; };
 		59A0B4DA2A1FEEB600250403 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D92A1FEEB600250403 /* LargeButton.swift */; };
 		59A0B4DE2A2016F900250403 /* newJoinCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4DD2A2016F900250403 /* newJoinCard.swift */; };
+		59A0B4E02A20DC4300250403 /* inputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4DF2A20DC4300250403 /* inputField.swift */; };
+		59A0B4E22A21E70800250403 /* newSizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4E12A21E70800250403 /* newSizeDropDown.swift */; };
 		F5255C152A1C9D6A0073AF14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5255C172A1C9D6A0073AF14 /* Localizable.strings */; };
 		F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57B089F2A1F3CC3002A8913 /* NewOrder.swift */; };
 		F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */; };
@@ -111,6 +113,8 @@
 		59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusButton.swift; sourceTree = "<group>"; };
 		59A0B4D92A1FEEB600250403 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		59A0B4DD2A2016F900250403 /* newJoinCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newJoinCard.swift; sourceTree = "<group>"; };
+		59A0B4DF2A20DC4300250403 /* inputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputField.swift; sourceTree = "<group>"; };
+		59A0B4E12A21E70800250403 /* newSizeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSizeDropDown.swift; sourceTree = "<group>"; };
 		F5255C162A1C9D6A0073AF14 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5255C182A1C9D9B0073AF14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F57B089F2A1F3CC3002A8913 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
+				59A0B4D92A1FEEB600250403 /* LargeButton.swift */,
+				59A0B4DF2A20DC4300250403 /* inputField.swift */,
 				59A0B4DC2A20069C00250403 /* account */,
 				59A0B4DB2A20063D00250403 /* main */,
 				59A0B4D02A1FEA6600250403 /* Join */,
@@ -268,7 +274,6 @@
 				59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */,
 				59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */,
 				59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */,
-				59A0B4D92A1FEEB600250403 /* LargeButton.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				23CD7CAB2A1A127200260B15 /* OrderStatusPage.swift */,
 				23CD7CBD2A1A130300260B15 /* myOrderSummary.swift */,
 				F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */,
+				59A0B4E12A21E70800250403 /* newSizeDropDown.swift */,
 				23CD7CBE2A1A130300260B15 /* copyButton.swift */,
 				23CD7CB12A1A129500260B15 /* JoinButton.swift */,
 			);
@@ -393,6 +399,7 @@
 				23CD7CB82A1A12D600260B15 /* CardNewOrder.swift in Sources */,
 				23297E2B2A1902A70035658B /* Mapp.swift in Sources */,
 				23CD7CC22A1A130300260B15 /* myOrderSummary.swift in Sources */,
+				59A0B4E02A20DC4300250403 /* inputField.swift in Sources */,
 				230520EF2A1D32D4006ED1D5 /* SkipButton.swift in Sources */,
 				230520F12A1D3755006ED1D5 /* SaveButton.swift in Sources */,
 				59A0B4DE2A2016F900250403 /* newJoinCard.swift in Sources */,
@@ -426,6 +433,7 @@
 				23CD7CBA2A1A12EA00260B15 /* joinCard.swift in Sources */,
 				23CD7CA62A1A120C00260B15 /* OrderHistory .swift in Sources */,
 				23CD7CB42A1A129E00260B15 /* SendButton.swift in Sources */,
+				59A0B4E22A21E70800250403 /* newSizeDropDown.swift in Sources */,
 				F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,24 +15,22 @@ struct AppNamePicker: View {
         
         VStack (alignment: .leading){
             // Picker
-            Text("App Name?")
-            
+            Text("App Name")
                 .font(.system(size: 18))
                 .fontWeight(.medium)
-                .padding(.bottom, 1.0)
             
             Picker("What App Are You Ordering From? ", selection: $selection){
                 ForEach(id, id: \.self){
                     Text($0)
-                        
                 }
-            }
+            } .pickerStyle(.automatic)
+                .accentColor(.black)
             
             .frame(height: 50)
-                .frame(width: 350)
+            .frame(maxWidth: .infinity)
                 .textFieldStyle(PlainTextFieldStyle())
                 .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
-                .padding(.top, -4.0)
+
             
         }
     }

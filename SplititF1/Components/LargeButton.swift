@@ -43,7 +43,7 @@ struct LargeButton: View {
         }
         .frame(maxWidth: .infinity)
         .background(Color("Color1"))
-        .cornerRadius(5)
+        .cornerRadius(8)
         .padding([.trailing, .leading])
     }
 }

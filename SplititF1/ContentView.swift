@@ -41,7 +41,7 @@ struct ContentView: View {
                         .padding(.top, 5)
                     ScrollView {
                         Text("My Orders")
-                            .padding(.top, 15)
+                            .padding([.top, .bottom], 15)
                             .padding(.trailing, 130)
                             .font(.system(size: 20, weight: .bold, design: .default))
                             .font(.title3)
@@ -82,7 +82,7 @@ struct ContentView: View {
                         
                         
                         
-                     .offset(y: 20)
+//                     .offset(y: 20)
 //                       Spacer()
                         
                     }
