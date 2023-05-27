@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LargeButton: View {
-//    @State private var isPresentedFullScreenCover = false
-//    @State var title = ""
     
     typealias actionHandled = () -> Void
     
@@ -17,7 +15,7 @@ struct LargeButton: View {
     let handler: actionHandled
     
     internal init(title: String,
-                  handler: @escaping LargeButton.actionHandled) {
+        handler: @escaping LargeButton.actionHandled) {
         self.title = title
         self.handler = handler
     }

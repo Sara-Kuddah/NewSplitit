@@ -15,7 +15,6 @@ struct Form: View {
     @State var checkP: String = ""
     @State var note: String = ""
     @State var firstMarked = false
-    //   @State var secondMarked = true
     @State var thirdMarked = false
     @State private var showOrder = false
     var body: some View {

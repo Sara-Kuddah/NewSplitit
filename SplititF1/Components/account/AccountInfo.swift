@@ -22,117 +22,82 @@ struct AccountInfo: View {
     var body: some View {
         NavigationView {
             ScrollView{
-                VStack{
+                VStack(alignment: .leading) {
                     Spacer()
                     VStack{
                         Text("Complete Your account informations")
                             .font(.system(size:20))
                             .fontWeight(.semibold)
-                            .multilineTextAlignment(.leading)
-                            .padding(.leading, -27.0)
-                            .padding(.top, 20.0)
+                            .multilineTextAlignment(.center)
                     }
-                    .padding(.bottom, 1.0)
-                    //.padding(.trailing, 85.0)
                     VStack{
                         Text("Those Informations will be provided for user’s in shared order, to contact you and pay you ")
                             .fontWeight(.regular)
                             .font(.system(size: 12))
                             .foregroundColor(Color.gray)
                             .multilineTextAlignment(.leading)
-                            .padding(.top, 1.0)
-                            .padding(.trailing, -0.5)
-                        
                     }
-                    VStack{
+                    VStack(alignment: .leading){
                         Text("Phone Number")
                             .font(.system(size: 15))
                             .fontWeight(.medium)
-                            .padding(.leading, -165.0)
                         TextField("What App Are You Ordering From?", text: $PhoneN)
                             .font(.system(size: 15))
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 20)
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
                         CheckP()
-                            .padding(.trailing, 100.0)
-                            .padding(.vertical, -10.0)
                     }
-                    .padding(.top, -1.0)
                     
-                    
-                    
-                    VStack{
+                    VStack(alignment: .leading){
                         Text("Add How you want others to pay you")
                             .font(.system(size: 20))
                             .fontWeight(.semibold)
-                        //.padding(.leading, -40.0)
                         
                     }
-                    .padding(.bottom, 5.0)
-                    VStack{
+                    
+                    VStack(alignment: .leading){
                         Text("Bank Name")
                             .font(.system(size: 15))
                             .fontWeight(.medium)
-                            .padding(.leading, -165.0)
                         TextField("Bank name", text: $BankN)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 20)
-                            .padding(.horizontal, 4)
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
                     }
-                    .padding(.bottom, 10.0)
-                    VStack{
+                    VStack(alignment: .leading){
                         Text("IBAN")
                             .font(.system(size: 15))
                             .fontWeight(.medium)
-                            .padding(.leading, -165.0)
                         TextField("Enter your IBAN", text: $IBAN)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 20)
-                            .padding(.horizontal, 4)
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
                     }
-                    .padding(.bottom, 10.0)
-                VStack {
+                    VStack(alignment: .leading) {
                         Text("Account Number")
-                        .font(.system(size: 15))
-                        .fontWeight(.medium)
-                            .padding(.leading, -165.0)
+                            .font(.system(size: 15))
+                            .fontWeight(.medium)
                         TextField("Enter your Account Number", text: $AccountN)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 20)
-                            .padding(.horizontal, 4)
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
                     }
                     
-                .padding(.bottom, 10.0)
-                    VStack{
+                    VStack(alignment: .leading){
                         HStack{
                             Text("STC PAY ")
                                 .font(.system(size: 15))
@@ -140,29 +105,23 @@ struct AccountInfo: View {
                             Text("(Optional)")
                                 .font(.system(size: 15))
                                 .fontWeight(.semibold)
-
+                            
                                 .foregroundColor(Color.gray)
                         }
                         .fontWeight(.medium)
-                        .padding(.leading, -165.0)
                         TextField("Enter your number", text: $STCp)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.horizontal, 20)
-                            .padding(.horizontal, 4)
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
-                            .padding([.horizontal], 24)
-                            .padding(.top, -6.0)
                     }
-                    .padding(.bottom, 10.0)
-                    
+                }
+                .padding()
                     VStack{
                         
-//                        SaveButton()
                         LargeButton(title: "Save") {
                             showTabBar = true
                         }
@@ -171,7 +130,7 @@ struct AccountInfo: View {
                         }
                             .padding(.top, 20)
                     }
-                }
+//                }
                 
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -183,9 +142,6 @@ struct AccountInfo: View {
                                     .padding(.leading, 50.0)
                                 Divider()
                                     
-                                
-                                
-                                
                             }
                             .padding(.top)
                             
@@ -194,9 +150,6 @@ struct AccountInfo: View {
                                     .foregroundColor(Color.gray)
                                     .padding(.all)
                                 
-                                
-                                
-                                //.offset(x:1 ,y:1)
                             }.navigationBarBackButtonHidden(true)
 
                         }

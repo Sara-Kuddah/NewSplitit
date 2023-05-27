@@ -16,14 +16,10 @@ struct inputField: View {
             .padding()
             .font(.system(size: 15))
             .frame(height: 50)
-//            .textFieldStyle(PlainTextFieldStyle())
-//            .padding(.horizontal, 4)
         
             .overlay( RoundedRectangle(cornerRadius: 11)
-                .stroke(Color("Color1"))  )
-//            .padding([.horizontal], 24)
-//            .padding(.top, -6.0)
-//            .padding(.horizontal)
+                .stroke(Color("Color1"))
+            )
     }
 }
 

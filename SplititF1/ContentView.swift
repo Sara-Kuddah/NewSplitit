@@ -18,10 +18,10 @@ struct ContentView: View {
        
 //            NavigationView {
                
-                VStack(spacing: 0) {
+        VStack(alignment: .leading, spacing: 0) {
                     HStack {
                         
-                        Text("Street 1")
+                        Text("Princess Nora University, A4")
                             .fontWeight(.bold)
                             .font(.title3)
                             .padding(.trailing, 1)
@@ -32,44 +32,29 @@ struct ContentView: View {
                             }
                         
                     }
-                    .padding(.bottom, 5)
-                    .padding(.leading, -160)
+                    .padding()
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(Color.gray.opacity(0.5))
-                    //Spacer()
-                        .padding(.top, 5)
+                    
                     ScrollView {
+                        VStack(alignment: .leading) {
                         Text("My Orders")
-                            .padding([.top, .bottom], 15)
-                            .padding(.trailing, 130)
+                        
                             .font(.system(size: 20, weight: .bold, design: .default))
                             .font(.title3)
-                            .padding(.trailing, 130)
-                        .padding(.top, 20)
+                            .padding()
                         
-                            .padding(.bottom, -10)
-                        VStack {
                             CardNewOrder()
-                               // .padding(.bottom, 25)
+                               
                             Text("Active Orders Near Me")
                             
-                                .padding(.trailing, 150)
                                 .font(.system(size: 20, weight: .bold, design: .default))
                                 .font(.title3)
-                            // Spacer()
-                            //.padding(.bottom, 480)
-                            
+                                .padding(.horizontal)
                             VStack(spacing: 15) {
                                 
-//                                joinCard()
-////                                    .padding(.top, 3)
-//                                joinCard()
-////                                    .padding(.top, -20)
-//                                joinCard()
-////                                    .padding(.top, -20)
-//                                joinCard()
-                                
+                                newJoinCard()
                                 newJoinCard()
                                 newJoinCard()
                                 newJoinCard()
@@ -79,19 +64,11 @@ struct ContentView: View {
                            
                             
                         }
-                        
-                        
-                        
-//                     .offset(y: 20)
-//                       Spacer()
-                        
+//
                     }
                     
-                  
                 }
                
-                //.ignoresSafeArea(.container)
-//            }
                 .navigationBarBackButtonHidden(true)
         }
     
