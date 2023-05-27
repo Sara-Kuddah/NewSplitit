@@ -8,16 +8,11 @@
 import SwiftUI
 
 struct FormForAddingOrder: View {
-    //let choices = ["Choice 1", "Choice 2", "Choice 3"]
-    
-    //@State private var selectedChoice = "Select a choice"
     @State private var text: String = ""
     @State private var text2: String = ""
     @State private var text3: String = ""
-    //@State private var selectedColor = "Red"
-    //let colorOptions = ["Original", "Medium", "Large"]
     @State private var selectedOption: String = ""
-        @State private var isShowingOptions: Bool = false
+    @State private var isShowingOptions: Bool = false
     @State private var showOrderIsSent = false
     var body: some View {
         NavigationView {
@@ -34,19 +29,14 @@ struct FormForAddingOrder: View {
                     Spacer()
                     VStack(spacing: 2) {
                         Text("McDonald's")
-                        // .font(.headline)
                             .font(.system(size: 25, weight: .bold, design: .default))
                         Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
-                        //.font(.subheadline)
                             .font(.system(size: 13, weight: .regular, design: .default))
                             .foregroundColor(.secondary)
                     }
-                    Spacer()                    }
+                    Spacer()
+                }
                 Divider()
-                
-                    //.background(Color.gray)
-                    //.shadow(color: Color.black.opacity(0.4), radius: 3, x: 0, y: 2)
-                //Spacer()
                 VStack {
                     Text("Add Your Order")
                         .padding(.top, 20)
@@ -90,8 +80,6 @@ struct FormForAddingOrder: View {
                                         .stroke(Color("Color1"))                        )}
                         .padding(.trailing, -40)
                         
-                        //                        sizeDropDown()
-                        //.padding(.leading)
                         newSizeDropDown()
                         
                     }
@@ -135,7 +123,6 @@ struct FormForAddingOrder: View {
                 
             }
             
-//            .padding(.horizontal)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
             Spacer()

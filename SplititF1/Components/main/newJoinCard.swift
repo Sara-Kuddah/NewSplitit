@@ -9,9 +9,7 @@ import SwiftUI
 
 struct newJoinCard: View {
     var body: some View {
-       
         VStack {
-            
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
                     Text("McDonald's")
@@ -70,32 +68,23 @@ struct newJoinCard: View {
                                     .scaledToFit()
                                     .minimumScaleFactor(0.01)
                                     .lineLimit(1)
-                                //                               .padding(.vertical, 1)
                             }
                         }
                     }
                     Spacer()
                     VStack{ // col 2
                         JoinButton()
-
                     }
                 }
-                
-                
-            }
-            .padding()
-                
-                
-                
+                .padding()
                 
             }
-        
+        }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: 150)
             .background(Color.white)
             .cornerRadius(14)
             .shadow(color: .black.opacity(0.1), radius: 10)
-//            .shadow(radius: 15)
             .padding([.trailing, .leading])
     }
 }

@@ -132,23 +132,7 @@ struct OrderStatusPage: View {
             checkbox()
                 .padding(.leading, -180)
 
-            
-            
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
     
     struct OrderStatusPage_Previews: PreviewProvider {

@@ -11,7 +11,6 @@ struct CheckP: View {
     @State private var isChecked = false
     
     var body: some View {
-        //Spacer()
         Button(action: {
             isChecked.toggle()
         }) {
@@ -26,10 +25,7 @@ struct CheckP: View {
                         .font(.system(size: 14, weight: .regular, design: .default))
                         .foregroundColor(.black)
                 }
-                
-                
                 .padding()
-                
             }
         }
     }

@@ -8,102 +8,40 @@
 import SwiftUI
 
 struct MyAccountP: View {
-    @State private var text: String = ""
+    @State private var Name: String = ""
+    @State private var Phone: String = ""
+    @State private var Email: String = ""
     @State private var showTabBar = false
     var body: some View {
         VStack {
             HStack {
-                
-                Spacer()
                 Text("My Account")
-                
-                    .padding(.leading, -18)
-                
                     .font(.system(size: 25, weight: .bold, design: .default))
-                Spacer()
-                
+            }
+            VStack(alignment: .leading, spacing: 15) {
+                Divider()
+                Text("Name")
+                    .font(.system(size: 17, weight: .semibold, design: .default))
+                inputField(placeholder: "Enter Your Name", text: Name)
+                Text("Phone ")
+                    .font(.system(size: 17, weight: .semibold, design: .default))
+                inputField(placeholder: "056XXXXXX", text: Phone)
+                Text("Email")
+                    .font(.system(size: 17, weight: .semibold, design: .default))
+                inputField(placeholder: "Enter Your Email", text: Email)
                 
             }
-            
-            VStack(spacing: 25) {
-                Divider()
-                    .padding(.bottom, 10)
-                
-                Text("Name")
-                    .padding(.leading, -165)
-                    .font(.system(size: 17, weight: .semibold, design: .default))
-                    .padding(.bottom, -10)
-                TextField("Enter Name", text: $text)
-                    .padding(.leading, 5)
-                    .frame(width: 340, height: 52)
-                //.cornerRadius(11)
-                //.border(Color.gray, width: 1)
-                    .background(Color.white)
-                //.cornerRadius(8)
-                    .overlay( RoundedRectangle(cornerRadius: 11)
-                        .stroke(Color("Color1"))  )
-                
-                Text("Phone ")
-                    .padding(.leading, -165)
-                    .font(.system(size: 17, weight: .semibold, design: .default))
-                    .padding(.bottom, -10)
-                TextField("056XXXXXX", text: $text)
-                    .padding(.leading, 5)
-                    .frame(width: 340, height: 52)
-                //.cornerRadius(11)
-                //.border(Color.gray, width: 1)
-                    .background(Color.white)
-                //.cornerRadius(8)
-                    .overlay( RoundedRectangle(cornerRadius: 11)
-                        .stroke(Color("Color1"))  )
-                Text("Email")
-                    .padding(.leading, -165)
-                    .font(.system(size: 17, weight: .semibold, design: .default))
-                    .padding(.bottom, -10)
-                TextField("Enter Your Email ", text: $text)
-                    .padding(.leading, 5)
-                    .frame(width: 340, height: 52)
-                //.cornerRadius(11)
-                //.border(Color.gray, width: 1)
-                    .background(Color.white)
-                //.cornerRadius(8)
-                    .overlay( RoundedRectangle(cornerRadius: 11)
-                        .stroke(Color("Color1"))  )
-                
-                
-                
-                
-//                Button(action: {
-//                    // Handle button action
-//                }) {
-//                    Text("Save")
-//                        .foregroundColor(.black)
-//                        .padding()
-//                        .background(
-//                            RoundedRectangle(cornerRadius: 10)
-//                                .foregroundColor(Color("Color1"))
-//                                .frame(width: 343, height: 61))
-//
-//                        .padding(.top, 30)
-//                }
+            .padding()
                 LargeButton(title: "Save"){
                     showTabBar = true
                 }
                 .fullScreenCover(isPresented: $showTabBar) {
                     TabBar()
                 }
-                
-                    .padding(.top, 30)
-            }
+                    .padding(.top, 20)
             
             Spacer()
         }
-        
-        
-        
-        
-        
-        
     }
     
     struct MyAccountP_Previews: PreviewProvider {

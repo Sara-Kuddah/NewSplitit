@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct PaymentProfile: View {
-    @State private var text: String = ""
+    @State private var bankName: String = ""
+    @State private var Iban: String = ""
+    @State private var STCPay: String = ""
+
     @State private var showTabBar = false
     var body: some View {
         VStack {
@@ -17,42 +20,36 @@ struct PaymentProfile: View {
                     .font(.system(size: 25, weight: .bold, design: .default))
                 
             }
-            VStack (spacing: 15)
+            VStack (alignment: .leading, spacing: 15)
             {
                 Divider()
-                Text("Transfer : ")
+                Text("Transfer: ")
                     .font(.system(size: 20, weight: .semibold, design: .default))
                 Text("Bank Name")
                     .font(.system(size: 17, weight: .semibold, design: .default))
-                TextField("Bank Name", text: $text)
-                    .frame(width: 340, height: 52)
-                    .background(Color.white)
-                    .overlay( RoundedRectangle(cornerRadius: 11)
-                        .stroke(Color("Color1"))  )
-                
+             
+                inputField(placeholder: "Bank Name", text: bankName)
                 Text("IBAN ")
                     .font(.system(size: 17, weight: .semibold, design: .default))
-                TextField("", text: $text)
-                    .frame(width: 340, height: 52)
-                    .background(Color.white)
-                    .overlay( RoundedRectangle(cornerRadius: 11)
-                        .stroke(Color("Color1"))  )
-                Text("STC pay : ")
-                    .font(.system(size: 17, weight: .semibold, design: .default))
-                TextField("Enter your number ", text: $text)
-                    .frame(width: 340, height: 52)
-                    .background(Color.white)
-                    .overlay( RoundedRectangle(cornerRadius: 11)
-                        .stroke(Color("Color1"))  )
+            
+                inputField(placeholder: "SA...", text: Iban)
                 
-               
+                Text("STC pay ")
+                    .font(.system(size: 17, weight: .semibold, design: .default))
+             
+                inputField(placeholder: "Enter Your Number", text: STCPay)
+                
+                
+            }
+            .padding()
                 LargeButton(title: "Save") {
+                    // add your functions here -- store data --
                     showTabBar = true
                 }
                 .fullScreenCover(isPresented: $showTabBar) {
                     TabBar()
                 }
-            }
+//            }
             
             Spacer()
         }
