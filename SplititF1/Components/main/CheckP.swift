@@ -1,5 +1,5 @@
 //
-//  CheckT.swift
+//  CheckP.swift
 //  SplititF1
 //
 //  Created by Abeer on 03/11/1444 AH.
@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct CheckT: View {
+struct CheckP: View {
     @State private var isChecked = false
     
     var body: some View {
-        //Spacer()
         Button(action: {
             isChecked.toggle()
         }) {
@@ -22,21 +21,17 @@ struct CheckT: View {
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color("Color1"))
                     
-                    Text("Transfer")
+                    Text("Use this Number for STC Pay")
                         .font(.system(size: 14, weight: .regular, design: .default))
                         .foregroundColor(.black)
                 }
-                
-                
                 .padding()
-                
             }
         }
     }
 }
-
-struct CheckT_Previews: PreviewProvider {
+struct CheckP_Previews: PreviewProvider {
     static var previews: some View {
-        CheckT()
+        CheckP()
     }
 }

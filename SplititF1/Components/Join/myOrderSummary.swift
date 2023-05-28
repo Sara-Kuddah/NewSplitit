@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct test2: View {
+struct myOrderSummary: View {
     @State private var isDropdownExpanded = false
         
         var body: some View {
@@ -96,6 +96,6 @@ struct test2: View {
 
 struct test2_Previews: PreviewProvider {
     static var previews: some View {
-        test2()
+        myOrderSummary()
     }
 }

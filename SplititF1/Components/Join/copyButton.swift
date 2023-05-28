@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct test3: View {
+struct copyButton: View {
     var body: some View {
        
                 Button(action: {
@@ -23,7 +23,7 @@ struct test3: View {
         
 struct test3_Previews: PreviewProvider {
     static var previews: some View {
-        test3()
+        copyButton()
     }
 }
             }

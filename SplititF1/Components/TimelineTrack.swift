@@ -10,7 +10,7 @@ import SwiftUI
 struct TimelineTrack: View {
     @State private var activeIndex: Int?
         
-        let circleTexts = ["Waiting", "Group Completed", "Order Sent", "Order Arrived"]
+        let circleTexts = ["Waiting For Others", "Group Completed", "Order Sent", "Order Arrived"]
         
         var body: some View {
             VStack {
@@ -24,7 +24,7 @@ struct TimelineTrack: View {
                                     activeIndex = index
                                 }) {
                                     Circle()
-                                        .frame(width: min(geometry.size.width / 14.4, 14.4), height: min(geometry.size.width / 10, 30))
+                                        .frame(width: min(geometry.size.width / 14.4, 14.4), height: min(geometry.size.height / 5, 40))
                                         .foregroundColor(getCircleColor(index: index))
                                        
                                 }
@@ -33,12 +33,15 @@ struct TimelineTrack: View {
                                 Text(circleTexts[index])
                                     .font(.system(size: 9, weight: .semibold, design: .default))
                                     .foregroundColor(.black)
+                                    .scaledToFit()
+                                    .minimumScaleFactor(0.01)
+                                    .lineLimit(1)
                             }
                             .padding(.horizontal, 8)
                             
                             if index != 3 {
                                 Rectangle()
-                                    .frame(width: min(geometry.size.width / 5, 30), height: 2)
+                                    .frame(width: min(geometry.size.width / 9, 130), height: 1.5)
                                     .foregroundColor(getLineColor(index: index))
                             }
                         }
