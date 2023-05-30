@@ -10,7 +10,7 @@ import SwiftUI
 struct TimelineTrack: View {
     @State private var activeIndex: Int?
         
-        let circleTexts = ["Waiting For Others", "Group Completed", "Order Sent", "Order Arrived"]
+        let circleTexts = ["Waiting ", "Group Completed", "Order Sent", "Order Arrived"]
         
         var body: some View {
             VStack {
