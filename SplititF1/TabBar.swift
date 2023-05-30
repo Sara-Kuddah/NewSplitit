@@ -11,6 +11,7 @@ struct TabBar: View {
     @State private var selection = 0
 
     var body: some View {
+        
         TabView(selection: $selection) {
             ContentView().tabItem {
                 Image(uiImage: UIImage(named: "image2")!)
@@ -35,7 +36,7 @@ struct TabBar: View {
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             
         }
-//        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(true)
        
     }
   

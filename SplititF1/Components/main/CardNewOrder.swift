@@ -13,7 +13,7 @@ struct CardNewOrder: View {
         
         VStack {
             Text("Couldn’t find what you look for ? Start new order now!")
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .font(.system(size: 17, weight: .semibold, design: .default))
                 .padding(.top, 5)
             Spacer()

@@ -12,6 +12,7 @@ struct OrderStatusPage: View {
     @State private var isInfoVisible = false
     @State private var text: String = ""
     var body: some View {
+        
         ScrollView {
             VStack(spacing: 8) {
                 HStack(spacing: 8) {
@@ -34,13 +35,14 @@ struct OrderStatusPage: View {
                     }
                     Spacer()                    }
                 Divider()
-                
-                Text("Order Status")
-                    .padding(.top, 20)
-                    .padding(.trailing, 195)
-                    .font(.system(size: 20, weight: .bold, design: .default))
-                    .font(.title)
-                    .padding(.trailing, 50)
+                VStack{
+                    Text("Order Status")
+                        .padding(.top, 20)
+                        .padding(.trailing, 195)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .font(.title)
+                        .padding(.trailing, 50)
+                }
                 Spacer()
                 
                 TimelineTrack()

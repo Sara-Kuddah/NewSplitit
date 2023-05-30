@@ -14,6 +14,7 @@ struct FormForAddingOrder: View {
     @State private var selectedOption: String = ""
     @State private var isShowingOptions: Bool = false
     @State private var showOrderIsSent = false
+    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 8) {
