@@ -10,10 +10,8 @@ import SwiftUI
 struct JoinButton: View {
     @State private var isPresentedFullScreenCover = false
     var body: some View {
-        NavigationView{
-            Button(action: {
-                // Handle button action
-            }) {
+        NavigationStack {
+          
                 NavigationLink(destination: FormForAddingOrder()) {
                     Text("Join")
                         .font(.system(size: 14, weight: .semibold, design: .default))
@@ -25,7 +23,7 @@ struct JoinButton: View {
                                 .frame(width:70, height: 33)
                         )
                 }
-            }
+            
         }
     }
     struct JoinButton_Previews: PreviewProvider {

@@ -19,15 +19,9 @@ struct CardNewOrder: View {
             Spacer()
             HStack {
             Spacer()
-                Button(action: {
-                    // Button action here
-                }) {
-                    
-                    Text("New Order")
-                        .font(.system(size: 13, weight: .semibold, design: .default))
-                        .foregroundColor(.black)
-            
-                }
+                NewOrder()
+                
+
                 .frame(width: 170, height: 40)
                 .background(Color.white)
                 .cornerRadius(7)

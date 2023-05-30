@@ -24,7 +24,8 @@ struct FormForAddingOrder: View {
                     }) {
                         NavigationLink(destination:  TabBar()) {
                             Image(systemName: "chevron.left")
-                                .foregroundColor(Color("Color1")) // change color of back button
+                                .foregroundColor(Color("Color1"))
+                                .padding(.leading)
                         }
                     }
                     Spacer()
@@ -115,7 +116,7 @@ struct FormForAddingOrder: View {
                         showOrderIsSent = true
                     }
                     .fullScreenCover(isPresented: $showOrderIsSent) {
-                        OrderIsSent()
+                        OrderStatusPage()
                     }
                         .padding(.top, 30)
                 }
