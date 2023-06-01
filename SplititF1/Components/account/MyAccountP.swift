@@ -14,12 +14,31 @@ struct MyAccountP: View {
     @State private var showTabBar = false
     var body: some View {
         VStack {
-            HStack {
-                Text("My Account")
-                    .font(.system(size: 25, weight: .bold, design: .default))
+            NavigationStack {
+                HStack(spacing: 8) {
+                    
+                    Button(action: {
+                        
+                    }) {
+                        NavigationLink(destination: Profile()) {
+                            Image(systemName: "chevron.left")
+                                .padding(.leading, 15)
+                                .foregroundColor(Color("Color1"))
+                        }
+                    }
+                    
+                    Text("My Account")
+                        .font(.system(size: 25, weight: .bold, design: .default))
+                        .padding(.leading,90)
+                    
+                    
+                
+                Spacer()
+                
             }
+            Divider()
             VStack(alignment: .leading, spacing: 15) {
-                Divider()
+                //Divider()
                 Text("Name")
                     .font(.system(size: 17, weight: .semibold, design: .default))
                 inputField(placeholder: "Enter Your Name", text: Name)
@@ -32,18 +51,19 @@ struct MyAccountP: View {
                 
             }
             .padding()
-                LargeButton(title: "Save"){
-                    showTabBar = true
-                }
-                .fullScreenCover(isPresented: $showTabBar) {
-                    TabBar()
-                }
-                    .padding(.top, 20)
+            LargeButton(title: "Save"){
+                showTabBar = true
+            }
+            .fullScreenCover(isPresented: $showTabBar) {
+                TabBar()
+            }
+            .padding(.top, 20)
             
             Spacer()
         }
     }
     
+}
     struct MyAccountP_Previews: PreviewProvider {
         static var previews: some View {
             MyAccountP()

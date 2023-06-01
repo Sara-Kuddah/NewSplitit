@@ -53,6 +53,7 @@ struct Form: View {
                                 .font(.system(size: 18))
                                 .fontWeight(.medium)
                             TextField("", text: $restaurantN)
+                            .padding(.leading, 10)
                                 .frame(height: 50)
                                 .textFieldStyle(PlainTextFieldStyle())
                             
@@ -65,6 +66,7 @@ struct Form: View {
                                 .font(.system(size: 18))
                                 .fontWeight(.medium)
                             TextField("", text: $DeliveryF)
+                            .padding(.leading, 10)
                             
                                 .frame(height: 50)
                                 .textFieldStyle(PlainTextFieldStyle())

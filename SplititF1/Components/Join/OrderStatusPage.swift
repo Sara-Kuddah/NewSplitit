@@ -24,21 +24,25 @@ struct OrderStatusPage: View {
                         }) {
                             NavigationLink(destination: TabBar()) {
                                 Image(systemName: "chevron.left")
-                                    .padding(.leading, 8)
+                                    .padding(.leading, 15)
                                     .foregroundColor(Color("Color1"))
-                            }// change color of back button
+                            }
                         }
                         Spacer()
                         VStack(alignment: .center, spacing: 2) {
                             Text("McDonald's")
                             // .font(.headline)
                                 .font(.system(size: 25, weight: .bold, design: .default))
+                                .padding(.leading, -15)
                             Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
                             //.font(.subheadline)
                                 .font(.system(size: 13, weight: .regular, design: .default))
+                                .padding(.leading, -15)
                                 .foregroundColor(.secondary)
                         }
-                        Spacer()                    }
+                        Spacer()
+                        
+                    }
                     Divider()
                     
                     Text("Order Status")
@@ -49,10 +53,11 @@ struct OrderStatusPage: View {
                         .padding(.trailing, 50)
                     Spacer()
                     
+                  
                     TimelineTrack()
-                    
                     Spacer()
                     myOrderSummary()
+                    
                     
                     
                     
@@ -80,11 +85,12 @@ struct OrderStatusPage: View {
                         
                         
                     }
+                    
                     Spacer()
                     Divider()
                     
                     
-                    //.padding(.bottom, 300)
+                   
                 }
                 Text("Abeer’s Payment Info:")
                     .padding(.top, 20)
@@ -106,7 +112,7 @@ struct OrderStatusPage: View {
                                         .foregroundColor(Color("Color1"))
                                         .padding(.top, 10)
                                     
-                                    // Add padding to position the text lower
+                                   
                                     Text("STC Pay")
                                         .padding(.top, 50)
                                     Text("Al rajhi")
@@ -141,8 +147,8 @@ struct OrderStatusPage: View {
                 
             }
         }
+        
     }
-    
     struct OrderStatusPage_Previews: PreviewProvider {
         static var previews: some View {
             OrderStatusPage()

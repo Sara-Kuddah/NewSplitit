@@ -202,7 +202,9 @@ struct Profile: View {
                     Spacer()
                 }
             }
+            .navigationBarBackButtonHidden(true)
         }
+        .navigationBarBackButtonHidden(true)
         
     }
     
