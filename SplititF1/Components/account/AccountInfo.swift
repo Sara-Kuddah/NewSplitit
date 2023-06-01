@@ -20,7 +20,7 @@ struct AccountInfo: View {
     @State var thirdMarked = false
     @State private var showTabBar = false
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView{
                 VStack(alignment: .leading) {
                     Spacer()
