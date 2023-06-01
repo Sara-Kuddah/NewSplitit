@@ -20,7 +20,7 @@ struct AccountInfo: View {
     @State var thirdMarked = false
     @State private var showTabBar = false
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView{
                 VStack(alignment: .leading) {
                     Spacer()
@@ -42,6 +42,7 @@ struct AccountInfo: View {
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                         TextField("What App Are You Ordering From?", text: $PhoneN)
+                            .padding(.horizontal)
                             .font(.system(size: 15))
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -62,6 +63,7 @@ struct AccountInfo: View {
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                         TextField("Bank name", text: $BankN)
+                            .padding(.horizontal)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
@@ -75,6 +77,7 @@ struct AccountInfo: View {
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                         TextField("Enter your IBAN", text: $IBAN)
+                            .padding(.horizontal)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
@@ -88,6 +91,7 @@ struct AccountInfo: View {
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                         TextField("Enter your Account Number", text: $AccountN)
+                            .padding(.horizontal)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
@@ -110,6 +114,7 @@ struct AccountInfo: View {
                         }
                         .fontWeight(.medium)
                         TextField("Enter your number", text: $STCp)
+                            .padding(.leading)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)

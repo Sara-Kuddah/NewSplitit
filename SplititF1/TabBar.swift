@@ -41,6 +41,7 @@ struct TabBar: View {
         }
         
         .navigationBarBackButtonHidden(true)
+       
     }
 }
 struct TabBar_Previews: PreviewProvider {

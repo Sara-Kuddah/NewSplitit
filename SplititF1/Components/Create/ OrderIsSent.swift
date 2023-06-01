@@ -29,6 +29,29 @@ struct  OrderIsSent: View {
     var body: some View {
         NavigationView {
             VStack{
+                HStack(spacing: 8) {
+                    Button(action: {
+                        
+                    }) {
+                        NavigationLink(destination:  TabBar()) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(Color("Color1"))
+                                .padding(.leading)
+                        }
+                    }
+                    Spacer()
+                    VStack(alignment: .center, spacing: 2) {
+                        Text("McDonald's")
+                            .font(.system(size: 25, weight: .bold, design: .default))
+                        Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+                            .font(.system(size: 13, weight: .regular, design: .default))
+                            .foregroundColor(.secondary)
+                        
+                    }
+                    .padding(.trailing)
+                    Spacer()
+                }
+                Divider()
                 HStack{
                     VStack{
                         
@@ -36,10 +59,10 @@ struct  OrderIsSent: View {
                             .font(.system(size:20))
                             .fontWeight(.bold)
                             .padding(.trailing, 150.0)
-                        
+                            
                         
                     }
-                    .padding(.top, 270.0)
+                    .padding(.top, 240.0)
                     HStack{
                         Text(convertSecondsToTime(timeInSeconds : timeRemaining))
                             .padding()
@@ -50,7 +73,7 @@ struct  OrderIsSent: View {
                                 timeRemaining -= 1
                             }
                     }
-                    .padding(.top, 270.0)
+                    .padding(.top, 240.0)
                     
                     
                 }
@@ -61,8 +84,8 @@ struct  OrderIsSent: View {
                         .font(.system(size:12))
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.leading)
-                        .padding(.leading, -10.0)
-
+                        .padding([.top, .leading], -10.0)
+                        
                        
                     
                 }
@@ -93,7 +116,7 @@ struct  OrderIsSent: View {
 //                        .navigationBarBackButtonHidden(true)
                     }
                     .padding(.trailing, -170.0)
-                    .padding(.top, -500.0)
+                    .padding(.top, -480.0)
                     
                     
                     
@@ -121,28 +144,28 @@ struct  OrderIsSent: View {
                     
                    
                     
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .principal) { // <3>
-                            VStack {
-                                Text("McDonald's").font(.title).fontWeight(.bold)
-                                Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
-                                Divider()
-                                
-                                
-                                
-                            }
-                            .padding(.top)
-                        }
-                        
-                    }
+//                    .navigationBarTitleDisplayMode(.inline)
+//                    .toolbar {
+//                        ToolbarItem(placement: .principal) { // <3>
+//                            VStack {
+//                                Text("McDonald's").font(.title).fontWeight(.bold)
+//                                Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
+//                                Divider()
+//
+//
+//
+//                            }
+//                            .padding(.top)
+//                        }
+//
+//                    }
                     
                     
                     
                 }
                 
             }
-        .navigationBarBackButtonHidden(true)
+      //  .navigationBarBackButtonHidden(true)
         }
     }
 

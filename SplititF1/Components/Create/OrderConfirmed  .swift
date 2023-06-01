@@ -12,13 +12,36 @@ struct OrderConfirmed__: View {
     var body: some View {
         NavigationView {
             VStack{
+                HStack(spacing: 8) {
+                    Button(action: {
+                        
+                    }) {
+                        NavigationLink(destination:  TabBar()) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(Color("Color1"))
+                                .padding(.leading)
+                        }
+                    }
+                    Spacer()
+                    VStack(alignment: .center, spacing: 2) {
+                        Text("McDonald's")
+                            .font(.system(size: 25, weight: .bold, design: .default))
+                        Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+                            .font(.system(size: 13, weight: .regular, design: .default))
+                            .foregroundColor(.secondary)
+                        
+                    }
+                    .padding(.trailing)
+                    Spacer()
+                }
+                Divider()
                 VStack{
                     
                     Text("Order Status")
                         .font(.system(size:20))
                         .fontWeight(.bold)
                         .padding(.trailing, 150.0)
-                        .padding(.top, 40.0)
+                        .padding(.top,10.0)
                        .padding(.leading, -90)
                     
                 }
@@ -62,7 +85,7 @@ struct OrderConfirmed__: View {
                             }
                     }
                     .padding(.trailing, -170.0)
-                    .padding(.top, -340.0)
+                    .padding(.top, -330.0)
                 }
                
                 Divider()
@@ -86,21 +109,21 @@ struct OrderConfirmed__: View {
                     
                     
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) { // <3>
-                        VStack {
-                            Text("McDonald's").font(.title).fontWeight(.bold)
-                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
-                            Divider()
-                            
-                            
-                            
-                        }
-                        .padding(.top)
-                    }
-                    
-                }
+//                .navigationBarTitleDisplayMode(.inline)
+//                .toolbar {
+//                    ToolbarItem(placement: .principal) { // <3>
+//                        VStack {
+//                            Text("McDonald's").font(.title).fontWeight(.bold)
+//                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
+//                            Divider()
+//
+//
+//
+//                        }
+//                        .padding(.top)
+//                    }
+//
+//                }
                 
                 
                 
