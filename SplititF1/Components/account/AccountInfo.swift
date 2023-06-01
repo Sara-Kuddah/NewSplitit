@@ -29,6 +29,7 @@ struct AccountInfo: View {
                             .font(.system(size:20))
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.center)
+                        
                     }
                     VStack{
                         Text("Those Informations will be provided for user’s in shared order, to contact you and pay you ")
@@ -36,6 +37,7 @@ struct AccountInfo: View {
                             .font(.system(size: 12))
                             .foregroundColor(Color.gray)
                             .multilineTextAlignment(.leading)
+                            .padding(.bottom)
                     }
                     VStack(alignment: .leading){
                         Text("Phone Number")
@@ -55,7 +57,7 @@ struct AccountInfo: View {
                         Text("Add How you want others to pay you")
                             .font(.system(size: 20))
                             .fontWeight(.semibold)
-                        
+                            .padding(.bottom)
                     }
                     
                     VStack(alignment: .leading){
@@ -71,6 +73,7 @@ struct AccountInfo: View {
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
+                            .padding(.bottom)
                     }
                     VStack(alignment: .leading){
                         Text("IBAN")
@@ -83,8 +86,10 @@ struct AccountInfo: View {
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
                         
+                        
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
+                            .padding(.bottom)
                     }
                     VStack(alignment: .leading) {
                         Text("Account Number")
@@ -99,6 +104,7 @@ struct AccountInfo: View {
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
+                            .padding(.bottom)
                     }
                     
                     VStack(alignment: .leading){
