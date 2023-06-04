@@ -29,7 +29,29 @@ struct Waiting1: View {
     var body: some View {
         NavigationView {
             VStack {
-                
+                HStack(spacing: 8) {
+                    Button(action: {
+                        
+                    }) {
+                        NavigationLink(destination:  TabBar()) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(Color("Color1"))
+                                .padding(.leading)
+                        }
+                    }
+                    Spacer()
+                    VStack(alignment: .center, spacing: 2) {
+                        Text("McDonald's")
+                            .font(.system(size: 25, weight: .bold, design: .default))
+                        Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+                            .font(.system(size: 13, weight: .regular, design: .default))
+                            .foregroundColor(.secondary)
+                        
+                    }
+                    .padding(.trailing)
+                    Spacer()
+                }
+                Divider()
                 VStack{
                     HStack{
                         HStack{
@@ -37,7 +59,7 @@ struct Waiting1: View {
                                 .font(.system(size:20))
                                 .fontWeight(.bold)
                                 .padding(.trailing, 150.0)
-                            
+                                .padding(.top, -29)
                         }
                         .padding(.top)
                         HStack{
@@ -52,7 +74,7 @@ struct Waiting1: View {
                             
                             
                         }
-                        .padding(.top)
+                        .padding(.top, -20)
                     } //.padding(.top, -120.0)
                 
                     Text("You only can cancel announcement when no one  joined yet")
@@ -65,6 +87,8 @@ struct Waiting1: View {
                         TimelineTrack()
                             .padding(.top, 10.0)
                     }
+                    
+                    
                     
                     NavigationLink(destination: TabBar()) {
                         Text("Cancel")
@@ -83,7 +107,7 @@ struct Waiting1: View {
 //                    .navigationBarBackButtonHidden(true)
                     
                 .padding(.trailing, -170.0)
-                   .padding(.top, -90.0)
+                   .padding(.top, -70.0)
                    
                         Divider()
                    
@@ -98,21 +122,21 @@ struct Waiting1: View {
                     
                 }
                 .padding(.top, 10.0)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) { // <3>
-                        VStack {
-                            Text("McDonald's").font(.title).fontWeight(.bold)
-                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
-                            Divider()
-                            
-                            
-                            
-                        }
-                        .padding(.top)
-                    }
-                    
-                }
+//                .navigationBarTitleDisplayMode(.inline)
+//                .toolbar {
+//                    ToolbarItem(placement: .principal) { // <3>
+//                        VStack {
+//                            Text("McDonald's").font(.title).fontWeight(.bold)
+//                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
+//                            Divider()
+//
+//
+//
+//                        }
+//                        .padding(.top)
+//                    }
+//
+//                }
                 
                 
                 
@@ -122,7 +146,7 @@ struct Waiting1: View {
             }
             .padding(.bottom, 400.0)
         }
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarBackButtonHidden(true)
     }
 }
 

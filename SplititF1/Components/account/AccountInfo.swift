@@ -20,7 +20,7 @@ struct AccountInfo: View {
     @State var thirdMarked = false
     @State private var showTabBar = false
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView{
                 VStack(alignment: .leading) {
                     Spacer()
@@ -29,6 +29,7 @@ struct AccountInfo: View {
                             .font(.system(size:20))
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.center)
+                        
                     }
                     VStack{
                         Text("Those Informations will be provided for user’s in shared order, to contact you and pay you ")
@@ -36,12 +37,14 @@ struct AccountInfo: View {
                             .font(.system(size: 12))
                             .foregroundColor(Color.gray)
                             .multilineTextAlignment(.leading)
+                            .padding(.bottom)
                     }
                     VStack(alignment: .leading){
                         Text("Phone Number")
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                         TextField("What App Are You Ordering From?", text: $PhoneN)
+                            .padding(.horizontal)
                             .font(.system(size: 15))
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -54,7 +57,7 @@ struct AccountInfo: View {
                         Text("Add How you want others to pay you")
                             .font(.system(size: 20))
                             .fontWeight(.semibold)
-                        
+                            .padding(.bottom)
                     }
                     
                     VStack(alignment: .leading){
@@ -62,6 +65,7 @@ struct AccountInfo: View {
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                         TextField("Bank name", text: $BankN)
+                            .padding(.horizontal)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
@@ -69,25 +73,30 @@ struct AccountInfo: View {
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
+                            .padding(.bottom)
                     }
                     VStack(alignment: .leading){
                         Text("IBAN")
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                         TextField("Enter your IBAN", text: $IBAN)
+                            .padding(.horizontal)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
                         
+                        
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
+                            .padding(.bottom)
                     }
                     VStack(alignment: .leading) {
                         Text("Account Number")
                             .font(.system(size: 15))
                             .fontWeight(.medium)
                         TextField("Enter your Account Number", text: $AccountN)
+                            .padding(.horizontal)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)
@@ -95,6 +104,7 @@ struct AccountInfo: View {
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
                                 .stroke(Color("Color1"))  )
+                            .padding(.bottom)
                     }
                     
                     VStack(alignment: .leading){
@@ -110,6 +120,7 @@ struct AccountInfo: View {
                         }
                         .fontWeight(.medium)
                         TextField("Enter your number", text: $STCp)
+                            .padding(.leading)
                             .font(.system(size: 15))
                         
                             .frame(height: 50)

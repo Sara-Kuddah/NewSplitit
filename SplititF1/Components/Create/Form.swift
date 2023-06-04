@@ -27,7 +27,8 @@ struct Form: View {
                         }) {
                             NavigationLink(destination:  TabBar()) {
                                 Image(systemName: "chevron.left")
-                                    .foregroundColor(Color("Color1")) // change color of back button
+                                    .foregroundColor(Color("Color1"))
+                                    .padding(.leading)
                             }
                         }
                         Spacer()
@@ -52,6 +53,7 @@ struct Form: View {
                                 .font(.system(size: 18))
                                 .fontWeight(.medium)
                             TextField("", text: $restaurantN)
+                            .padding(.leading, 10)
                                 .frame(height: 50)
                                 .textFieldStyle(PlainTextFieldStyle())
                             
@@ -64,6 +66,7 @@ struct Form: View {
                                 .font(.system(size: 18))
                                 .fontWeight(.medium)
                             TextField("", text: $DeliveryF)
+                            .padding(.leading, 10)
                             
                                 .frame(height: 50)
                                 .textFieldStyle(PlainTextFieldStyle())

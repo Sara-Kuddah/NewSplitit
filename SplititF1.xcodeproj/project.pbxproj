@@ -250,7 +250,6 @@
 			children = (
 				23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */,
 				230520F02A1D3755006ED1D5 /* SaveButton.swift */,
-				F57B089F2A1F3CC3002A8913 /* NewOrder.swift */,
 				230520EE2A1D32D3006ED1D5 /* SkipButton.swift */,
 				23CD7CB32A1A129E00260B15 /* SendButton.swift */,
 				23297DFE2A18B71A0035658B /* RName.swift */,
@@ -302,6 +301,7 @@
 				59A0B4E12A21E70800250403 /* newSizeDropDown.swift */,
 				23CD7CBE2A1A130300260B15 /* copyButton.swift */,
 				23CD7CB12A1A129500260B15 /* JoinButton.swift */,
+				F57B089F2A1F3CC3002A8913 /* NewOrder.swift */,
 				23CD7CBB2A1A12F500260B15 /* checkbox.swift */,
 			);
 			path = Join;
