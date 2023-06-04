@@ -53,6 +53,9 @@
 		59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A392A2C64C2000F80D5 /* SignInWithApple.swift */; };
 		59581A3C2A2C6511000F80D5 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */; };
 		59581A3E2A2C68AE000F80D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */; };
+		59581A402A2C6D02000F80D5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3F2A2C6D02000F80D5 /* File.swift */; };
+		59581A422A2C6E07000F80D5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A412A2C6E07000F80D5 /* UserProfile.swift */; };
+		59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A432A2C783F000F80D5 /* WebAPI.swift */; };
 		59A0B4D42A1FEA9F00250403 /* AppNamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */; };
 		59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */; };
 		59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */; };
@@ -114,6 +117,9 @@
 		59581A392A2C64C2000F80D5 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
 		59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		59581A3F2A2C6D02000F80D5 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		59581A412A2C6E07000F80D5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		59581A432A2C783F000F80D5 /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
 		59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNamePicker.swift; sourceTree = "<group>"; };
 		59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedOrder.swift; sourceTree = "<group>"; };
 		59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusButton.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 				23CD7CA52A1A120C00260B15 /* OrderHistory .swift */,
 				23FC80FC2A14BB350001853B /* Splash.swift */,
 				23FC80FA2A14B7800001853B /* Onboarding.swift */,
+				59581A3F2A2C6D02000F80D5 /* File.swift */,
 				59A0B4CE2A1FE9C900250403 /* Components */,
 				59A0B4CD2A1FE9BC00250403 /* To Be Deleted */,
 				23297E1F2A1902A70035658B /* Map */,
@@ -241,6 +248,8 @@
 				59581A392A2C64C2000F80D5 /* SignInWithApple.swift */,
 				59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */,
 				59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */,
+				59581A412A2C6E07000F80D5 /* UserProfile.swift */,
+				59581A432A2C783F000F80D5 /* WebAPI.swift */,
 			);
 			path = SignInWithApple;
 			sourceTree = "<group>";
@@ -429,6 +438,7 @@
 				23FC81042A153BB40001853B /* Order.swift in Sources */,
 				59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */,
 				23297E302A1902A70035658B /* LocalSearchService.swift in Sources */,
+				59581A422A2C6E07000F80D5 /* UserProfile.swift in Sources */,
 				23CD7CAA2A1A125700260B15 /* FormForAddingOrder.swift in Sources */,
 				59581A3E2A2C68AE000F80D5 /* SceneDelegate.swift in Sources */,
 				23CD7CAE2A1A128200260B15 /* MyAccountP.swift in Sources */,
@@ -445,8 +455,10 @@
 				23CD7CC32A1A130300260B15 /* copyButton.swift in Sources */,
 				23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
+				59581A402A2C6D02000F80D5 /* File.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
 				23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */,
+				59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */,
 				59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */,
 				23CA5FC42A1DE6AA00289A3B /* PaymentCard.swift in Sources */,
 				59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */,
@@ -596,7 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = 684Z82SSZ7;
+				DEVELOPMENT_TEAM = 686H3J2SCC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -610,7 +622,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Abeer.SplititF1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlaaAlabdullah.splitit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -624,10 +636,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SplititF1/SplititF1.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = 684Z82SSZ7;
+				DEVELOPMENT_TEAM = 686H3J2SCC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -641,8 +654,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Abeer.SplititF1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlaaAlabdullah.splitit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
