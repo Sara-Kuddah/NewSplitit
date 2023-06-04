@@ -50,6 +50,9 @@
 		23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FA2A14B7800001853B /* Onboarding.swift */; };
 		23FC80FD2A14BB350001853B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FC2A14BB350001853B /* Splash.swift */; };
 		23FC81042A153BB40001853B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC81032A153BB40001853B /* Order.swift */; };
+		59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A392A2C64C2000F80D5 /* SignInWithApple.swift */; };
+		59581A3C2A2C6511000F80D5 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */; };
+		59581A3E2A2C68AE000F80D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */; };
 		59A0B4D42A1FEA9F00250403 /* AppNamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */; };
 		59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */; };
 		59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */; };
@@ -108,6 +111,9 @@
 		23FC80FC2A14BB350001853B /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		23FC81022A15303B0001853B /* SplititF1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplititF1.entitlements; sourceTree = "<group>"; };
 		23FC81032A153BB40001853B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		59581A392A2C64C2000F80D5 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
+		59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
+		59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNamePicker.swift; sourceTree = "<group>"; };
 		59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedOrder.swift; sourceTree = "<group>"; };
 		59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusButton.swift; sourceTree = "<group>"; };
@@ -229,6 +235,16 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		59581A382A2C649C000F80D5 /* SignInWithApple */ = {
+			isa = PBXGroup;
+			children = (
+				59581A392A2C64C2000F80D5 /* SignInWithApple.swift */,
+				59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */,
+				59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */,
+			);
+			path = SignInWithApple;
+			sourceTree = "<group>";
+		};
 		59A0B4CD2A1FE9BC00250403 /* To Be Deleted */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +262,7 @@
 		59A0B4CE2A1FE9C900250403 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				59581A382A2C649C000F80D5 /* SignInWithApple */,
 				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
 				59A0B4D92A1FEEB600250403 /* LargeButton.swift */,
 				59A0B4DF2A20DC4300250403 /* inputField.swift */,
@@ -410,13 +427,16 @@
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,
 				23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */,
 				23FC81042A153BB40001853B /* Order.swift in Sources */,
+				59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */,
 				23297E302A1902A70035658B /* LocalSearchService.swift in Sources */,
 				23CD7CAA2A1A125700260B15 /* FormForAddingOrder.swift in Sources */,
+				59581A3E2A2C68AE000F80D5 /* SceneDelegate.swift in Sources */,
 				23CD7CAE2A1A128200260B15 /* MyAccountP.swift in Sources */,
 				23CD7CA42A1A11F000260B15 /* TabBar.swift in Sources */,
 				23CD7CA82A1A121B00260B15 /* Profile .swift in Sources */,
 				23297E2F2A1902A70035658B /* LandmarkListView.swift in Sources */,
 				230520C52A1C98F4006ED1D5 /* CheckT.swift in Sources */,
+				59581A3C2A2C6511000F80D5 /* SignInWithAppleDelegates.swift in Sources */,
 				23297E2E2A1902A70035658B /* MKCoordinateRegion+Extensions.swift in Sources */,
 				23297E2C2A1902A70035658B /* LocationManager.swift in Sources */,
 				23297E2D2A1902A70035658B /* Landmark.swift in Sources */,

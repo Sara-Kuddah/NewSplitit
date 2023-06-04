@@ -1,0 +1,26 @@
+//
+//  SceneDelegate.swift
+//  SplititF1
+//
+//  Created by Alaa Alabdullah on 04/06/2023.
+//
+
+import SwiftUI
+
+//class SceneDelegate: UIResponder {
+//  var window: UIWindow?
+//}
+//
+//extension SceneDelegate: UIWindowSceneDelegate {
+//  func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+//    guard let windowScene = scene as? UIWindowScene else { return }
+//    
+//    let window = UIWindow(windowScene: windowScene)
+//
+////    let rootView = ContentView().environment(\.window, window)
+//    
+//    window.rootViewController = UIHostingController(rootView: rootView)
+//    self.window = window
+//    window.makeKeyAndVisible()
+//  }
+//}

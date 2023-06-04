@@ -45,16 +45,14 @@ struct Onboarding: View {
                                 let firstName = credential.fullName?.givenName
                                 let lastName = credential.fullName?.familyName
                                 
+//                                self.userId = userId ?? ""
                                 self.email = email ?? ""
-                                // self.userId = userId
                                 self.firstName = firstName ?? ""
-                                self.lastName ?? ""
+                                self.lastName = lastName ?? ""
                                 
                             default:
                                 break
                             }
-                            
-                            
                             
                         case .failure(let error):
                             print(error)
