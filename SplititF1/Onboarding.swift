@@ -4,7 +4,7 @@
 //
 //  Created by Abeer on 27/10/1444 AH.
 //
-//import UIKit
+import UIKit
 import AuthenticationServices
 import SwiftUI
 
@@ -15,8 +15,10 @@ struct Onboarding: View {
     @AppStorage("lastName") var lastName: String = ""
     @AppStorage("userId") var usertId: String = ""
     
+    @AppStorage("isUserOnboarded") var isUserOnboarded: Bool = false
+    
     @State private var showTabBar = false
-    @Environment var window: UIWindow?
+    @Environment(\.window) var window: UIWindow?
     @State var appleSignInDelegates: SignInWithAppleDelegates! = nil
     @State private var showingAlert = false
     @State private var alertMessage = ""
@@ -37,47 +39,15 @@ struct Onboarding: View {
                 Spacer()
                 VStack{
                     
-//                    SignInWithAppleButton(.continue){ request in
-//                        request.requestedScopes = [.email, .fullName]
-//                    } onCompletion: { result in
-//                        switch result{
-//                        case .success(let auth):
-//
-//
-//                            switch auth.credential {
-//                            case let credential as ASAuthorizationAppleIDCredential:
-//                                let userId = credential.user
-//                                let email = credential.email
-//                                let firstName = credential.fullName?.givenName
-//                                let lastName = credential.fullName?.familyName
-//
-////                                self.userId = userId ?? ""
-//                                self.email = email ?? ""
-//                                self.firstName = firstName ?? ""
-//                                self.lastName = lastName ?? ""
-//
-//                            default:
-//                                break
-//                            }
-//
-//                        case .failure(let error):
-//                            print(error)
-//                        }
-//
-//                    }
-//                    //                .signInWithAppleButtonStyle( colorScheme == .dark ? .white : .black
-//                    //                )
-//                    .frame(height: 50)
-//                    .padding()
-//                    .cornerRadius(10)
-//
-                    
+               
                     SignInWithApple()
-                      .frame(width: 280, height: 60)
+                      .frame(height: 50)
                       .onTapGesture(perform: showAppleLogin)
-                    
+                      
+                      .padding()
                     LargeButton(title: "Skip") {
                         showTabBar = true
+                        isUserOnboarded = true
                     }
                     .fullScreenCover(isPresented: $showTabBar) {
                         TabBar()
@@ -92,6 +62,8 @@ struct Onboarding: View {
       request.requestedScopes = [.fullName, .email]
 
       performSignIn(using: [request])
+        showTabBar = true
+        isUserOnboarded = true
     }
 
     private func performSignIn(using requests: [ASAuthorizationRequest]) {

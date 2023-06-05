@@ -12,6 +12,7 @@ struct Splash: View {
     @State var isActive : Bool = false
     @State private var size = 0.8
     @State private var opacity = 0.5
+    @AppStorage("isUserOnboarded") var isUserOnboarded: Bool = false
     var body: some View {
         ZStack{
             Text("one Shahad")
@@ -20,7 +21,13 @@ struct Splash: View {
                     .font(.system(size: 100))
                     .background(Splash.Mycolor)
             if isActive {
-                Onboarding()
+                if !isUserOnboarded {
+                    Onboarding()
+                } else {
+    //                AddingEvents()
+                    TabBar()
+                }
+                
             }
             else{
                 VStack {

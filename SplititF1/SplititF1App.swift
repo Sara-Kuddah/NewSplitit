@@ -11,8 +11,8 @@ import SwiftUI
 struct SplititF1App: App {
     var body: some Scene {
         WindowGroup {
-            OrderStatusPage()
-
+//            OrderStatusPage()
+            Splash()
         }
     }
 }
