@@ -26,4 +26,13 @@ struct Landmark: Identifiable, Hashable {
     var coordinate: CLLocationCoordinate2D {
         self.placemark.coordinate
     }
+    var coordinateLat: CLLocationDegrees {
+        self.placemark.coordinate.latitude
+    }
+    
+
+    var coordinateLong: CLLocationDegrees {
+        self.placemark.coordinate.longitude
+    }
+   
 }

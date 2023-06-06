@@ -12,7 +12,7 @@ struct cardforstatus: View {
         
         VStack {
             Spacer()
-            timeline2()
+//            timeline2()
             
 
             //Spacer()

@@ -13,7 +13,9 @@ struct SplititF1App: App {
         WindowGroup {
 //            OrderStatusPage()
             Splash()
-//            Mapp()
+//            Mapp().environmentObject(LocalSearchService())
+//            getLocation()
+//            ContentView2()
         }
     }
 }

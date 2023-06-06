@@ -16,13 +16,27 @@ struct ContentView2: View {
                 // Insert code here of what should happen when Location services are authorized
                 Text("Your current location is:")
                 
-                let latitude = locationDataManager.locationManager.location?.coordinate.latitude.description ?? "Error loading"
-                let longitude = locationDataManager.locationManager.location?.coordinate.longitude.description ?? "Error loading"
+                let longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
+                let latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
+                
                 
                 Text("Latitude: \(locationDataManager.locationManager.location?.coordinate.latitude.description ?? "Error loading")")
                 
                 Text("Longitude: \(locationDataManager.locationManager.location?.coordinate.longitude.description ?? "Error loading")")
-                
+                    .onAppear{
+                        WebAPI.postLocation(discription: "Alaa",
+                                            long: longitude ,
+                                            lat: latitude ,
+                                            completion: { result in
+                            switch result {
+                            case .success(let success):
+                                print("success") // get location
+                            case .failure(let failure):
+                                print(type(of: latitude))
+                                print(Double(latitude))
+                                print(longitude)
+                                print("failure cause I'm a failure sorry22")}})
+                    }
             case .restricted, .denied:  // Location services currently unavailable.
                 // Insert code here of what should happen when Location services are NOT authorized
                 Text("Current location data was restricted or denied.")
@@ -34,6 +48,7 @@ struct ContentView2: View {
             }
         }
     }
+    
 }
 
 struct ContentView2_Previews: PreviewProvider {
