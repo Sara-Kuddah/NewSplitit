@@ -76,7 +76,7 @@ struct newJoinCard: View {
                         JoinButton()
                     }
                 }
-                .padding()
+//                .padding()
                 
             }
         }

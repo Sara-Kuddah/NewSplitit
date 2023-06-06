@@ -49,6 +49,13 @@
 		23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FA2A14B7800001853B /* Onboarding.swift */; };
 		23FC80FD2A14BB350001853B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FC2A14BB350001853B /* Splash.swift */; };
 		23FC81042A153BB40001853B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC81032A153BB40001853B /* Order.swift */; };
+		590B929A2A2CF0F00026B132 /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B92992A2CF0F00026B132 /* EnvironmentWindowKey.swift */; };
+		59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A392A2C64C2000F80D5 /* SignInWithApple.swift */; };
+		59581A3C2A2C6511000F80D5 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */; };
+		59581A3E2A2C68AE000F80D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */; };
+		59581A402A2C6D02000F80D5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3F2A2C6D02000F80D5 /* File.swift */; };
+		59581A422A2C6E07000F80D5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A412A2C6E07000F80D5 /* UserProfile.swift */; };
+		59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A432A2C783F000F80D5 /* WebAPI.swift */; };
 		59A0B4D42A1FEA9F00250403 /* AppNamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */; };
 		59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */; };
 		59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */; };
@@ -112,6 +119,13 @@
 		23FC80FC2A14BB350001853B /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		23FC81022A15303B0001853B /* SplititF1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplititF1.entitlements; sourceTree = "<group>"; };
 		23FC81032A153BB40001853B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		590B92992A2CF0F00026B132 /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
+		59581A392A2C64C2000F80D5 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
+		59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
+		59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		59581A3F2A2C6D02000F80D5 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		59581A412A2C6E07000F80D5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		59581A432A2C783F000F80D5 /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
 		59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNamePicker.swift; sourceTree = "<group>"; };
 		59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedOrder.swift; sourceTree = "<group>"; };
 		59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusButton.swift; sourceTree = "<group>"; };
@@ -173,6 +187,7 @@
 				23CD7CA52A1A120C00260B15 /* OrderHistory .swift */,
 				23FC80FC2A14BB350001853B /* Splash.swift */,
 				23FC80FA2A14B7800001853B /* Onboarding.swift */,
+				59581A3F2A2C6D02000F80D5 /* File.swift */,
 				59A0B4CE2A1FE9C900250403 /* Components */,
 				59A0B4CD2A1FE9BC00250403 /* To Be Deleted */,
 				23297E1F2A1902A70035658B /* Map */,
@@ -243,6 +258,19 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		59581A382A2C649C000F80D5 /* SignInWithApple */ = {
+			isa = PBXGroup;
+			children = (
+				59581A392A2C64C2000F80D5 /* SignInWithApple.swift */,
+				59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */,
+				59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */,
+				59581A412A2C6E07000F80D5 /* UserProfile.swift */,
+				59581A432A2C783F000F80D5 /* WebAPI.swift */,
+				590B92992A2CF0F00026B132 /* EnvironmentWindowKey.swift */,
+			);
+			path = SignInWithApple;
+			sourceTree = "<group>";
+		};
 		59A0B4CD2A1FE9BC00250403 /* To Be Deleted */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +286,7 @@
 		59A0B4CE2A1FE9C900250403 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				59581A382A2C649C000F80D5 /* SignInWithApple */,
 				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
 				F567FC562A2DC8F1008B134C /* timeline2.swift */,
 				59A0B4D92A1FEEB600250403 /* LargeButton.swift */,
@@ -435,13 +464,17 @@
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,
 				23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */,
 				23FC81042A153BB40001853B /* Order.swift in Sources */,
+				59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */,
 				23297E302A1902A70035658B /* LocalSearchService.swift in Sources */,
+				59581A422A2C6E07000F80D5 /* UserProfile.swift in Sources */,
 				23CD7CAA2A1A125700260B15 /* FormForAddingOrder.swift in Sources */,
+				59581A3E2A2C68AE000F80D5 /* SceneDelegate.swift in Sources */,
 				23CD7CAE2A1A128200260B15 /* MyAccountP.swift in Sources */,
 				23CD7CA42A1A11F000260B15 /* TabBar.swift in Sources */,
 				23CD7CA82A1A121B00260B15 /* Profile .swift in Sources */,
 				23297E2F2A1902A70035658B /* LandmarkListView.swift in Sources */,
 				230520C52A1C98F4006ED1D5 /* CheckT.swift in Sources */,
+				59581A3C2A2C6511000F80D5 /* SignInWithAppleDelegates.swift in Sources */,
 				23297E2E2A1902A70035658B /* MKCoordinateRegion+Extensions.swift in Sources */,
 				23297E2C2A1902A70035658B /* LocationManager.swift in Sources */,
 				23297E2D2A1902A70035658B /* Landmark.swift in Sources */,
@@ -450,10 +483,11 @@
 				23CD7CC32A1A130300260B15 /* copyButton.swift in Sources */,
 				23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
+				59581A402A2C6D02000F80D5 /* File.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
 				F50523DC2A2DC64B005BC1AC /* cardforstatus.swift in Sources */,
 				23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */,
-				F567FC572A2DC8F1008B134C /* timeline2.swift in Sources */,
+				59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */,
 				59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */,
 				23CA5FC42A1DE6AA00289A3B /* PaymentCard.swift in Sources */,
 				59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */,
@@ -462,7 +496,7 @@
 				23CD7CB42A1A129E00260B15 /* SendButton.swift in Sources */,
 				59A0B4E22A21E70800250403 /* newSizeDropDown.swift in Sources */,
 				F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */,
-				F567FC592A2DCB25008B134C /* MotivationalPopUp.swift in Sources */,
+				590B929A2A2CF0F00026B132 /* EnvironmentWindowKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +638,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = T6KTATRLDG;
+				DEVELOPMENT_TEAM = 686H3J2SCC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location data to tell you your location";
@@ -619,7 +653,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Abeer.SplititF;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlaaAlabdullah.splitit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -633,10 +667,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SplititF1/SplititF1.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = T6KTATRLDG;
+				DEVELOPMENT_TEAM = 686H3J2SCC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location data to tell you your location";
@@ -651,8 +686,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Abeer.SplititF;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AlaaAlabdullah.splitit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

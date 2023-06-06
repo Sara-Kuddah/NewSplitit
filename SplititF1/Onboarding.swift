@@ -4,6 +4,7 @@
 //
 //  Created by Abeer on 27/10/1444 AH.
 //
+import UIKit
 import AuthenticationServices
 import SwiftUI
 
@@ -14,7 +15,14 @@ struct Onboarding: View {
     @AppStorage("lastName") var lastName: String = ""
     @AppStorage("userId") var usertId: String = ""
     
+    @AppStorage("isUserOnboarded") var isUserOnboarded: Bool = false
+    
     @State private var showTabBar = false
+    @Environment(\.window) var window: UIWindow?
+    @State var appleSignInDelegates: SignInWithAppleDelegates! = nil
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
+    @State private var alertTitle = ""
     var body: some View {
         NavigationView{
             VStack{
@@ -31,45 +39,15 @@ struct Onboarding: View {
                 Spacer()
                 VStack{
                     
-                    SignInWithAppleButton(.continue){ request in
-                        request.requestedScopes = [.email, .fullName]
-                    } onCompletion: { result in
-                        switch result{
-                        case .success(let auth):
-                            
-                            
-                            switch auth.credential {
-                            case let credential as ASAuthorizationAppleIDCredential:
-                                let userId = credential.user
-                                let email = credential.email
-                                let firstName = credential.fullName?.givenName
-                                let lastName = credential.fullName?.familyName
-                                
-                                self.email = email ?? ""
-                                // self.userId = userId
-                                self.firstName = firstName ?? ""
-                                self.lastName ?? ""
-                                
-                            default:
-                                break
-                            }
-                            
-                            
-                            
-                        case .failure(let error):
-                            print(error)
-                        }
-                        
-                    }
-                    //                .signInWithAppleButtonStyle( colorScheme == .dark ? .white : .black
-                    //                )
-                    .frame(height: 50)
-                    .padding()
-                    .cornerRadius(10)
-                    
-                    
+               
+                    SignInWithApple()
+                      .frame(height: 50)
+                      .onTapGesture(perform: showAppleLogin)
+                      
+                      .padding()
                     LargeButton(title: "Skip") {
                         showTabBar = true
+                        isUserOnboarded = true
                     }
                     .fullScreenCover(isPresented: $showTabBar) {
                         TabBar()
@@ -79,9 +57,50 @@ struct Onboarding: View {
             }
         }
     }
-}
-struct Onboarding_Previews: PreviewProvider {
-    static var previews: some View {
-        Onboarding()
+    private func showAppleLogin() {
+      let request = ASAuthorizationAppleIDProvider().createRequest()
+      request.requestedScopes = [.fullName, .email]
+
+      performSignIn(using: [request])
+        showTabBar = true
+        isUserOnboarded = true
     }
-}
+
+    private func performSignIn(using requests: [ASAuthorizationRequest]) {
+      appleSignInDelegates = SignInWithAppleDelegates(window: window) { success in
+        switch success {
+        case .success(let profile): self.showProfileAlert(profile: profile)
+        case .failure(let error): self.showErrorAlert(error: error)
+        }
+      }
+
+      let controller = ASAuthorizationController(authorizationRequests: requests)
+      controller.delegate = appleSignInDelegates
+      controller.presentationContextProvider = appleSignInDelegates
+
+      controller.performRequests()
+    }
+
+    private func showErrorAlert(error: Error) {
+      self.showingAlert = true
+      self.alertTitle = "Error 😐"
+      self.alertMessage = error.localizedDescription
+    }
+
+    private func showProfileAlert(profile: UserProfile) {
+      self.showingAlert = true
+      self.alertTitle = "Success 🎉"
+      self.alertMessage = """
+        User ID: \(profile.id)
+        Email: \(profile.email)
+        First name: \(profile.firstName ?? "N/A")
+        Last name: \(profile.lastName ?? "N/A")
+      """
+    }
+  }
+
+//struct Onboarding_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Onboarding(window: window)
+//    }
+//}
