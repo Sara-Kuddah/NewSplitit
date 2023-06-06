@@ -61,6 +61,7 @@ struct MyAccountP: View {
             
             Spacer()
         }
+            .navigationBarBackButtonHidden(true)
     }
     
 }
