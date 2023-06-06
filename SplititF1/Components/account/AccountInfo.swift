@@ -145,7 +145,7 @@ struct AccountInfo: View {
                 
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .principal) { // <3>
+                    ToolbarItem(placement: .principal) { 
                         HStack{
                             VStack {
                                 Text("Account Info")
