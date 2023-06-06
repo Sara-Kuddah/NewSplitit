@@ -100,10 +100,13 @@ struct Profile: View {
                         Button(action: {
                             // Button action here
                         }) {
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray)
-                                .font(.title)
+                            NavigationLink(destination:         Privacy_and_Policy_()
+) {
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.gray)
+                                    .font(.title)
+                            }
                         }
                     }
                     .padding()
@@ -162,10 +165,14 @@ struct Profile: View {
                         Button(action: {
                             // Button action here
                         }) {
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray)
-                                .font(.title)
+                            NavigationLink(destination:    helpandsupport()) {
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.gray)
+                                    .font(.title)
+                                    .navigationBarHidden(true)
+                            }
+                            
                         }
                     }
                     .padding()
