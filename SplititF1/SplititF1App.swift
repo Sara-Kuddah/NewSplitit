@@ -13,6 +13,7 @@ struct SplititF1App: App {
         WindowGroup {
 //            OrderStatusPage()
             Splash()
+//            Mapp()
         }
     }
 }

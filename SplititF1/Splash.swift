@@ -13,6 +13,8 @@ struct Splash: View {
     @State private var size = 0.8
     @State private var opacity = 0.5
     @AppStorage("isUserOnboarded") var isUserOnboarded: Bool = false
+    @AppStorage("showMap") var showMap: Bool = false
+    @AppStorage("showTabBar") var showTabBar: Bool = false
     var body: some View {
         ZStack{
             Text("one Shahad")
@@ -24,16 +26,17 @@ struct Splash: View {
                 if !isUserOnboarded {
                     Onboarding()
                 } else {
-    //                AddingEvents()
-                    TabBar()
+                    if showMap {
+                        TabBar()
+                    } else {
+                        TabBar()
+                    }
                 }
                 
             }
             else{
                 VStack {
-                    
                     VStack {
-                        
                         Image("Group")
                             .font(.system(size: 80))
                             .foregroundColor(.blue)
