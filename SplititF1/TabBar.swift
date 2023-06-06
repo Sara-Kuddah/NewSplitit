@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBar: View {
     @State private var selection = 0
-    
+    @ObservedObject var locationDataManager = LocationDataManager()
     var body: some View {
         NavigationStack {
             TabView(selection: $selection) {
@@ -39,7 +39,9 @@ struct TabBar: View {
            // .navigationBarBackButtonHidden(true)
             
         }
-        
+        .onAppear{
+            getLocation().getLocationCoordinates()
+        }
         .navigationBarBackButtonHidden(true)
        
     }

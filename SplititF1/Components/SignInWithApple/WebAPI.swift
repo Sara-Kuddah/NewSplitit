@@ -93,7 +93,7 @@ struct WebAPI {
       completion(.failure(WebAPIError.unauthorized))
       return
     }
-
+      print(accessToken)
     let session = URLSession.shared
     let url = URL(string: "\(baseURL)/api/users/me")!
     var request = URLRequest(url: url)
@@ -115,12 +115,42 @@ struct WebAPI {
     // MARK: - POST LOCATION
     
     static func postLocation(
-        description: String,
+        discription: String,
         long: Double,
-        lat: Double) {
-        
-    }
-    
+        lat: Double,
+        completion: @escaping (Result<UserLocation, Error>) -> Void) {
+            
+            guard let accessToken = Self.accessToken else {
+                completion(.failure(WebAPIError.unauthorized))
+                return
+            }
+            
+            let body = UserLocation(discription: discription,
+                                    long: long,
+                                    lat: lat)
+            
+            guard let jsonBody = try? JSONEncoder().encode(body) else {
+              completion(.failure(WebAPIError.unableToEncodeJSONData))
+              return
+            }
+            let session = URLSession.shared
+            let url = URL(string: "\(baseURL)/api/locations/create")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+              do {
+                let locationResponse: LocationResponse = try parseResponse(response, data: data, error: error)
+
+                completion(.success(locationResponse.location))
+              } catch {
+                completion(.failure(error))
+              }
+            }.resume()
+            
+        }
     
     
     // MARK: - post error
@@ -192,4 +222,15 @@ extension WebAPI {
     }
     return decoded
   }
+}
+
+struct UserLocation: Codable {
+    let discription: String
+    let long: Double
+    let lat: Double
+}
+
+struct LocationResponse: Codable {
+    let accessToken: String?
+    let location: UserLocation
 }

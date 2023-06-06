@@ -65,6 +65,7 @@
 		59A0B4DE2A2016F900250403 /* newJoinCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4DD2A2016F900250403 /* newJoinCard.swift */; };
 		59A0B4E02A20DC4300250403 /* inputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4DF2A20DC4300250403 /* inputField.swift */; };
 		59A0B4E22A21E70800250403 /* newSizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4E12A21E70800250403 /* newSizeDropDown.swift */; };
+		59ABF66A2A2F1FC1005CE373 /* getLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ABF6692A2F1FC1005CE373 /* getLocation.swift */; };
 		F50523D52A2B5405005BC1AC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523D42A2B5405005BC1AC /* Location.swift */; };
 		F50523D72A2B5807005BC1AC /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523D62A2B5807005BC1AC /* ContentView2.swift */; };
 		F50523DA2A2B6905005BC1AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50523D92A2B6905005BC1AC /* CoreLocation.framework */; };
@@ -137,6 +138,7 @@
 		59A0B4DD2A2016F900250403 /* newJoinCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newJoinCard.swift; sourceTree = "<group>"; };
 		59A0B4DF2A20DC4300250403 /* inputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputField.swift; sourceTree = "<group>"; };
 		59A0B4E12A21E70800250403 /* newSizeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSizeDropDown.swift; sourceTree = "<group>"; };
+		59ABF6692A2F1FC1005CE373 /* getLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getLocation.swift; sourceTree = "<group>"; };
 		F50523D42A2B5405005BC1AC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F50523D62A2B5807005BC1AC /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		F50523D92A2B6905005BC1AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -187,6 +189,7 @@
 				23FC81022A15303B0001853B /* SplititF1.entitlements */,
 				231174332A0AB5FB003916F0 /* SplititF1App.swift */,
 				F50523D42A2B5405005BC1AC /* Location.swift */,
+				59ABF6692A2F1FC1005CE373 /* getLocation.swift */,
 				F50523D62A2B5807005BC1AC /* ContentView2.swift */,
 				23CD7CCD2A1A147800260B15 /* ContentView.swift */,
 				23CD7CA32A1A11F000260B15 /* TabBar.swift */,
@@ -481,6 +484,7 @@
 				F5D03D242A2F1F3000636E12 /* Privacy and Policy .swift in Sources */,
 				59A0B4DA2A1FEEB600250403 /* LargeButton.swift in Sources */,
 				23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */,
+				59ABF66A2A2F1FC1005CE373 /* getLocation.swift in Sources */,
 				F50523D52A2B5405005BC1AC /* Location.swift in Sources */,
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,
 				23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */,
