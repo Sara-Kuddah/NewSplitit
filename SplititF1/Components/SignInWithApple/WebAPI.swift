@@ -34,6 +34,8 @@ struct WebAPI {
     let user: UserProfile
   }
 
+    // MARK: - post user
+    
   static func authorizeUsingSIWA(
     identityToken: Data?,
     email: String?,
@@ -81,6 +83,8 @@ struct WebAPI {
     }.resume()
   }
 
+    // MARK: - get user
+    
   static func getProfile(
     completion: @escaping (Result<UserProfile, Error>) -> Void
   ) {
@@ -101,13 +105,73 @@ struct WebAPI {
       do {
         let userResponse: UserResponse = try parseResponse(response, data: data, error: error)
         completion(.success(userResponse.user))
+          
       } catch {
         completion(.failure(error))
       }
     }.resume()
   }
+    
+    // MARK: - POST LOCATION
+    
+    static func postLocation(
+        description: String,
+        long: Double,
+        lat: Double) {
+        
+    }
+    
+    
+    
+    // MARK: - post error
+    
+    static func postOrder(
+        merchantName: String,
+         appName: String,
+         deliveryFee: Int,
+         checkpoint: String,
+         notes: String?,
+         active: Bool?,
+         status: String?,
+        completion: @escaping (Result<order, Error>) -> Void
+    ) {
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        
+        let body = orderReqBody(merchantName: merchantName,
+                                appName: appName,
+                                deliveryFee: deliveryFee,
+                                checkpoint: checkpoint,
+                                notes: notes,
+                                active: active,
+                                status: status)
+        
+        guard let jsonBody = try? JSONEncoder().encode(body) else {
+          completion(.failure(WebAPIError.unableToEncodeJSONData))
+          return
+        }
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/create")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+            do {
+//                let userResponse:
+            }
+        }
+    }
+    
+    
 }
 
+
+// MARK: - error handling
 extension WebAPI {
 
   static func parseResponse<T: Decodable>(_ response: URLResponse?, data: Data?, error: Error?) throws -> T {
