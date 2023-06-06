@@ -2,7 +2,7 @@
 //  LandmarkListView.swift
 //  Places
 //
-//  Created by Mohammad Azam on 7/29/22.
+//  Created by  Abeer  on 7/29/22.
 //
 
 import SwiftUI

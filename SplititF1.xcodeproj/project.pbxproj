@@ -42,7 +42,6 @@
 		23CD7CC22A1A130300260B15 /* myOrderSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBD2A1A130300260B15 /* myOrderSummary.swift */; };
 		23CD7CC32A1A130300260B15 /* copyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CBE2A1A130300260B15 /* copyButton.swift */; };
 		23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CC02A1A130300260B15 /* TimelineTrack.swift */; };
-		23CD7CC62A1A130300260B15 /* MotivationalPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */; };
 		23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CD7CCD2A1A147800260B15 /* ContentView.swift */; };
 		23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DAF6A42A10C77800B68DF4 /* OrderArrived.swift */; };
 		23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EDEB652A0FDFB70096DA21 /* Waiting1.swift */; };
@@ -57,7 +56,13 @@
 		59A0B4DE2A2016F900250403 /* newJoinCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4DD2A2016F900250403 /* newJoinCard.swift */; };
 		59A0B4E02A20DC4300250403 /* inputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4DF2A20DC4300250403 /* inputField.swift */; };
 		59A0B4E22A21E70800250403 /* newSizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4E12A21E70800250403 /* newSizeDropDown.swift */; };
+		F50523D52A2B5405005BC1AC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523D42A2B5405005BC1AC /* Location.swift */; };
+		F50523D72A2B5807005BC1AC /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523D62A2B5807005BC1AC /* ContentView2.swift */; };
+		F50523DA2A2B6905005BC1AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50523D92A2B6905005BC1AC /* CoreLocation.framework */; };
+		F50523DC2A2DC64B005BC1AC /* cardforstatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523DB2A2DC64B005BC1AC /* cardforstatus.swift */; };
 		F5255C152A1C9D6A0073AF14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5255C172A1C9D6A0073AF14 /* Localizable.strings */; };
+		F567FC572A2DC8F1008B134C /* timeline2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F567FC562A2DC8F1008B134C /* timeline2.swift */; };
+		F567FC592A2DCB25008B134C /* MotivationalPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F567FC582A2DCB25008B134C /* MotivationalPopUp.swift */; };
 		F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57B089F2A1F3CC3002A8913 /* NewOrder.swift */; };
 		F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */; };
 /* End PBXBuildFile section */
@@ -99,7 +104,6 @@
 		23CD7CBD2A1A130300260B15 /* myOrderSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myOrderSummary.swift; sourceTree = "<group>"; };
 		23CD7CBE2A1A130300260B15 /* copyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = copyButton.swift; sourceTree = "<group>"; };
 		23CD7CC02A1A130300260B15 /* TimelineTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrack.swift; sourceTree = "<group>"; };
-		23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotivationalPopUp.swift; sourceTree = "<group>"; };
 		23CD7CCD2A1A147800260B15 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23DAF6A42A10C77800B68DF4 /* OrderArrived.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderArrived.swift; sourceTree = "<group>"; };
 		23EDEB652A0FDFB70096DA21 /* Waiting1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waiting1.swift; sourceTree = "<group>"; };
@@ -115,8 +119,14 @@
 		59A0B4DD2A2016F900250403 /* newJoinCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newJoinCard.swift; sourceTree = "<group>"; };
 		59A0B4DF2A20DC4300250403 /* inputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputField.swift; sourceTree = "<group>"; };
 		59A0B4E12A21E70800250403 /* newSizeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newSizeDropDown.swift; sourceTree = "<group>"; };
+		F50523D42A2B5405005BC1AC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F50523D62A2B5807005BC1AC /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		F50523D92A2B6905005BC1AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F50523DB2A2DC64B005BC1AC /* cardforstatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardforstatus.swift; sourceTree = "<group>"; };
 		F5255C162A1C9D6A0073AF14 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5255C182A1C9D9B0073AF14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F567FC562A2DC8F1008B134C /* timeline2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeline2.swift; sourceTree = "<group>"; };
+		F567FC582A2DCB25008B134C /* MotivationalPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationalPopUp.swift; sourceTree = "<group>"; };
 		F57B089F2A1F3CC3002A8913 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sizeDropDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50523DA2A2B6905005BC1AC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +149,7 @@
 				F5255C172A1C9D6A0073AF14 /* Localizable.strings */,
 				231174322A0AB5FB003916F0 /* SplititF1 */,
 				231174312A0AB5FB003916F0 /* Products */,
+				F50523D82A2B6905005BC1AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +166,8 @@
 			children = (
 				23FC81022A15303B0001853B /* SplititF1.entitlements */,
 				231174332A0AB5FB003916F0 /* SplititF1App.swift */,
+				F50523D42A2B5405005BC1AC /* Location.swift */,
+				F50523D62A2B5807005BC1AC /* ContentView2.swift */,
 				23CD7CCD2A1A147800260B15 /* ContentView.swift */,
 				23CD7CA32A1A11F000260B15 /* TabBar.swift */,
 				23CD7CA52A1A120C00260B15 /* OrderHistory .swift */,
@@ -232,7 +246,6 @@
 		59A0B4CD2A1FE9BC00250403 /* To Be Deleted */ = {
 			isa = PBXGroup;
 			children = (
-				23CD7CC12A1A130300260B15 /* MotivationalPopUp.swift */,
 				230520F02A1D3755006ED1D5 /* SaveButton.swift */,
 				230520EE2A1D32D3006ED1D5 /* SkipButton.swift */,
 				23CD7CB32A1A129E00260B15 /* SendButton.swift */,
@@ -246,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
+				F567FC562A2DC8F1008B134C /* timeline2.swift */,
 				59A0B4D92A1FEEB600250403 /* LargeButton.swift */,
 				59A0B4DF2A20DC4300250403 /* inputField.swift */,
 				59A0B4DC2A20069C00250403 /* account */,
@@ -295,6 +309,7 @@
 			children = (
 				23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */,
 				23CD7CB92A1A12EA00260B15 /* joinCard.swift */,
+				F50523DB2A2DC64B005BC1AC /* cardforstatus.swift */,
 				59A0B4DD2A2016F900250403 /* newJoinCard.swift */,
 				230520C22A1C92EB006ED1D5 /* CheckP.swift */,
 				23CD7CB52A1A12A600260B15 /* OpenButton.swift */,
@@ -308,9 +323,18 @@
 				23FC80F82A14A82D0001853B /* AccountInfo.swift */,
 				23CD7CAF2A1A128C00260B15 /* PaymentProfile.swift */,
 				23CD7CA72A1A121B00260B15 /* Profile .swift */,
+				F567FC582A2DCB25008B134C /* MotivationalPopUp.swift */,
 				23CD7CAD2A1A128200260B15 /* MyAccountP.swift */,
 			);
 			path = account;
+			sourceTree = "<group>";
+		};
+		F50523D82A2B6905005BC1AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F50523D92A2B6905005BC1AC /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,7 +413,6 @@
 				23CD7CAC2A1A127300260B15 /* OrderStatusPage.swift in Sources */,
 				23FC80FD2A14BB350001853B /* Splash.swift in Sources */,
 				23297DFF2A18B71A0035658B /* RName.swift in Sources */,
-				23CD7CC62A1A130300260B15 /* MotivationalPopUp.swift in Sources */,
 				23CD7CBC2A1A12F500260B15 /* checkbox.swift in Sources */,
 				59A0B4D42A1FEA9F00250403 /* AppNamePicker.swift in Sources */,
 				23CD7CB22A1A129500260B15 /* JoinButton.swift in Sources */,
@@ -398,6 +421,7 @@
 				23CD7CB02A1A128C00260B15 /* PaymentProfile.swift in Sources */,
 				23CD7CB82A1A12D600260B15 /* CardNewOrder.swift in Sources */,
 				23297E2B2A1902A70035658B /* Mapp.swift in Sources */,
+				F50523D72A2B5807005BC1AC /* ContentView2.swift in Sources */,
 				23CD7CC22A1A130300260B15 /* myOrderSummary.swift in Sources */,
 				59A0B4E02A20DC4300250403 /* inputField.swift in Sources */,
 				230520EF2A1D32D4006ED1D5 /* SkipButton.swift in Sources */,
@@ -407,6 +431,7 @@
 				23CA5FC62A1DE99400289A3B /* editButton.swift in Sources */,
 				59A0B4DA2A1FEEB600250403 /* LargeButton.swift in Sources */,
 				23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */,
+				F50523D52A2B5405005BC1AC /* Location.swift in Sources */,
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,
 				23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */,
 				23FC81042A153BB40001853B /* Order.swift in Sources */,
@@ -426,7 +451,9 @@
 				23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
+				F50523DC2A2DC64B005BC1AC /* cardforstatus.swift in Sources */,
 				23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */,
+				F567FC572A2DC8F1008B134C /* timeline2.swift in Sources */,
 				59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */,
 				23CA5FC42A1DE6AA00289A3B /* PaymentCard.swift in Sources */,
 				59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */,
@@ -435,6 +462,7 @@
 				23CD7CB42A1A129E00260B15 /* SendButton.swift in Sources */,
 				59A0B4E22A21E70800250403 /* newSizeDropDown.swift in Sources */,
 				F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */,
+				F567FC592A2DCB25008B134C /* MotivationalPopUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,9 +604,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = 684Z82SSZ7;
+				DEVELOPMENT_TEAM = T6KTATRLDG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location data to tell you your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -590,7 +619,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Abeer.SplititF1;
+				PRODUCT_BUNDLE_IDENTIFIER = Abeer.SplititF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -607,9 +636,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = 684Z82SSZ7;
+				DEVELOPMENT_TEAM = T6KTATRLDG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location data to tell you your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -621,7 +651,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Abeer.SplititF1;
+				PRODUCT_BUNDLE_IDENTIFIER = Abeer.SplititF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

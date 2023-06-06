@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppNamePicker: View {
     @State public var selection: String = "App Name?"
-    let id = ["Jahez", "The Chefz", "The Chefz", "Hunger Station", "Ninja", "Toyou", "Cari", "Shgardi", "Cofe", "Mr.Mandoob", "Mrsool"]
+    let id = ["Jahez", "The Chefz", "Hunger Station", "Ninja", "Toyou", "Cari", "Shgardi", "Cofe", "Mr.Mandoob", "Mrsool"]
     
     var body: some View {
         

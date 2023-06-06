@@ -46,15 +46,15 @@ struct OrderStatusPage: View {
                     Divider()
                     
                     Text("Order Status")
-                        .padding(.top, 20)
+                        .padding(.top, 30)
                         .padding(.trailing, 195)
                         .font(.system(size: 20, weight: .bold, design: .default))
                         .font(.title)
-                        .padding(.trailing, 50)
+                        .padding(.trailing, 55)
                     Spacer()
+                        .padding(.bottom,10)
                     
-                  
-                    TimelineTrack()
+                    //TimelineTrack()
                     Spacer()
                     myOrderSummary()
                     
@@ -90,7 +90,7 @@ struct OrderStatusPage: View {
                     Divider()
                     
                     
-                   
+                    
                 }
                 Text("Abeer’s Payment Info:")
                     .padding(.top, 20)
@@ -112,7 +112,7 @@ struct OrderStatusPage: View {
                                         .foregroundColor(Color("Color1"))
                                         .padding(.top, 10)
                                     
-                                   
+                                    
                                     Text("STC Pay")
                                         .padding(.top, 50)
                                     Text("Al rajhi")
@@ -141,9 +141,13 @@ struct OrderStatusPage: View {
                                 .foregroundColor(.black)
                                 
                             }
+                            
                         })
                 checkbox()
+                    .padding(.top, 20)
                     .padding(.leading, -180)
+               
+                
                 
             }
         }
@@ -154,4 +158,5 @@ struct OrderStatusPage: View {
             OrderStatusPage()
         }
     }
+    
 }
