@@ -69,7 +69,6 @@
 		F50523D52A2B5405005BC1AC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523D42A2B5405005BC1AC /* Location.swift */; };
 		F50523D72A2B5807005BC1AC /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523D62A2B5807005BC1AC /* ContentView2.swift */; };
 		F50523DA2A2B6905005BC1AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50523D92A2B6905005BC1AC /* CoreLocation.framework */; };
-		F50523DC2A2DC64B005BC1AC /* cardforstatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523DB2A2DC64B005BC1AC /* cardforstatus.swift */; };
 		F5255C152A1C9D6A0073AF14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5255C172A1C9D6A0073AF14 /* Localizable.strings */; };
 		F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57B089F2A1F3CC3002A8913 /* NewOrder.swift */; };
 		F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */; };
@@ -140,7 +139,6 @@
 		F50523D42A2B5405005BC1AC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F50523D62A2B5807005BC1AC /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		F50523D92A2B6905005BC1AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F50523DB2A2DC64B005BC1AC /* cardforstatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardforstatus.swift; sourceTree = "<group>"; };
 		F5255C162A1C9D6A0073AF14 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5255C182A1C9D9B0073AF14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F567FC562A2DC8F1008B134C /* timeline2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeline2.swift; sourceTree = "<group>"; };
@@ -353,7 +351,6 @@
 			children = (
 				23CD7CB72A1A12D600260B15 /* CardNewOrder.swift */,
 				23CD7CB92A1A12EA00260B15 /* joinCard.swift */,
-				F50523DB2A2DC64B005BC1AC /* cardforstatus.swift */,
 				59A0B4DD2A2016F900250403 /* newJoinCard.swift */,
 				230520C22A1C92EB006ED1D5 /* CheckP.swift */,
 				23CD7CB52A1A12A600260B15 /* OpenButton.swift */,
@@ -503,7 +500,6 @@
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
 				59581A402A2C6D02000F80D5 /* File.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
-				F50523DC2A2DC64B005BC1AC /* cardforstatus.swift in Sources */,
 				23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */,
 				59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */,
 				59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */,
