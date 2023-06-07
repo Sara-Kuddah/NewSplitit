@@ -24,18 +24,40 @@ struct ContentView2: View {
                 
                 Text("Longitude: \(locationDataManager.locationManager.location?.coordinate.longitude.description ?? "Error loading")")
                     .onAppear{
+                        
+//                        WebAPI.postLocation(discription: "", long: longitude, lat: latitude) { result in
+//                            switch result {
+//                            case .success(let success):
+//                                print(success)
+//                            case .failure(let failure):
+//                                print(failure)
+//                            }
+//                        }
+                        
+                        
+                        
+                        
                         WebAPI.postLocation(discription: "Alaa",
                                             long: longitude ,
                                             lat: latitude ,
                                             completion: { result in
                             switch result {
-                            case .success(let success):
-                                print("success") // get location
+                            case .success(let location):
+//                                self.showLocation(location: location)
+                                print("failure cause I'm a failure sorry22")
                             case .failure(let failure):
+                                WebAPI.getLocation { result in
+                                    switch result {
+                                    case .success(let success):
+                                        self.showLocation(location: success)
+                                    case .failure(let failure):
+                                        print("faaail")
+                                    }
+                                }
                                 print(type(of: latitude))
                                 print(Double(latitude))
                                 print(longitude)
-                                print("failure cause I'm a failure sorry22")}})
+                                print("failurcccce cause I'm a failure sorry22")}})
                     }
             case .restricted, .denied:  // Location services currently unavailable.
                 // Insert code here of what should happen when Location services are NOT authorized
@@ -48,6 +70,11 @@ struct ContentView2: View {
             }
         }
     }
+    private func showLocation(location: UserLocation) {
+        Text(location.discription)
+        Text("\(location.lat)")
+        Text("\(location.long)")
+    }
     
 }
 
@@ -56,3 +83,5 @@ struct ContentView2_Previews: PreviewProvider {
         ContentView2()
     }
 }
+
+

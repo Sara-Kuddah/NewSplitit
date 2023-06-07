@@ -93,7 +93,7 @@ struct WebAPI {
       completion(.failure(WebAPIError.unauthorized))
       return
     }
-      print(accessToken)
+      
     let session = URLSession.shared
     let url = URL(string: "\(baseURL)/api/users/me")!
     var request = URLRequest(url: url)
@@ -144,14 +144,38 @@ struct WebAPI {
               do {
                 let locationResponse: LocationResponse = try parseResponse(response, data: data, error: error)
 
-                completion(.success(locationResponse.location))
+                  completion(.success(locationResponse.location))
               } catch {
                 completion(.failure(error))
               }
             }.resume()
             
         }
-    
+    // MARK: - GET LOCATION
+    static func getLocation(completion: @escaping (Result<UserLocation, Error>) -> Void){
+        
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/locations/location")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let locationResponse: LocationResponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(locationResponse.location))
+                
+            } catch {
+              completion(.failure(error))
+            }
+          }.resume()
+    }
     
     // MARK: - post error
     
@@ -163,16 +187,16 @@ struct WebAPI {
          notes: String?,
          active: Bool?,
          status: String?,
-        completion: @escaping (Result<order, Error>) -> Void
+        completion: @escaping (Result<OrderReqBody, Error>) -> Void
     ) {
         guard let accessToken = Self.accessToken else {
           completion(.failure(WebAPIError.unauthorized))
           return
         }
         
-        let body = orderReqBody(merchantName: merchantName,
-                                appName: appName,
-                                deliveryFee: deliveryFee,
+        let body = OrderReqBody(merchant_name: merchantName,
+                                app_name: appName,
+                                delivery_fee: deliveryFee,
                                 checkpoint: checkpoint,
                                 notes: notes,
                                 active: active,
@@ -192,10 +216,33 @@ struct WebAPI {
         
         session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
             do {
-//                let userResponse:
+                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
             }
-        }
+        }.resume()
     }
+    
+    // MARK: - POST PAYMENT STC
+    
+    
+    
+    // MARK: - GET PAYMENT STC
+    
+    
+    
+    // MARK: - POST PAYMENT BANK
+    
+    
+    
+    
+    // MARK: - GET PAYMENT BANK
+    
+    
+    // MARK: - PATCH PHONE NUMBER
+    
     
     
 }
@@ -233,4 +280,19 @@ struct UserLocation: Codable {
 struct LocationResponse: Codable {
     let accessToken: String?
     let location: UserLocation
+}
+
+struct OrderReqBody: Codable {
+    let merchant_name: String
+    let app_name: String
+    let delivery_fee: Int
+    let checkpoint: String
+    let notes: String?
+    let active: Bool?
+    let status: String?
+}
+
+struct OrderResponse: Codable {
+    let accessToken: String?
+    let order: OrderReqBody
 }

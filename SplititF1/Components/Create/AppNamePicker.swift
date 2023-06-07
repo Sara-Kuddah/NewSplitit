@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppNamePicker: View {
-    @State public var selection: String = "App Name?"
+    @State public var selection: String
     let id = ["Jahez", "The Chefz", "Hunger Station", "Ninja", "Toyou", "Cari", "Shgardi", "Cofe", "Mr.Mandoob", "Mrsool"]
     
     var body: some View {
@@ -38,6 +38,6 @@ struct AppNamePicker: View {
 
 struct AppNamePicker_Previews: PreviewProvider {
     static var previews: some View {
-        AppNamePicker()
+        AppNamePicker(selection: "Jahez")
     }
 }
