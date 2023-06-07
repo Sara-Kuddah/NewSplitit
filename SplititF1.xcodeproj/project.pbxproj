@@ -70,8 +70,11 @@
 		F50523D72A2B5807005BC1AC /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50523D62A2B5807005BC1AC /* ContentView2.swift */; };
 		F50523DA2A2B6905005BC1AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50523D92A2B6905005BC1AC /* CoreLocation.framework */; };
 		F5255C152A1C9D6A0073AF14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5255C172A1C9D6A0073AF14 /* Localizable.strings */; };
+		F56E3CB92A2F1AC50029B9F0 /* SwiftUIView22.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E3CB82A2F1AC50029B9F0 /* SwiftUIView22.swift */; };
 		F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57B089F2A1F3CC3002A8913 /* NewOrder.swift */; };
 		F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */; };
+		F5D03D242A2F1F3000636E12 /* Privacy and Policy .swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D03D232A2F1F3000636E12 /* Privacy and Policy .swift */; };
+		F5D03D262A2F8E0D00636E12 /* helpandsupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D03D252A2F8E0D00636E12 /* helpandsupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,8 +146,11 @@
 		F5255C182A1C9D9B0073AF14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F567FC562A2DC8F1008B134C /* timeline2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeline2.swift; sourceTree = "<group>"; };
 		F567FC582A2DCB25008B134C /* MotivationalPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationalPopUp.swift; sourceTree = "<group>"; };
+		F56E3CB82A2F1AC50029B9F0 /* SwiftUIView22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView22.swift; sourceTree = "<group>"; };
 		F57B089F2A1F3CC3002A8913 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
 		F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sizeDropDown.swift; sourceTree = "<group>"; };
+		F5D03D232A2F1F3000636E12 /* Privacy and Policy .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Privacy and Policy .swift"; sourceTree = "<group>"; };
+		F5D03D252A2F8E0D00636E12 /* helpandsupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpandsupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				23297E202A1902A70035658B /* Mapp.swift */,
+				F56E3CB82A2F1AC50029B9F0 /* SwiftUIView22.swift */,
 				23297E212A1902A70035658B /* Managers */,
 				23297E232A1902A70035658B /* Models */,
 				23297E252A1902A70035658B /* Extensions */,
@@ -364,6 +371,8 @@
 				23FC80F82A14A82D0001853B /* AccountInfo.swift */,
 				23CD7CAF2A1A128C00260B15 /* PaymentProfile.swift */,
 				23CD7CA72A1A121B00260B15 /* Profile .swift */,
+				F5D03D252A2F8E0D00636E12 /* helpandsupport.swift */,
+				F5D03D232A2F1F3000636E12 /* Privacy and Policy .swift */,
 				F567FC582A2DCB25008B134C /* MotivationalPopUp.swift */,
 				23CD7CAD2A1A128200260B15 /* MyAccountP.swift */,
 			);
@@ -469,8 +478,10 @@
 				230520F12A1D3755006ED1D5 /* SaveButton.swift in Sources */,
 				59A0B4DE2A2016F900250403 /* newJoinCard.swift in Sources */,
 				230520C32A1C92EB006ED1D5 /* CheckP.swift in Sources */,
+				F5D03D262A2F8E0D00636E12 /* helpandsupport.swift in Sources */,
 				590B92A02A2DD7F60026B132 /* OrderT.swift in Sources */,
 				23CA5FC62A1DE99400289A3B /* editButton.swift in Sources */,
+				F5D03D242A2F1F3000636E12 /* Privacy and Policy .swift in Sources */,
 				59A0B4DA2A1FEEB600250403 /* LargeButton.swift in Sources */,
 				23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */,
 				59ABF66A2A2F1FC1005CE373 /* getLocation.swift in Sources */,
@@ -491,6 +502,7 @@
 				590B929E2A2DBD370026B132 /* OrderAPI.swift in Sources */,
 				59581A3C2A2C6511000F80D5 /* SignInWithAppleDelegates.swift in Sources */,
 				23297E2E2A1902A70035658B /* MKCoordinateRegion+Extensions.swift in Sources */,
+				F56E3CB92A2F1AC50029B9F0 /* SwiftUIView22.swift in Sources */,
 				23297E2C2A1902A70035658B /* LocationManager.swift in Sources */,
 				23297E2D2A1902A70035658B /* Landmark.swift in Sources */,
 				230A1E302A0B6C9100832244 /* Form.swift in Sources */,
@@ -652,7 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = 686H3J2SCC;
+				DEVELOPMENT_TEAM = T6KTATRLDG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location data to tell you your location";
@@ -667,7 +679,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AlaaAlabdullah.splitit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dina.splitit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -685,7 +697,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = 686H3J2SCC;
+				DEVELOPMENT_TEAM = T6KTATRLDG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location data to tell you your location";
@@ -700,7 +712,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AlaaAlabdullah.splitit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dina.splitit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
