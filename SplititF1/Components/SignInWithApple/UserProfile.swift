@@ -12,4 +12,5 @@ struct UserProfile: Codable {
   let email: String
   let firstName: String?
   let lastName: String?
+    
 }
