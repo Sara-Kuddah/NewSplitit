@@ -23,6 +23,10 @@
 		23297E2E2A1902A70035658B /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23297E262A1902A70035658B /* MKCoordinateRegion+Extensions.swift */; };
 		23297E2F2A1902A70035658B /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23297E282A1902A70035658B /* LandmarkListView.swift */; };
 		23297E302A1902A70035658B /* LocalSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23297E2A2A1902A70035658B /* LocalSearchService.swift */; };
+		23568BA72A30EC110063C061 /* Check1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23568BA62A30EC110063C061 /* Check1.swift */; };
+		23568BAD2A30F0B90063C061 /* NamePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23568BAC2A30F0B80063C061 /* NamePopupView.swift */; };
+		23568BAF2A30F1060063C061 /* BottomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23568BAE2A30F1060063C061 /* BottomPopupView.swift */; };
+		23568BB12A30F11C0063C061 /* PopupModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23568BB02A30F11C0063C061 /* PopupModifier.swift */; };
 		23CA5FC42A1DE6AA00289A3B /* PaymentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */; };
 		23CA5FC62A1DE99400289A3B /* editButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC52A1DE99400289A3B /* editButton.swift */; };
 		23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */; };
@@ -95,6 +99,10 @@
 		23297E262A1902A70035658B /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 		23297E282A1902A70035658B /* LandmarkListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
 		23297E2A2A1902A70035658B /* LocalSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSearchService.swift; sourceTree = "<group>"; };
+		23568BA62A30EC110063C061 /* Check1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check1.swift; sourceTree = "<group>"; };
+		23568BAC2A30F0B80063C061 /* NamePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamePopupView.swift; sourceTree = "<group>"; };
+		23568BAE2A30F1060063C061 /* BottomPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomPopupView.swift; sourceTree = "<group>"; };
+		23568BB02A30F11C0063C061 /* PopupModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupModifier.swift; sourceTree = "<group>"; };
 		23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCard.swift; sourceTree = "<group>"; };
 		23CA5FC52A1DE99400289A3B /* editButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editButton.swift; sourceTree = "<group>"; };
 		23CA5FC72A1E006200289A3B /* OrderConfirmed  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderConfirmed  .swift"; sourceTree = "<group>"; };
@@ -333,6 +341,10 @@
 				59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */,
 				59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */,
 				23FC81032A153BB40001853B /* Order.swift */,
+				23568BA62A30EC110063C061 /* Check1.swift */,
+				23568BAC2A30F0B80063C061 /* NamePopupView.swift */,
+				23568BAE2A30F1060063C061 /* BottomPopupView.swift */,
+				23568BB02A30F11C0063C061 /* PopupModifier.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -471,6 +483,7 @@
 				23CD7CB02A1A128C00260B15 /* PaymentProfile.swift in Sources */,
 				23CD7CB82A1A12D600260B15 /* CardNewOrder.swift in Sources */,
 				23297E2B2A1902A70035658B /* Mapp.swift in Sources */,
+				23568BAD2A30F0B90063C061 /* NamePopupView.swift in Sources */,
 				F50523D72A2B5807005BC1AC /* ContentView2.swift in Sources */,
 				23CD7CC22A1A130300260B15 /* myOrderSummary.swift in Sources */,
 				59A0B4E02A20DC4300250403 /* inputField.swift in Sources */,
@@ -483,6 +496,7 @@
 				23CA5FC62A1DE99400289A3B /* editButton.swift in Sources */,
 				F5D03D242A2F1F3000636E12 /* Privacy and Policy .swift in Sources */,
 				59A0B4DA2A1FEEB600250403 /* LargeButton.swift in Sources */,
+				23568BB12A30F11C0063C061 /* PopupModifier.swift in Sources */,
 				23DAF6A52A10C77800B68DF4 /* OrderArrived.swift in Sources */,
 				59ABF66A2A2F1FC1005CE373 /* getLocation.swift in Sources */,
 				F50523D52A2B5405005BC1AC /* Location.swift in Sources */,
@@ -505,11 +519,13 @@
 				F56E3CB92A2F1AC50029B9F0 /* SwiftUIView22.swift in Sources */,
 				23297E2C2A1902A70035658B /* LocationManager.swift in Sources */,
 				23297E2D2A1902A70035658B /* Landmark.swift in Sources */,
+				23568BAF2A30F1060063C061 /* BottomPopupView.swift in Sources */,
 				230A1E302A0B6C9100832244 /* Form.swift in Sources */,
 				F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */,
 				23CD7CC32A1A130300260B15 /* copyButton.swift in Sources */,
 				23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
+				23568BA72A30EC110063C061 /* Check1.swift in Sources */,
 				59581A402A2C6D02000F80D5 /* File.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
 				23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */,
