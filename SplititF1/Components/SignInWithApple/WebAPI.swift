@@ -225,6 +225,88 @@ struct WebAPI {
         }.resume()
     }
     
+    // MARK: - JOIN ORDER - POST
+    
+    static func joinOrder(orderID: UUID, completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+        
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        
+        let body = OrderID(orderID: orderID)
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/join/\(body)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+          }.resume()
+    }
+    
+    // MARK: - GET MY ACTIVE ORDER
+    static func getMyActiveOrder(completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/myactiveorder")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+          }.resume()
+    }
+    
+    // MARK: - GET RANDOM ORDERS - 10
+    static func getRandomOrders(completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+        
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/lastrandomorders")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+          }.resume()
+        
+    }
+    
+    // MARK: - GET ALL ORDERS AROUND ME
+    
+    
+    
+    // MARK: - GET MY ORDERS
+    
+    
     // MARK: - POST PAYMENT STC
     
     
@@ -295,4 +377,8 @@ struct OrderReqBody: Codable {
 struct OrderResponse: Codable {
     let accessToken: String?
     let order: OrderReqBody
+}
+
+struct OrderID: Codable {
+    let orderID: UUID
 }
