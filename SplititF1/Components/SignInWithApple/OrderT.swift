@@ -10,10 +10,10 @@ import Foundation
 
 struct order: Codable {
     let id: UUID
-    let location: Location
-    let merchantName: String
-    let appName: String
-    let deliveryFee: Int
+    let locationID: Location
+    let merchant_name: String
+    let app_name: String
+    let delivery_fee: Int
     let checkpoint: String
     let notes: String?
     let active: Bool?
@@ -22,15 +22,7 @@ struct order: Codable {
     let createdAt: Date?
 }
 
-struct orderReqBody: Codable {
-    let merchantName: String
-    let appName: String
-    let deliveryFee: Int
-    let checkpoint: String
-    let notes: String?
-    let active: Bool?
-    let status: String?
-}
+
 
 // MARK: - Location
 struct Location: Codable{

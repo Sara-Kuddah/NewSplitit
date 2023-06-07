@@ -93,7 +93,7 @@ struct WebAPI {
       completion(.failure(WebAPIError.unauthorized))
       return
     }
-      print(accessToken)
+      
     let session = URLSession.shared
     let url = URL(string: "\(baseURL)/api/users/me")!
     var request = URLRequest(url: url)
@@ -144,14 +144,38 @@ struct WebAPI {
               do {
                 let locationResponse: LocationResponse = try parseResponse(response, data: data, error: error)
 
-                completion(.success(locationResponse.location))
+                  completion(.success(locationResponse.location))
               } catch {
                 completion(.failure(error))
               }
             }.resume()
             
         }
-    
+    // MARK: - GET LOCATION
+    static func getLocation(completion: @escaping (Result<UserLocation, Error>) -> Void){
+        
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/locations/location")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let locationResponse: LocationResponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(locationResponse.location))
+                
+            } catch {
+              completion(.failure(error))
+            }
+          }.resume()
+    }
     
     // MARK: - post error
     
@@ -163,16 +187,16 @@ struct WebAPI {
          notes: String?,
          active: Bool?,
          status: String?,
-        completion: @escaping (Result<order, Error>) -> Void
+        completion: @escaping (Result<OrderReqBody, Error>) -> Void
     ) {
         guard let accessToken = Self.accessToken else {
           completion(.failure(WebAPIError.unauthorized))
           return
         }
         
-        let body = orderReqBody(merchantName: merchantName,
-                                appName: appName,
-                                deliveryFee: deliveryFee,
+        let body = OrderReqBody(merchant_name: merchantName,
+                                app_name: appName,
+                                delivery_fee: deliveryFee,
                                 checkpoint: checkpoint,
                                 notes: notes,
                                 active: active,
@@ -192,16 +216,269 @@ struct WebAPI {
         
         session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
             do {
-//                let userResponse:
+                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
             }
+        }.resume()
+    }
+    
+    // MARK: - POST PAYMENT STC
+    
+    static func poststcpayments(
+    phone : String? ,
+        completion: @escaping (Result<Stcpayments, Error>) -> Void) {
+            
+            guard let accessToken = Self.accessToken else {
+                completion(.failure(WebAPIError.unauthorized))
+                return
+            }
+            let body = Stcpayments(phone: phone )
+            
+            guard let jsonBody = try? JSONEncoder().encode(body) else {
+              completion(.failure(WebAPIError.unableToEncodeJSONData))
+              return
+            }
+            let session = URLSession.shared
+            let url = URL(string: "\(baseURL)/api/stcpayments/create")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+              do {
+                let stcpaymentsResponse: Stcpaymentsresponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(stcpaymentsResponse.stcpayments))
+              } catch {
+                completion(.failure(error))
+              }
+            }.resume()
+            
         }
+
+    // MARK: - GET PAYMENT STC
+    
+    static func getstcpayments(completion: @escaping (Result<Stcpayments, Error>) -> Void){
+        
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/stcpayments/stcpayment")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let stcpaymentsresponse: Stcpaymentsresponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(stcpaymentsresponse.stcpayments))
+                
+            } catch {
+              completion(.failure(error))
+            }
+          }.resume()
+    }
+    
+    // MARK: - POST PAYMENT BANK
+    
+    static func postbankpayments(
+        phone : String?,
+         Bname : String,
+         iban : Int,
+         account : String,
+    
+        completion: @escaping (Result<Bankpayments, Error>) -> Void) {
+            
+            guard let accessToken = Self.accessToken else {
+                completion(.failure(WebAPIError.unauthorized))
+                return
+            }
+            let body = Bankpayments(phone: phone , Bname:Bname ,iban: iban, account: account)
+            
+            guard let jsonBody = try? JSONEncoder().encode(body) else {
+              completion(.failure(WebAPIError.unableToEncodeJSONData))
+              return
+            }
+            let session = URLSession.shared
+            let url = URL(string: "\(baseURL)/api/bankpayments/create")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+              do {
+                let bankpaymentsresponse: Bankpaymentsresponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(bankpaymentsresponse.bankpayments))
+              } catch {
+                completion(.failure(error))
+              }
+            }.resume()
+            
+        }
+    
+    
+    
+    // MARK: - GET PAYMENT BANK
+    
+    static func getbankpayments(completion: @escaping (Result<Bankpayments, Error>) -> Void){
+        
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/bankpayments/bankpayment")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let bankpaymentsresponse: Bankpaymentsresponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(bankpaymentsresponse.bankpayments))
+                
+            } catch {
+              completion(.failure(error))
+            }
+          }.resume()
     }
     
     
+    // MARK: - PATCH PHONE NUMBER
+    
+    static func PatchPhone(
+    
+      phone: String?,
+    
+        completion: @escaping (Result<Addphone, Error>) -> Void) {
+            
+            guard let accessToken = Self.accessToken else {
+                completion(.failure(WebAPIError.unauthorized))
+                return
+            }
+            let body = Addphone(phone: phone)
+            
+            guard let jsonBody = try? JSONEncoder().encode(body) else {
+              completion(.failure(WebAPIError.unableToEncodeJSONData))
+              return
+            }
+            let session = URLSession.shared
+            let url = URL(string: "\(baseURL)/api/users/me/addphone")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+              do {
+                let addphoneresponse: Addphoneresponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(addphoneresponse.addphone))
+              } catch {
+                completion(.failure(error))
+              }
+            }
+            .resume()
+            
+        }
+    // MARK: - PATCH STC PAYMENT
+    
+    static func PatchStcpayments(
+    
+      phone: String?,
+    
+        completion: @escaping (Result<Stcpayments, Error>) -> Void) {
+            
+            guard let accessToken = Self.accessToken else {
+                completion(.failure(WebAPIError.unauthorized))
+                return
+            }
+            let body = Stcpayments(phone: phone)
+            
+            guard let jsonBody = try? JSONEncoder().encode(body) else {
+              completion(.failure(WebAPIError.unableToEncodeJSONData))
+              return
+            }
+            let session = URLSession.shared
+            let url = URL(string: "\(baseURL)/api/stcpayments/stcpayment")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+              do {
+                let stcpaymentsresponse: Stcpaymentsresponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(stcpaymentsresponse.stcpayments))
+              } catch {
+                completion(.failure(error))
+              }
+            }
+            .resume()
+            
+     
+        }
+    // MARK: - PATCH BANK PAYMENT
+    static func PatchBankpayments(
+    
+     phone : String?,
+    Bname : String,
+    iban : Int,
+     account : String,
+    
+    
+        completion: @escaping (Result<Bankpayments, Error>) -> Void) {
+            
+            guard let accessToken = Self.accessToken else {
+                completion(.failure(WebAPIError.unauthorized))
+                return
+            }
+            let body = Bankpayments(phone: phone, Bname: Bname, iban: iban, account: account)
+            
+            guard let jsonBody = try? JSONEncoder().encode(body) else {
+              completion(.failure(WebAPIError.unableToEncodeJSONData))
+              return
+            }
+            let session = URLSession.shared
+            let url = URL(string: "\(baseURL)/api/bankpayments/bankpayment")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+              do {
+                let bankpaymentsresponse: Bankpaymentsresponse = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(bankpaymentsresponse.bankpayments))
+              } catch {
+                completion(.failure(error))
+              }
+            }
+            .resume()
+            
+     
+        }
 }
 
 
+
+
 // MARK: - error handling
+
 extension WebAPI {
 
   static func parseResponse<T: Decodable>(_ response: URLResponse?, data: Data?, error: Error?) throws -> T {
@@ -233,4 +510,48 @@ struct UserLocation: Codable {
 struct LocationResponse: Codable {
     let accessToken: String?
     let location: UserLocation
+}
+
+struct OrderReqBody: Codable {
+    let merchant_name: String
+    let app_name: String
+    let delivery_fee: Int
+    let checkpoint: String
+    let notes: String?
+    let active: Bool?
+    let status: String?
+}
+
+struct OrderResponse: Codable {
+    let accessToken: String?
+    let order: OrderReqBody
+}
+ 
+struct Stcpayments:  Codable {
+    let phone : String?
+}
+struct Stcpaymentsresponse: Codable {
+    let accessToken: String?
+    let stcpayments: Stcpayments
+}
+
+struct Bankpayments: Codable {
+    let phone : String?
+    let Bname : String
+    let iban : Int
+    let account : String
+    
+}
+struct Bankpaymentsresponse: Codable {
+    let accessToken: String?
+    let bankpayments: Bankpayments
+}
+
+struct Addphone: Codable {
+    let phone: String?
+}
+
+struct Addphoneresponse: Codable {
+    let accessToken: String?
+    let addphone: Addphone
 }

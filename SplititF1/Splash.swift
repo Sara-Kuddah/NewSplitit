@@ -27,6 +27,7 @@ struct Splash: View {
                     Onboarding()
                 } else {
                     if showMap {
+//                        TabBar()
                         ContentView2()
                     } else {
                         TabBar()

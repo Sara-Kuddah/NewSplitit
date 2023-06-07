@@ -44,7 +44,7 @@ struct Form: View {
                     Divider()
                 VStack {
                         VStack{
-                            AppNamePicker()
+                            AppNamePicker(selection: "Jahez")
                             
                         }
       
@@ -74,7 +74,7 @@ struct Form: View {
                                     .stroke(Color("Color1"))  )
                         }
                     VStack(alignment: .leading){
-                            Text("Check Point Fee")
+                            Text("Check Point")
                                 .font(.system(size: 18))
                                 .fontWeight(.medium)
                             TextField("Where others will find the order ? ", text: $checkP)
@@ -104,6 +104,22 @@ struct Form: View {
                     .padding()
                     VStack{
                         LargeButton(title: "Send") {
+                            guard !DeliveryF.isEmpty else { return }
+                            let deliveryFeeInt = Int(DeliveryF)
+                            WebAPI.postOrder(merchantName: restaurantN,
+                                             appName: appN,
+                                             deliveryFee: deliveryFeeInt ?? 0,
+                                             checkpoint: checkP,
+                                             notes: Notes,
+                                             active: true,
+                                             status: "waiting") { result in
+                                switch result {
+                                case .success(_):
+                                    print("order sent")
+                                case .failure(_):
+                                    print("fail")
+                                }
+                            }
                             showOrder = true
                         }
                         .fullScreenCover(isPresented: $showOrder) {
