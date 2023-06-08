@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OrderConfirmed__: View {
     @State private var showingAlert = false
+    @State var isPresented = false
     var body: some View {
         NavigationView {
             VStack{
@@ -62,27 +63,48 @@ struct OrderConfirmed__: View {
                         .padding(.top, 10.0)
                 }
                 
+//                ZStack {
+////                    Color.white.ignoresSafeArea()
+//
+//                    Button("OrderArrived") {
+//                        isPresented = true
+//                    }//.bold()
+//                        .foregroundColor(.black)
+//                        .frame(width: 200)
+//                        .frame(height: 50)
+//                        .background(Color(.orange))
+//                        .cornerRadius(10)
+//                }
+//                .padding(.trailing, -170.0)
+//                                    .padding(.top, -330.0)
+//                .popup(isPresented: $isPresented) {
+//                    BottomPopupView {
+//                        NamePopupView(isPresented: $isPresented)
+//                    }
+//                }
                 HStack{
-                    
+
                     Button {
-                        showingAlert = true
-                        
+                        //showingAlert = true
+
                     } label: {
-                        Text("Order Arrived")
-                        
-                            .bold()
-                            .foregroundColor(.black)
-                            .frame(width: 200)
-                            .frame(height: 50)
-                            .background(Color("Color1"))
-                            .cornerRadius(10)
-                            .alert("Please Confirm who have payed you ", isPresented: $showingAlert) {
-                                
-                                VStack{
-                                    
-                                    Button("OK", role: .cancel) { }
-                                }
-                            }
+                        NavigationLink(destination: TabBar()) {
+                            Text("Order Arrived")
+                            
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: 200)
+                                .frame(height: 50)
+                                .background(Color("Color1"))
+                                .cornerRadius(10)
+                        }
+//                            .alert("Please Confirm who have payed you ", isPresented: $showingAlert) {
+//
+//                                VStack{
+//
+//                                    Button("OK", role: .cancel) { }
+//                                }
+//                            }
                     }
                     .padding(.trailing, -170.0)
                     .padding(.top, -330.0)
@@ -139,6 +161,9 @@ struct OrderConfirmed__: View {
 
 struct OrderConfirmed___Previews: PreviewProvider {
     static var previews: some View {
-        OrderConfirmed__()
+        Group {
+            OrderConfirmed__()
+            OrderConfirmed__(isPresented: true)
+        }
     }
 }

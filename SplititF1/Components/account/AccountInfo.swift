@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct AccountInfo: View {
+    @StateObject var locationDataManager = LocationDataManager()
     @State var PhoneN: String = ""
     @State var BankN: String = ""
     @State var IBAN: String = ""
     @State var STCp: String = ""
-    @State var checkP: String = ""
-    @State var note: String = ""
     @State var AccountN: String = ""
-    @State var firstMarked = false
-    
-    @State var thirdMarked = false
-    @State private var showTabBar = false
+//    @State var firstMarked = false
+//
+//    @State var thirdMarked = false
+    @AppStorage("showTabBar") var showTabBar: Bool = false
+    @AppStorage("showForm") var showForm: Bool = false
     var body: some View {
         NavigationStack {
             ScrollView{
@@ -134,6 +134,58 @@ struct AccountInfo: View {
                     VStack{
                         
                         LargeButton(title: "Save") {
+                            switch locationDataManager.locationManager.authorizationStatus {
+                            case .authorizedWhenInUse:  // Location services are available.
+                                // Insert code here of what should happen when Location services are authorized
+                                
+                                let longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
+                                let latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
+                                
+                                        WebAPI.postLocation(discription: "Alaa",
+                                                            long: longitude ,
+                                                            lat: latitude ,
+                                                            completion: { result in
+                                            switch result {
+                                            case .success(_):
+                //                                self.showLocation(location: location)
+                                                print("failure cause I'm a failure sorry22")
+                                            case .failure(_):
+                                                print("I might be success")
+                                                }})
+                                    
+                            case .restricted, .denied:  // Location services currently unavailable.
+                                // Insert code here of what should happen when Location services are NOT authorized
+                               print("restricted")
+                                break
+                            case .notDetermined:        // Authorization not determined yet.
+                                print("not determined")
+                               break
+                            default:
+                                break
+                            }
+                            
+                            if !STCp.isEmpty {
+                                WebAPI.postStcPayments(phone: STCp) { result in
+                                    switch result {
+                                    case .success(let success):
+                                        print("posted stc", success)
+                                    case .failure(let failure):
+                                        print("error stc", failure)
+                                    }
+                                }
+                            }
+                            
+                            if !BankN.isEmpty && !IBAN.isEmpty {
+                                WebAPI.postbankpayments(phone: PhoneN, bname: BankN, iban: IBAN, account: AccountN) { result in
+                                    switch result {
+                                    case .success(let success):
+                                        print("posted bank", success)
+                                    case .failure(let failure):
+                                        print("error bank", failure)
+                                    }
+                                }
+                            }
+                            showForm = false
                             showTabBar = true
                         }
                         .fullScreenCover(isPresented: $showTabBar) {

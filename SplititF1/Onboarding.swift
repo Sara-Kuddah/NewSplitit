@@ -16,7 +16,7 @@ struct Onboarding: View {
     @AppStorage("userId") var usertId: String = ""
     
     @AppStorage("isUserOnboarded") var isUserOnboarded: Bool = false
-    @AppStorage("showMap") var showMap: Bool = false
+    @AppStorage("showForm") var showForm: Bool = false
     @AppStorage("showTabBar") var showTabBar: Bool = false
 //    @State private var showTabBar = false
 //    @State private var showMap = false
@@ -46,8 +46,8 @@ struct Onboarding: View {
                       .frame(height: 50)
                       .onTapGesture(perform: showAppleLogin)
                       .padding()
-                      .fullScreenCover(isPresented: $showMap) {
-                          TabBar()
+                      .fullScreenCover(isPresented: $showForm) {
+                          AccountInfo()
                       }
                     LargeButton(title: "Skip") {
                         showTabBar = true
@@ -74,7 +74,7 @@ struct Onboarding: View {
       appleSignInDelegates = SignInWithAppleDelegates(window: window) { success in
         switch success {
         case .success(let profile): self.showProfileAlert(profile: profile)
-            showMap = true
+            showForm = true
         case .failure(let error): self.showErrorAlert(error: error)
         }
       }

@@ -13,7 +13,7 @@ struct Splash: View {
     @State private var size = 0.8
     @State private var opacity = 0.5
     @AppStorage("isUserOnboarded") var isUserOnboarded: Bool = false
-    @AppStorage("showMap") var showMap: Bool = false
+    @AppStorage("showForm") var showForm: Bool = false
     @AppStorage("showTabBar") var showTabBar: Bool = false
     var body: some View {
         ZStack{
@@ -26,10 +26,13 @@ struct Splash: View {
                 if !isUserOnboarded {
                     Onboarding()
                 } else {
-                    if showMap {
+                    if showForm {
 //                        TabBar()
-                        ContentView2()
-                    } else {
+//                        ContentView2()
+                        // if user don' have payment info
+                        AccountInfo()
+                        // else tab bar
+                    } else if showTabBar {
                         TabBar()
                     }
                 }

@@ -10,6 +10,7 @@ struct ContentView: View {
     @State private var isExpanded = false
     @State var showTabBar: Bool = false
     @State private var isPresentedFullScreenCover = false
+    @State var ordersCount = Int()
     init() {
         UIScrollView.appearance().bounces = false
     }
@@ -69,10 +70,20 @@ struct ContentView: View {
                 }
                 
             }
-            
+//            .onAppear{
+//                WebAPI.getRandomOrders { res in
+//                    switch res {
+//                    case .success(let success):
+//                        self.ordersCount = success.count
+//                    case .failure(let failure):
+//                        <#code#>
+//                    }
+//                }
+//            }
            
         }
         .navigationBarBackButtonHidden(true)
+        
     }
        
     struct ContentView_Previews: PreviewProvider {

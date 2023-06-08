@@ -75,7 +75,7 @@ struct WebAPI {
       do {
         let userResponse: UserResponse = try parseResponse(response, data: data, error: error)
         accessToken = userResponse.accessToken
-
+          UserDefaults.standard.set(self.accessToken, forKey: "accessToken")
         completion(.success(userResponse.user))
       } catch {
         completion(.failure(error))
@@ -90,6 +90,8 @@ struct WebAPI {
   ) {
 
     guard let accessToken = Self.accessToken else {
+        // if not in core data
+        
       completion(.failure(WebAPIError.unauthorized))
       return
     }
@@ -121,6 +123,7 @@ struct WebAPI {
         completion: @escaping (Result<UserLocation, Error>) -> Void) {
             
             guard let accessToken = Self.accessToken else {
+                
                 completion(.failure(WebAPIError.unauthorized))
                 return
             }
@@ -189,7 +192,22 @@ struct WebAPI {
          status: String?,
         completion: @escaping (Result<OrderReqBody, Error>) -> Void
     ) {
-        guard let accessToken = Self.accessToken else {
+//        getProfile { result in
+//            switch result {
+//            case .success(let success):
+//                print( success.id)
+//
+//            case .failure(let failure):
+//                print("get profile",failure.localizedDescription)
+//                print("access token", accessToken ?? "none")
+//                print("access token", accessToken?.description ?? "none")
+//                print("access token", self.accessToken ?? "nonee")
+//                print("access token", self.accessToken?.count ?? "nonee")
+//            }
+//        }
+        guard let accessToken = self.accessToken
+        else {
+            print("hshshsysj",UserDefaults.standard.string(forKey: "accessToken") ?? "line 210")
           completion(.failure(WebAPIError.unauthorized))
           return
         }
@@ -225,17 +243,99 @@ struct WebAPI {
         }.resume()
     }
     
+    // MARK: - JOIN ORDER - POST
+    
+    static func joinOrder(orderID: UUID, completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+        
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        
+        let body = OrderID(orderID: orderID)
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/join/\(body)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+          }.resume()
+    }
+    
+    // MARK: - GET MY ACTIVE ORDER
+    static func getMyActiveOrder(completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+        guard let accessToken = Self.accessToken else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/myactiveorder")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+          }.resume()
+    }
+    
+    // MARK: - GET RANDOM ORDERS - 10
+    static func getRandomOrders(completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+        
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/lastrandomorders")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+          }.resume()
+        
+    }
+    
+    // MARK: - GET ALL ORDERS AROUND ME
+    
+    
+    
+    // MARK: - GET MY ORDERS
+    
+    
     // MARK: - POST PAYMENT STC
     
-    static func poststcpayments(
+    static func postStcPayments(
     phone : String? ,
-        completion: @escaping (Result<Stcpayments, Error>) -> Void) {
+        completion: @escaping (Result<StcPayments, Error>) -> Void) {
             
             guard let accessToken = Self.accessToken else {
                 completion(.failure(WebAPIError.unauthorized))
                 return
             }
-            let body = Stcpayments(phone: phone )
+            let body = StcPayments(phone: phone )
             
             guard let jsonBody = try? JSONEncoder().encode(body) else {
               completion(.failure(WebAPIError.unableToEncodeJSONData))
@@ -250,9 +350,9 @@ struct WebAPI {
             
             session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
               do {
-                let stcpaymentsResponse: Stcpaymentsresponse = try parseResponse(response, data: data, error: error)
+                let stcPaymentsResponse: Stcpaymentsresponse = try parseResponse(response, data: data, error: error)
 
-                  completion(.success(stcpaymentsResponse.stcpayments))
+                  completion(.success(stcPaymentsResponse.stcPayments))
               } catch {
                 completion(.failure(error))
               }
@@ -262,7 +362,7 @@ struct WebAPI {
 
     // MARK: - GET PAYMENT STC
     
-    static func getstcpayments(completion: @escaping (Result<Stcpayments, Error>) -> Void){
+    static func getstcpayments(completion: @escaping (Result<StcPayments, Error>) -> Void){
         
         guard let accessToken = Self.accessToken else {
           completion(.failure(WebAPIError.unauthorized))
@@ -279,7 +379,7 @@ struct WebAPI {
             do {
                 let stcpaymentsresponse: Stcpaymentsresponse = try parseResponse(response, data: data, error: error)
 
-                  completion(.success(stcpaymentsresponse.stcpayments))
+                  completion(.success(stcpaymentsresponse.stcPayments))
                 
             } catch {
               completion(.failure(error))
@@ -290,18 +390,17 @@ struct WebAPI {
     // MARK: - POST PAYMENT BANK
     
     static func postbankpayments(
-        phone : String?,
-         Bname : String,
-         iban : Int,
-         account : String,
-    
+        phone: String?,
+         bname: String,
+         iban: String,
+         account: String?,
         completion: @escaping (Result<Bankpayments, Error>) -> Void) {
             
             guard let accessToken = Self.accessToken else {
                 completion(.failure(WebAPIError.unauthorized))
                 return
             }
-            let body = Bankpayments(phone: phone , Bname:Bname ,iban: iban, account: account)
+            let body = Bankpayments(phone: phone, bname: bname, iban: iban, account: account)
             
             guard let jsonBody = try? JSONEncoder().encode(body) else {
               completion(.failure(WebAPIError.unableToEncodeJSONData))
@@ -399,13 +498,13 @@ struct WebAPI {
     
       phone: String?,
     
-        completion: @escaping (Result<Stcpayments, Error>) -> Void) {
+        completion: @escaping (Result<StcPayments, Error>) -> Void) {
             
             guard let accessToken = Self.accessToken else {
                 completion(.failure(WebAPIError.unauthorized))
                 return
             }
-            let body = Stcpayments(phone: phone)
+            let body = StcPayments(phone: phone)
             
             guard let jsonBody = try? JSONEncoder().encode(body) else {
               completion(.failure(WebAPIError.unableToEncodeJSONData))
@@ -422,7 +521,7 @@ struct WebAPI {
               do {
                 let stcpaymentsresponse: Stcpaymentsresponse = try parseResponse(response, data: data, error: error)
 
-                  completion(.success(stcpaymentsresponse.stcpayments))
+                  completion(.success(stcpaymentsresponse.stcPayments))
               } catch {
                 completion(.failure(error))
               }
@@ -434,10 +533,10 @@ struct WebAPI {
     // MARK: - PATCH BANK PAYMENT
     static func PatchBankpayments(
     
-     phone : String?,
-    Bname : String,
-    iban : Int,
-     account : String,
+     phone: String?,
+    bname: String,
+    iban: String,
+     account: String?,
     
     
         completion: @escaping (Result<Bankpayments, Error>) -> Void) {
@@ -446,7 +545,7 @@ struct WebAPI {
                 completion(.failure(WebAPIError.unauthorized))
                 return
             }
-            let body = Bankpayments(phone: phone, Bname: Bname, iban: iban, account: account)
+            let body = Bankpayments(phone: phone, bname: bname, iban: iban, account: account)
             
             guard let jsonBody = try? JSONEncoder().encode(body) else {
               completion(.failure(WebAPIError.unableToEncodeJSONData))
@@ -527,19 +626,19 @@ struct OrderResponse: Codable {
     let order: OrderReqBody
 }
  
-struct Stcpayments:  Codable {
+struct StcPayments:  Codable {
     let phone : String?
 }
 struct Stcpaymentsresponse: Codable {
     let accessToken: String?
-    let stcpayments: Stcpayments
+    let stcPayments: StcPayments
 }
 
 struct Bankpayments: Codable {
-    let phone : String?
-    let Bname : String
-    let iban : Int
-    let account : String
+    let phone: String?
+    let bname: String
+    let iban: String
+    let account: String?
     
 }
 struct Bankpaymentsresponse: Codable {
@@ -554,4 +653,7 @@ struct Addphone: Codable {
 struct Addphoneresponse: Codable {
     let accessToken: String?
     let addphone: Addphone
+}
+struct OrderID: Codable {
+    let orderID: UUID
 }
