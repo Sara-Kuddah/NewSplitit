@@ -25,7 +25,14 @@ struct Waiting1: View {
         return String(format: "%02i:%02i" , minutes,
                       seconds)
     }
-    @State private var isPresentedFullScreenCover = false
+//    @State private var isPresentedFullScreenCover = false
+    @State var appN = String()
+    @State var merN = String()
+    @State var delFe = String()
+    @State var payMS = String()
+    @State var payMB = String()
+    @State var cheP = String()
+    @State var status = String()
     var body: some View {
         NavigationView {
             VStack {
@@ -41,12 +48,29 @@ struct Waiting1: View {
                     }
                     Spacer()
                     VStack(alignment: .center, spacing: 2) {
-                        Text("McDonald's")
+                        Text(!merN.isEmpty ? "\(merN)" : "McDonald's")
                             .font(.system(size: 25, weight: .bold, design: .default))
-                        Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
-                            .font(.system(size: 13, weight: .regular, design: .default))
-                            .foregroundColor(.secondary)
-                        
+                        HStack {
+                            Text(!delFe.isEmpty ? "\(delFe)SR" : "20SR")
+                                .font(.system(size: 13, weight: .regular, design: .default))
+                                .foregroundColor(.secondary)
+                            
+                            Text(!appN.isEmpty ? "\(appN)" : "Jahez")
+                                .font(.system(size: 13, weight: .regular, design: .default))
+                                .foregroundColor(.secondary)
+                            
+                            Text(!payMB.isEmpty ? "\(payMB)" : "Al rajhi")
+                                .font(.system(size: 13, weight: .regular, design: .default))
+                                .foregroundColor(.secondary)
+                            
+                            Text(payMS.isEmpty ? "" : "STC Pay")
+//                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+                                .font(.system(size: 13, weight: .regular, design: .default))
+                                .foregroundColor(.secondary)
+                            Text(!cheP.isEmpty ? "\(cheP)" : "PNU A4")
+                                .font(.system(size: 13, weight: .regular, design: .default))
+                                .foregroundColor(.secondary)
+                        }
                     }
                     .padding(.trailing)
                     Spacer()
@@ -111,7 +135,7 @@ struct Waiting1: View {
                    
                         Divider()
                    
-                    Text("Waiting for others to join :")
+                    Text(status == "waiting" ? "Waiting for others to join :" : "Completed")
                         .font(.system(size:20))
                         .fontWeight(.bold)
                         .padding(.leading, -130.0)
@@ -145,6 +169,36 @@ struct Waiting1: View {
                 
             }
             .padding(.bottom, 400.0)
+            .onAppear{
+                WebAPI.getMyActiveOrder { res in
+                    switch res {
+                    case .success(let success):
+                        self.merN = success.merchant_name
+                        self.appN = success.app_name
+                        self.delFe = String(success.delivery_fee)
+                        self.cheP = success.checkpoint
+                        self.status = success.status ?? "waiting"
+                    case .failure(let failure):
+                        print("couldn't get my active order", failure)
+                    }
+                }
+                WebAPI.getstcpayments { res in
+                    switch res {
+                    case .success(let success):
+                        self.payMS = success.phone ?? ""
+                    case .failure(let failure):
+                        print("couldn't get stc info", failure)
+                    }
+                }
+                WebAPI.getbankpayments { res in
+                    switch res {
+                    case .success(let success):
+                        self.payMB = success.bname
+                    case .failure(let failure):
+                        print("couldn't get bank info", failure)
+                    }
+                }
+            }
         }
 //        .navigationBarBackButtonHidden(true)
     }

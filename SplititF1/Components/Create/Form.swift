@@ -97,7 +97,7 @@ struct Form: View {
                                 .font(.system(size: 18))
                                 .fontWeight(.medium)
                                 .padding()
-                            inputField(placeholder: "", text: note)
+                            inputField(placeholder: "", text: Notes)
                         }
                         
                     }
@@ -116,11 +116,13 @@ struct Form: View {
                                 switch result {
                                 case .success(_):
                                     print("order sent")
-                                case .failure(_):
-                                    print("fail")
+                                    
+                                case .failure(let failure):
+                                    print("faill", failure)
+                                    showOrder = true
                                 }
                             }
-                            showOrder = true
+                            
                         }
                         .fullScreenCover(isPresented: $showOrder) {
                             Waiting1()

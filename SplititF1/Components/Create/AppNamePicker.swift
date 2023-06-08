@@ -21,7 +21,7 @@ struct AppNamePicker: View {
             
             Picker("What App Are You Ordering From? ", selection: $selection){
                 ForEach(id, id: \.self){
-                    Text($0)
+                    Text($0).tag(id)
                 }
             } .pickerStyle(.automatic)
                 .accentColor(.black)
