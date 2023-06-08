@@ -63,39 +63,41 @@ struct OrderConfirmed__: View {
                         .padding(.top, 10.0)
                 }
                 
-                ZStack {
-//                    Color.white.ignoresSafeArea()
-                    
-                    Button("OrderArrived") {
-                        isPresented = true
-                    }//.bold()
-                        .foregroundColor(.black)
-                        .frame(width: 200)
-                        .frame(height: 50)
-                        .background(Color(.orange))
-                        .cornerRadius(10)
-                }
+//                ZStack {
+////                    Color.white.ignoresSafeArea()
+//
+//                    Button("OrderArrived") {
+//                        isPresented = true
+//                    }//.bold()
+//                        .foregroundColor(.black)
+//                        .frame(width: 200)
+//                        .frame(height: 50)
+//                        .background(Color(.orange))
+//                        .cornerRadius(10)
+//                }
 //                .padding(.trailing, -170.0)
 //                                    .padding(.top, -330.0)
-                .popup(isPresented: $isPresented) {
-                    BottomPopupView {
-                        NamePopupView(isPresented: $isPresented)
-                    }
-                }
-//                HStack{
-//
-//                    Button {
-//                        showingAlert = true
-//
-//                    } label: {
-//                        Text("Order Arrived")
-//
-//                            .bold()
-//                            .foregroundColor(.black)
-//                            .frame(width: 200)
-//                            .frame(height: 50)
-//                            .background(Color("Color1"))
-//                            .cornerRadius(10)
+//                .popup(isPresented: $isPresented) {
+//                    BottomPopupView {
+//                        NamePopupView(isPresented: $isPresented)
+//                    }
+//                }
+                HStack{
+
+                    Button {
+                        //showingAlert = true
+
+                    } label: {
+                        NavigationLink(destination: TabBar()) {
+                            Text("Order Arrived")
+                            
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: 200)
+                                .frame(height: 50)
+                                .background(Color("Color1"))
+                                .cornerRadius(10)
+                        }
 //                            .alert("Please Confirm who have payed you ", isPresented: $showingAlert) {
 //
 //                                VStack{
@@ -103,10 +105,10 @@ struct OrderConfirmed__: View {
 //                                    Button("OK", role: .cancel) { }
 //                                }
 //                            }
-//                    }
-//                    .padding(.trailing, -170.0)
-//                    .padding(.top, -330.0)
-//                }
+                    }
+                    .padding(.trailing, -170.0)
+                    .padding(.top, -330.0)
+                }
                
                 Divider()
                     .padding(.top, -280.0)
