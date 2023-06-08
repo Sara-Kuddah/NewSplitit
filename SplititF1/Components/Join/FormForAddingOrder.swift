@@ -116,7 +116,7 @@ struct FormForAddingOrder: View {
                         showOrderIsSent = true
                     }
                     .fullScreenCover(isPresented: $showOrderIsSent) {
-                        OrderStatusPage()
+                        checkbox()
                     }
                         .padding(.top, 30)
                 }
