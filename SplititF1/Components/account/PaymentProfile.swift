@@ -15,18 +15,18 @@ struct PaymentProfile: View {
     @State private var showTabBar = false
     var body: some View {
         VStack {
-            NavigationStack {
+            //NavigationStack {
                 HStack(spacing: 8) {
                     
-                    Button(action: {
-                        
-                    }) {
-                        NavigationLink(destination: Profile()) {
-                            Image(systemName: "chevron.left")
-                                .padding(.leading, 15)
-                                .foregroundColor(Color("Color1"))
-                        }
-                    }
+//                    Button(action: {
+//
+//                    }) {
+//                        NavigationLink(destination: Profile()) {
+//                            Image(systemName: "chevron.left")
+//                                .padding(.leading, 15)
+//                                .foregroundColor(Color("Color1"))
+//                        }
+//                    }
                     Spacer()
                     VStack(alignment: .center, spacing: 2) {
                         Text("Payment")
@@ -73,7 +73,7 @@ struct PaymentProfile: View {
                 
                 Spacer()
             }
-            .navigationBarBackButtonHidden(true)
+           // .navigationBarBackButtonHidden(true)
             
         }
     }
@@ -83,4 +83,4 @@ struct PaymentProfile: View {
             PaymentProfile()
         }
     }
-}
+

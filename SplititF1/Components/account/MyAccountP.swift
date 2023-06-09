@@ -14,18 +14,18 @@ struct MyAccountP: View {
     @State private var showTabBar = false
     var body: some View {
         VStack {
-            NavigationStack {
+            //NavigationStack {
                 HStack(spacing: 8) {
                     
-                    Button(action: {
-                        
-                    }) {
-                        NavigationLink(destination: Profile()) {
-                            Image(systemName: "chevron.left")
-                                .padding(.leading, 15)
-                                .foregroundColor(Color("Color1"))
-                        }
-                    }
+//                    Button(action: {
+//
+//                    }) {
+//                        NavigationLink(destination: Profile()) {
+//                            Image(systemName: "chevron.left")
+//                                .padding(.leading, 15)
+//                                .foregroundColor(Color("Color1"))
+//                        }
+//                    }
                     
                     Text("My Account")
                         .font(.system(size: 25, weight: .bold, design: .default))
@@ -61,7 +61,7 @@ struct MyAccountP: View {
             
             Spacer()
         }
-            .navigationBarBackButtonHidden(true)
+            //.navigationBarBackButtonHidden(true)
     }
     
 }
@@ -70,4 +70,4 @@ struct MyAccountP: View {
             MyAccountP()
         }
     }
-}
+
