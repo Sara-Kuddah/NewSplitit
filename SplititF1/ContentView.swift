@@ -7,10 +7,20 @@
 
 import SwiftUI
 struct ContentView: View {
+    @State var userSignedIn = false
     @State private var isExpanded = false
-    @State var showTabBar: Bool = false
-    @State private var isPresentedFullScreenCover = false
-    @State var ordersCount = Int()
+    // order stuff
+    @State var appN = String()
+    @State var merN = String()
+    @State var delFe = Int()
+    @State var payMS = String()
+    @State var payMB = String()
+    @State var cheP = String()
+    @State var status = String()
+    @State var notes = String()
+    @State var createdAt = String()
+    @State var orderID = UUID()
+    @State var active = Bool()
     init() {
         UIScrollView.appearance().bounces = false
     }
@@ -29,7 +39,8 @@ struct ContentView: View {
                         .padding(.trailing, 1)
                     
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                        .foregroundColor(Color("Color1"))                             .onTapGesture {
+                        .foregroundColor(Color("Color1"))
+                        .onTapGesture {
                             self.isExpanded.toggle()
                         }
                     
@@ -46,8 +57,9 @@ struct ContentView: View {
                             .font(.system(size: 20, weight: .bold, design: .default))
                             .font(.title3)
                             .padding()
-                        
+                        // if i don't have active order
                         CardNewOrder()
+                        // else show my order
                         
                         Text("Active Orders Near Me")
                         
@@ -57,29 +69,47 @@ struct ContentView: View {
                         VStack(spacing: 15) {
                             
                             newJoinCard()
-                            newJoinCard()
-                            newJoinCard()
-                            newJoinCard()
-                            newJoinCard()
+                            
                             
                         }
-                        
-                        
                     }
-                    //
                 }
-                
             }
-//            .onAppear{
-//                WebAPI.getRandomOrders { res in
-//                    switch res {
-//                    case .success(let success):
-//                        self.ordersCount = success.count
-//                    case .failure(let failure):
-//                        <#code#>
-//                    }
-//                }
-//            }
+            .onAppear{
+                if WebAPI.userSignedIn() == true {
+                    userSignedIn = true
+                    
+                    WebAPI.getOrdersAroundMe { res in
+                        print("res",res)
+                        switch res {
+                        case .success(let success):
+                            print("success orders around me",success)
+//                            self.appN = success.
+//                            self.merN = success.merchant_name
+//                            self.delFe = success.delivery_fee
+//                            self.cheP = success.checkpoint
+//                            self.status = success.status ?? "waiting"
+//                            self.active = success.active ?? true
+                            // time and id
+//                            self.createdAt = success.createdAt ?? ""
+//                            self.orderID = success.id
+//                            print(orderID)
+                        case .failure(let failure):
+                            print("failure orders around me",failure)
+                        }
+                    }
+                } else { // unsigned user
+                    
+                    //                WebAPI.getRandomOrders { res in
+                    //                    switch res {
+                    //                    case .success(let success):
+                    //                        self.ordersCount = success.delivery_fee
+                    //                    case .failure(let failure):
+                    //                        print(failure)
+                    //                    }
+                    //                }
+                }
+            }
            
         }
         .navigationBarBackButtonHidden(true)

@@ -35,6 +35,16 @@ struct WebAPI {
     let user: UserProfile
   }
 
+   static func userSignedIn() -> Bool {
+        if ((self.accessToken?.isEmpty) == nil) {
+            accessToken = UserDefaults.standard.string(forKey: "accessToken")
+        }
+       guard self.accessToken != nil
+        else {
+            return false
+        }
+       return true
+    }
     // MARK: - post user
     
   static func authorizeUsingSIWA(
@@ -321,7 +331,7 @@ struct WebAPI {
     }
     
     // MARK: - GET ALL ORDERS AROUND ME
-    static func getOrdersAroundMe(completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+    static func getOrdersAroundMe(completion: @escaping (Result<[order], Error>) -> Void) {
         
         // update access token from userDefault value
         if ((self.accessToken?.isEmpty) == nil) {
@@ -329,8 +339,8 @@ struct WebAPI {
         }
         guard let accessToken = self.accessToken
         else {
-                      completion(.failure(WebAPIError.unauthorized))
-                      return
+              completion(.failure(WebAPIError.unauthorized))
+              return
         }
         let session = URLSession.shared
         let url = URL(string: "\(baseURL)/api/orders/getactiveordersaroundme")!
@@ -341,15 +351,26 @@ struct WebAPI {
 
         session.dataTask(with: request) { (data, response, error) in
             do {
-                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                if let error = error {
+                  throw error
+                }
+                  guard let httpResponse = response as? HTTPURLResponse else {
+                    throw WebAPIError.invalidResponse
+                  }
+                  if !(200...299).contains(httpResponse.statusCode) {
+                    throw WebAPIError.httpError(statusCode: httpResponse.statusCode)
+                  }
+                  guard let data = data,
+                  let decoded = try? JSONDecoder().decode([order].self, from: data)
+                  else {
+                    throw WebAPIError.unableToDecodeJSONData
+                  }
+                completion(.success(decoded))
                 
-                completion(.success(orderResponse.order))
             } catch {
                 completion(.failure(error))
             }
           }.resume()
-    
-        
     }
     
     
@@ -749,4 +770,28 @@ struct Addphoneresponse: Codable {
 }
 struct OrderID: Codable {
     let orderID: UUID
+}
+
+struct order: Codable {
+    let id: UUID
+    let location: Location
+    let merchant_name: String
+    let app_name: String
+    let delivery_fee: Int
+    let checkpoint: String
+    let notes: String?
+    let active: Bool?
+    let status: String?
+    let updatedAt: String?
+    let createdAt: String?
+}
+
+// MARK: - Location
+struct Location: Codable{
+    let id: String
+}
+
+struct OrderResponse2: Codable {
+    let accessToken: String?
+    let order: [order]
 }

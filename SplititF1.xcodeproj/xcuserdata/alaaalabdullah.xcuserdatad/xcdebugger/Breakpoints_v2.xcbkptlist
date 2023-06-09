@@ -110,8 +110,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "postLocation(discription:long:lat:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "postLocation(discription:long:lat:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "postLocation(discription:long:lat:completion:)"
             landmarkType = "7">
             <Locations>
@@ -190,8 +190,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "postLocation(discription:long:lat:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,8 +206,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "postLocation(discription:long:lat:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "postLocation(discription:long:lat:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -581,8 +581,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "postLocation(discription:long:lat:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -597,8 +597,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "postLocation(discription:long:lat:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -869,9 +869,121 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "postLocation(discription:long:lat:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "820C7409-3884-4B37-972D-B3D099E975C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SplititF1/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "820C7409-3884-4B37-972D-B3D099E975C6 - ae34f05e3754540e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in SplititF1.ContentView.body.getter : some"
+                  moduleName = "SplititF1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alaaalabdullah/Desktop/NewSplitit/SplititF1/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "820C7409-3884-4B37-972D-B3D099E975C6 - cffba233f1feab2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in SplititF1.ContentView.body.getter : some"
+                  moduleName = "SplititF1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alaaalabdullah/Desktop/NewSplitit/SplititF1/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65129ECB-079B-48A5-860C-CCD4D167F593"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SplititF1/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9D09605-CF04-472B-BBA1-08F78B2ADB65"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "userSignedIn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64A3C365-1B21-49C9-896A-0662C903963D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "userSignedIn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A2E1387-1673-4801-98E9-CD583C335687"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "userSignedIn()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
