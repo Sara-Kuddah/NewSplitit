@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct newJoinCard: View {
+    // published or state or binding
+    @State var appN = String()
+    @State var merN = String()
+    @State var delFe = String()
+    @State var payMS = String()
+    @State var payMB = String()
+    @State var cheP = String()
+    @State var status = String()
+    @State var notes = String()
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
-                    Text("McDonald's")
+                    Text(merN)
                         .font(.system(size: 18, weight: .semibold, design: .default))
                     
                     Spacer()
@@ -23,7 +32,7 @@ struct newJoinCard: View {
                         .font(.system(size: 11, weight: .bold, design: .default))
                 }
                 
-                Text("Note: I only have 55 Riyals")
+                Text(notes)
                     .foregroundColor(Color.gray)
                     .font(.system(size: 11, weight: .semibold, design: .default))
                 Spacer()
@@ -34,7 +43,7 @@ struct newJoinCard: View {
                                 
                                 Image(systemName: "car")
                                     .foregroundColor(Color("Color1"))
-                                Text("20 Riyals")
+                                Text(delFe)
                                     .font(.caption)
                                     .frame(width: 80, height: 30)
                                     .scaledToFit()
@@ -42,7 +51,7 @@ struct newJoinCard: View {
                                     .lineLimit(1)
                                 Image(systemName: "apps.iphone")
                                     .foregroundColor(Color("Color1"))
-                                Text("Hungerstation")
+                                Text(appN)
                                     .font(.caption)
                                     .frame(width: 80, height: 30)
                                     .scaledToFit()

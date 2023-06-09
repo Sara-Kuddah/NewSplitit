@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct JoinButton: View {
-    @State private var isPresentedFullScreenCover = false
+//    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationStack {
           

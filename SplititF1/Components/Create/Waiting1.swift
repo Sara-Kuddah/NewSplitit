@@ -178,6 +178,7 @@ struct Waiting1: View {
                         self.delFe = String(success.delivery_fee)
                         self.cheP = success.checkpoint
                         self.status = success.status ?? "waiting"
+                        
                     case .failure(let failure):
                         print("couldn't get my active order", failure)
                     }
