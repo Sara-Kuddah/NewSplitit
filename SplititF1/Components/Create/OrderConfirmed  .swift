@@ -7,9 +7,96 @@
 
 import SwiftUI
 
+struct SheetView: View {
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        Text("Please Confirm who have payed you ")
+            .font(.system(size: 18, weight: .bold, design: .default))
+            .foregroundColor(Color.black)
+        Text("This step will help us sending reminders for those who didn’t pay yet .")
+            .font(.system(size: 13))
+            .fontWeight(.light)
+            .foregroundColor(Color.black)
+        
+        VStack{
+            //        Button("Confirm") {
+            //            dismiss()
+            //        }
+            //        .font(.title)
+            //        .padding()
+            //        .background(.black)
+            //
+            HStack{
+                Text ("Reem")
+                    .foregroundColor(Color("Color1"))
+                    .padding(.trailing, 90.0)
+                Text ("38 SR")
+                    .foregroundColor(Color.black)
+                    .padding(.trailing, 50.0)
+                Check1()
+            }
+            HStack{
+                Text ("Sarah")
+                    .foregroundColor(Color("Color1"))
+                    .padding(.trailing, 90.0)
+                Text ("38 SR")
+                    .padding(.trailing, 50.0)
+                    .foregroundColor(Color.black)
+                Check1()
+            }
+            HStack{
+                Text ("Noura")
+                    .foregroundColor(Color("Color1"))
+                    .padding(.trailing, 90.0)
+                
+                Text ("38 SR")
+                    .foregroundColor(Color.black)
+                    .padding(.trailing, 50.0)
+                Check1()
+            }
+            HStack{
+                Text ("Nada")
+                    .foregroundColor(Color("Color1"))
+                    .padding(.trailing, 90.0)
+                Text ("38 SR")
+                    .foregroundColor(Color.black)
+                    .padding(.trailing, 50.0)
+                Check1()
+            }
+            
+            Button {
+                dismiss()
+            }
+        label: {
+            NavigationLink(destination: Check1()) {
+                Text("Confirm")
+                
+                    .bold()
+                    .foregroundColor(.black)
+                    .frame(width: 200)
+                    .frame(height: 50)
+                    .background(Color("Color1"))
+                    .cornerRadius(10)
+            }
+            //.font(.title)
+            //            .padding()
+            //            .bold()
+            //            .foregroundColor(.black)
+            //            .frame(width: 200)
+            //            .frame(height: 50)
+            //            .background(Color.orange)
+            //            .cornerRadius(10)
+        }
+        }
+    }
+}
+
 struct OrderConfirmed__: View {
     @State private var showingAlert = false
     @State var isPresented = false
+    @State private var showingSheet = false
+
     var body: some View {
         NavigationView {
             VStack{
@@ -86,9 +173,9 @@ struct OrderConfirmed__: View {
 
                     Button {
                         //showingAlert = true
-
+                        showingSheet.toggle()
                     } label: {
-                        NavigationLink(destination: TabBar()) {
+                      
                             Text("Order Arrived")
                             
                                 .bold()
@@ -97,7 +184,10 @@ struct OrderConfirmed__: View {
                                 .frame(height: 50)
                                 .background(Color("Color1"))
                                 .cornerRadius(10)
-                        }
+                                .sheet(isPresented: $showingSheet) {
+                                    SheetView()
+                                }
+                        
 //                            .alert("Please Confirm who have payed you ", isPresented: $showingAlert) {
 //
 //                                VStack{
