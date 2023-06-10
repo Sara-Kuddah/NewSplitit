@@ -59,9 +59,9 @@ struct joinCard: View {
                         .padding(.vertical, 1)
                 }
                 
-                JoinButton()
-                    .padding(.leading, 10)
-                    .padding(.bottom, 10)
+//                JoinButton()
+//                    .padding(.leading, 10)
+//                    .padding(.bottom, 10)
                 
             }
             

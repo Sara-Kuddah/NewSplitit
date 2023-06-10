@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct OrderStatusPage: View {
-    @State private var isChecked = false
-    @State private var isInfoVisible = false
-    @State private var text: String = ""
-    @State private var isPresentedFullScreenCover = false
+    //    @State private var isChecked = false
+    //    @State private var isInfoVisible = false
+    //    @State private var text: String = ""
+    //    @State private var isPresentedFullScreenCover = false
+    @State var item_name = ""
+    @State var price = ""
+    @State var appN = String()
+    @State var merN = String()
+    @State var delFe = String()
+    @State var payMS = String()
+    @State var payMB = String()
+    @State var cheP = String()
+    @State var status = String()
+    @State var orderID: UUID
+    
+    @State var items: [Item] = []
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -30,11 +42,11 @@ struct OrderStatusPage: View {
                         }
                         Spacer()
                         VStack(alignment: .center, spacing: 2) {
-                            Text("McDonald's")
+                            Text(merN)
                             // .font(.headline)
                                 .font(.system(size: 25, weight: .bold, design: .default))
                                 .padding(.leading, -15)
-                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+                            Text("\(delFe), \(appN), \(payMS)-\(payMB), \(cheP)")
                             //.font(.subheadline)
                                 .font(.system(size: 13, weight: .regular, design: .default))
                                 .padding(.leading, -15)
@@ -58,9 +70,6 @@ struct OrderStatusPage: View {
                     Spacer()
                     myOrderSummary()
                     
-                    
-                    
-                    
                     VStack {
                         Spacer()
                         // Card with text
@@ -76,22 +85,15 @@ struct OrderStatusPage: View {
                                     
                                     Spacer()
                                     
-                                    Text("PNU-A4")
+                                    Text(cheP)
                                         .font(.system(size: 15, weight: .semibold, design: .default))
                                         .foregroundColor(Color.gray)
                                         .padding(.trailing)
                                     
-                                })
-                        
-                        
-                    }
+                                })                    }
                     
                     Spacer()
-                    Divider()
-                    
-                    
-                    
-                }
+                    Divider()                }
                 Text("Abeer’s Payment Info:")
                     .padding(.top, 20)
                     .padding(.trailing, 200)
@@ -123,9 +125,9 @@ struct OrderStatusPage: View {
                                 
                                 // Spacer()
                                 
-                                VStack(alignment: .leading, spacing: 10) {
+                                VStack(alignment: .trailing, spacing: 10) {
                                     HStack {
-                                        Text("                   0593491213")
+                                        Text("0593491213")
                                             .font(.system(size: 13, weight: .semibold, design: .default))
                                         copyButton()
                                         
@@ -143,20 +145,41 @@ struct OrderStatusPage: View {
                             }
                             
                         })
-//                newbox()
-//                    .padding(.top, 20)
-//                    .padding(.leading, -180)
-//               
                 
-                
+            }
+        }
+        .onAppear{
+            WebAPI.getMyActiveOrder { res in
+                switch res {
+                case .success(let success):
+                    print(success)
+                    self.merN = success.merchant_name
+                    self.appN = success.app_name
+                    self.delFe = String(success.delivery_fee)
+                    self.cheP = success.checkpoint
+                    self.status = success.status ?? "waiting"
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
+            WebAPI.getItemsInOrder(orderID: orderID) { res in
+                switch res {
+                case .success(let success):
+                    self.items = success
+                    print(success)
+                    
+                case .failure(let failure):
+                    print(failure)
+                }
             }
         }
         
     }
-    struct OrderStatusPage_Previews: PreviewProvider {
-        static var previews: some View {
-            OrderStatusPage()
-        }
-    }
-    
 }
+//    struct OrderStatusPage_Previews: PreviewProvider {
+//        static var previews: some View {
+//            OrderStatusPage()
+//        }
+//    }
+    
+

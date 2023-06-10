@@ -21,6 +21,8 @@ struct ContentView: View {
     @State var createdAt = String()
     @State var orderID = UUID()
     @State var active = Bool()
+    
+    @State var orders: [order] = []
     init() {
         UIScrollView.appearance().bounces = false
     }
@@ -67,10 +69,11 @@ struct ContentView: View {
                             .font(.title3)
                             .padding(.horizontal)
                         VStack(spacing: 15) {
-                            
-                            newJoinCard()
-                            
-                            
+                            ForEach(orders, id: \.id) { order in
+                                
+                                newJoinCard(appN: order.app_name, merN: order.merchant_name, delFe: order.delivery_fee, payMS: "STC", payMB: "Alrajhi", cheP: order.checkpoint, status: order.status ?? "waiting", notes: order.notes ?? "", orderID: order.id)
+                                
+                            }
                         }
                     }
                 }
@@ -80,34 +83,23 @@ struct ContentView: View {
                     userSignedIn = true
                     
                     WebAPI.getOrdersAroundMe { res in
-                        print("res",res)
                         switch res {
                         case .success(let success):
-                            print("success orders around me",success)
-//                            self.appN = success.
-//                            self.merN = success.merchant_name
-//                            self.delFe = success.delivery_fee
-//                            self.cheP = success.checkpoint
-//                            self.status = success.status ?? "waiting"
-//                            self.active = success.active ?? true
-                            // time and id
-//                            self.createdAt = success.createdAt ?? ""
-//                            self.orderID = success.id
-//                            print(orderID)
+                            self.orders = success
                         case .failure(let failure):
                             print("failure orders around me",failure)
                         }
                     }
-                } else { // unsigned user
+                } else { // unsigned user -- fix this function
                     
-                    //                WebAPI.getRandomOrders { res in
-                    //                    switch res {
-                    //                    case .success(let success):
-                    //                        self.ordersCount = success.delivery_fee
-                    //                    case .failure(let failure):
-                    //                        print(failure)
-                    //                    }
-                    //                }
+//                    WebAPI.getRandomOrders { res in
+//                        switch res {
+//                        case .success(let success):
+//                            self.orders = success
+//                        case .failure(let failure):
+//                            print(failure)
+//                        }
+//                    }
                 }
             }
            

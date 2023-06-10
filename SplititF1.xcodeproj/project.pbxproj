@@ -54,12 +54,10 @@
 		23FC80FD2A14BB350001853B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FC2A14BB350001853B /* Splash.swift */; };
 		23FC81042A153BB40001853B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC81032A153BB40001853B /* Order.swift */; };
 		590B929A2A2CF0F00026B132 /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B92992A2CF0F00026B132 /* EnvironmentWindowKey.swift */; };
-		590B929E2A2DBD370026B132 /* OrderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B929D2A2DBD370026B132 /* OrderAPI.swift */; };
 		590B92A02A2DD7F60026B132 /* OrderT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B929F2A2DD7F60026B132 /* OrderT.swift */; };
 		59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A392A2C64C2000F80D5 /* SignInWithApple.swift */; };
 		59581A3C2A2C6511000F80D5 /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */; };
 		59581A3E2A2C68AE000F80D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */; };
-		59581A402A2C6D02000F80D5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3F2A2C6D02000F80D5 /* File.swift */; };
 		59581A422A2C6E07000F80D5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A412A2C6E07000F80D5 /* UserProfile.swift */; };
 		59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A432A2C783F000F80D5 /* WebAPI.swift */; };
 		59A0B4D42A1FEA9F00250403 /* AppNamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */; };
@@ -131,12 +129,10 @@
 		23FC81022A15303B0001853B /* SplititF1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplititF1.entitlements; sourceTree = "<group>"; };
 		23FC81032A153BB40001853B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		590B92992A2CF0F00026B132 /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
-		590B929D2A2DBD370026B132 /* OrderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAPI.swift; sourceTree = "<group>"; };
 		590B929F2A2DD7F60026B132 /* OrderT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderT.swift; sourceTree = "<group>"; };
 		59581A392A2C64C2000F80D5 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		59581A3B2A2C6511000F80D5 /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
 		59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		59581A3F2A2C6D02000F80D5 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		59581A412A2C6E07000F80D5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		59581A432A2C783F000F80D5 /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
 		59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNamePicker.swift; sourceTree = "<group>"; };
@@ -204,7 +200,6 @@
 				23CD7CA52A1A120C00260B15 /* OrderHistory .swift */,
 				23FC80FC2A14BB350001853B /* Splash.swift */,
 				23FC80FA2A14B7800001853B /* Onboarding.swift */,
-				59581A3F2A2C6D02000F80D5 /* File.swift */,
 				59A0B4CE2A1FE9C900250403 /* Components */,
 				59A0B4CD2A1FE9BC00250403 /* To Be Deleted */,
 				23297E1F2A1902A70035658B /* Map */,
@@ -276,14 +271,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		590B929C2A2DBD210026B132 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				590B929D2A2DBD370026B132 /* OrderAPI.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		59581A382A2C649C000F80D5 /* SignInWithApple */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +288,9 @@
 		59A0B4CD2A1FE9BC00250403 /* To Be Deleted */ = {
 			isa = PBXGroup;
 			children = (
+				59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */,
+				59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */,
+				23CD7CB12A1A129500260B15 /* JoinButton.swift */,
 				230520F02A1D3755006ED1D5 /* SaveButton.swift */,
 				230520EE2A1D32D3006ED1D5 /* SkipButton.swift */,
 				23CD7CB32A1A129E00260B15 /* SendButton.swift */,
@@ -313,7 +303,6 @@
 		59A0B4CE2A1FE9C900250403 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				590B929C2A2DBD210026B132 /* API */,
 				59581A382A2C649C000F80D5 /* SignInWithApple */,
 				23CD7CC02A1A130300260B15 /* TimelineTrack.swift */,
 				F567FC562A2DC8F1008B134C /* timeline2.swift */,
@@ -338,8 +327,6 @@
 				23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */,
 				23CA5FC52A1DE99400289A3B /* editButton.swift */,
 				59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */,
-				59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */,
-				59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */,
 				23FC81032A153BB40001853B /* Order.swift */,
 				23568BA62A30EC110063C061 /* Check1.swift */,
 				23568BAC2A30F0B80063C061 /* NamePopupView.swift */,
@@ -358,7 +345,6 @@
 				F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */,
 				59A0B4E12A21E70800250403 /* newSizeDropDown.swift */,
 				23CD7CBE2A1A130300260B15 /* copyButton.swift */,
-				23CD7CB12A1A129500260B15 /* JoinButton.swift */,
 				F57B089F2A1F3CC3002A8913 /* NewOrder.swift */,
 				23CD7CBB2A1A12F500260B15 /* checkbox.swift */,
 			);
@@ -513,7 +499,6 @@
 				23CD7CA82A1A121B00260B15 /* Profile .swift in Sources */,
 				23297E2F2A1902A70035658B /* LandmarkListView.swift in Sources */,
 				230520C52A1C98F4006ED1D5 /* CheckT.swift in Sources */,
-				590B929E2A2DBD370026B132 /* OrderAPI.swift in Sources */,
 				59581A3C2A2C6511000F80D5 /* SignInWithAppleDelegates.swift in Sources */,
 				23297E2E2A1902A70035658B /* MKCoordinateRegion+Extensions.swift in Sources */,
 				F56E3CB92A2F1AC50029B9F0 /* SwiftUIView22.swift in Sources */,
@@ -526,7 +511,6 @@
 				23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
 				23568BA72A30EC110063C061 /* Check1.swift in Sources */,
-				59581A402A2C6D02000F80D5 /* File.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
 				23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */,
 				59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */,
