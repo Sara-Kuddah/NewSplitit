@@ -216,7 +216,7 @@ struct OrderConfirmed__: View {
                 
                 VStack{
                     VStack{
-                        Order()
+                        OrderView()
                             .padding(.top, -270.0)
                         
                     }

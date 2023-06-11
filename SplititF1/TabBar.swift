@@ -39,9 +39,9 @@ struct TabBar: View {
            // .navigationBarBackButtonHidden(true)
             
         }
-        .onAppear{
-            getLocation().getLocationCoordinates()
-        }
+//        .onAppear{
+//            getLocation().getLocationCoordinates()
+//        }
         .navigationBarBackButtonHidden(true)
        
     }

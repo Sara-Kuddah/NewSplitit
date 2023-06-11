@@ -52,7 +52,7 @@
 		23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80F82A14A82D0001853B /* AccountInfo.swift */; };
 		23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FA2A14B7800001853B /* Onboarding.swift */; };
 		23FC80FD2A14BB350001853B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC80FC2A14BB350001853B /* Splash.swift */; };
-		23FC81042A153BB40001853B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC81032A153BB40001853B /* Order.swift */; };
+		23FC81042A153BB40001853B /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC81032A153BB40001853B /* OrderView.swift */; };
 		590B929A2A2CF0F00026B132 /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B92992A2CF0F00026B132 /* EnvironmentWindowKey.swift */; };
 		590B92A02A2DD7F60026B132 /* OrderT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B929F2A2DD7F60026B132 /* OrderT.swift */; };
 		59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A392A2C64C2000F80D5 /* SignInWithApple.swift */; };
@@ -60,6 +60,7 @@
 		59581A3E2A2C68AE000F80D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */; };
 		59581A422A2C6E07000F80D5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A412A2C6E07000F80D5 /* UserProfile.swift */; };
 		59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59581A432A2C783F000F80D5 /* WebAPI.swift */; };
+		596A25A22A34F7C7008FC583 /* CardActiveOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A25A12A34F7C7008FC583 /* CardActiveOrder.swift */; };
 		59A0B4D42A1FEA9F00250403 /* AppNamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */; };
 		59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */; };
 		59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */; };
@@ -127,7 +128,7 @@
 		23FC80FA2A14B7800001853B /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		23FC80FC2A14BB350001853B /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		23FC81022A15303B0001853B /* SplititF1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplititF1.entitlements; sourceTree = "<group>"; };
-		23FC81032A153BB40001853B /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		23FC81032A153BB40001853B /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		590B92992A2CF0F00026B132 /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
 		590B929F2A2DD7F60026B132 /* OrderT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderT.swift; sourceTree = "<group>"; };
 		59581A392A2C64C2000F80D5 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		59581A3D2A2C68AE000F80D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		59581A412A2C6E07000F80D5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		59581A432A2C783F000F80D5 /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		596A25A12A34F7C7008FC583 /* CardActiveOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActiveOrder.swift; sourceTree = "<group>"; };
 		59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNamePicker.swift; sourceTree = "<group>"; };
 		59A0B4D52A1FEC9A00250403 /* JoinedOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedOrder.swift; sourceTree = "<group>"; };
 		59A0B4D72A1FEDBC00250403 /* ChangeStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusButton.swift; sourceTree = "<group>"; };
@@ -327,7 +329,7 @@
 				23CA5FC32A1DE6AA00289A3B /* PaymentCard.swift */,
 				23CA5FC52A1DE99400289A3B /* editButton.swift */,
 				59A0B4D32A1FEA9F00250403 /* AppNamePicker.swift */,
-				23FC81032A153BB40001853B /* Order.swift */,
+				23FC81032A153BB40001853B /* OrderView.swift */,
 				23568BA62A30EC110063C061 /* Check1.swift */,
 				23568BAC2A30F0B80063C061 /* NamePopupView.swift */,
 				23568BAE2A30F1060063C061 /* BottomPopupView.swift */,
@@ -359,6 +361,7 @@
 				59A0B4DD2A2016F900250403 /* newJoinCard.swift */,
 				230520C22A1C92EB006ED1D5 /* CheckP.swift */,
 				23CD7CB52A1A12A600260B15 /* OpenButton.swift */,
+				596A25A12A34F7C7008FC583 /* CardActiveOrder.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -488,7 +491,7 @@
 				F50523D52A2B5405005BC1AC /* Location.swift in Sources */,
 				23CD7CCE2A1A147800260B15 /* ContentView.swift in Sources */,
 				23CD7CC52A1A130300260B15 /* TimelineTrack.swift in Sources */,
-				23FC81042A153BB40001853B /* Order.swift in Sources */,
+				23FC81042A153BB40001853B /* OrderView.swift in Sources */,
 				59581A3A2A2C64C2000F80D5 /* SignInWithApple.swift in Sources */,
 				23297E302A1902A70035658B /* LocalSearchService.swift in Sources */,
 				59581A422A2C6E07000F80D5 /* UserProfile.swift in Sources */,
@@ -515,6 +518,7 @@
 				23FC80F92A14A82D0001853B /* AccountInfo.swift in Sources */,
 				59581A442A2C783F000F80D5 /* WebAPI.swift in Sources */,
 				59A0B4D82A1FEDBC00250403 /* ChangeStatusButton.swift in Sources */,
+				596A25A22A34F7C7008FC583 /* CardActiveOrder.swift in Sources */,
 				23CA5FC42A1DE6AA00289A3B /* PaymentCard.swift in Sources */,
 				59A0B4D62A1FEC9A00250403 /* JoinedOrder.swift in Sources */,
 				23CD7CBA2A1A12EA00260B15 /* joinCard.swift in Sources */,
