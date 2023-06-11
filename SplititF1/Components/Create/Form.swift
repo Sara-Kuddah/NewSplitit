@@ -90,13 +90,13 @@ struct Form: View {
                         
                         VStack{
                             PaymentCard()
-                                .padding(.vertical, 10.0)
+                               // .padding(.vertical, 10.0)
                         }
                         VStack(alignment: .leading) {
                             Text("Notes")
                                 .font(.system(size: 18))
                                 .fontWeight(.medium)
-                                .padding()
+                                //.padding()
                             inputField(placeholder: "", text: Notes)
                         }
                         
