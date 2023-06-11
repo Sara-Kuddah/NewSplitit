@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NewOrder: View {
-    @State private var isPresentedFullScreenCover = false
     var body: some View {
         NavigationStack{
             Button(action: {

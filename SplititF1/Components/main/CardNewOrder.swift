@@ -20,8 +20,6 @@ struct CardNewOrder: View {
             HStack {
             Spacer()
                 NewOrder()
-                
-
                 .frame(width: 170, height: 40)
                 .background(Color.white)
                 .cornerRadius(7)

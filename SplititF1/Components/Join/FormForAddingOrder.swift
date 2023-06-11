@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct FormForAddingOrder: View {
-    @State private var text: String = ""
-    @State private var text2: String = ""
+    @State private var item_name: String = ""
+    @State private var price: String = ""
     @State private var text3: String = ""
-    @State private var selectedOption: String = ""
-    @State private var isShowingOptions: Bool = false
+    //    @State private var selectedOption: String = ""
+    //    @State private var isShowingOptions: Bool = false
     @State private var showOrderIsSent = false
-    @State private var isPresentedFullScreenCover = false
+    //    @State private var isPresentedFullScreenCover = false
+    
+    @State var orderID: UUID
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 8) {
@@ -52,7 +54,7 @@ struct FormForAddingOrder: View {
                         .padding(.top, 35)
                         .padding(.trailing, 265)
                     VStack {
-                        TextField("Please write your order ", text: $text)
+                        TextField("Please write your order ", text: $item_name)
                         
                             .padding()
                         //.border(Color("Color1"))
@@ -74,7 +76,7 @@ struct FormForAddingOrder: View {
                         {
                             Text("Price")
                                 .font(.system(size: 14, weight: .semibold, design: .default))
-                            TextField("Price SR", text: $text2)
+                            TextField("Price SR", text: $price)
                                 .padding(.leading, 10)
                                 .frame(width: 146, height: 52)
                                 .overlay(
@@ -113,12 +115,31 @@ struct FormForAddingOrder: View {
                         .foregroundColor(Color.gray)
                         .padding(.top, 50)
                     LargeButton(title: "Send") {
+                        // call join order and pass order id
+                        WebAPI.joinOrder(orderID: orderID) { res in
+                            switch res {
+                            case .success(let success):
+                                print("success", success)
+                            case .failure(let failure):
+                                print("failure!", failure)
+                            }
+                        }
+                        
+                        WebAPI.addItem(orderID: orderID, item_name: item_name, price: Double(price) ?? 0.0) { res in
+                            switch res {
+                            case .success(let success):
+                                print("success", success)
+                            case .failure(let failure):
+                                print("failure!", failure)
+                            }
+                        }
+                        // call add item and pass order id -- did i do it?
                         showOrderIsSent = true
                     }
                     .fullScreenCover(isPresented: $showOrderIsSent) {
-                        checkbox()
+                        checkbox(orderID: orderID)
                     }
-                        .padding(.top, 30)
+                    .padding(.top, 30)
                 }
                 
                 Spacer()
@@ -132,10 +153,10 @@ struct FormForAddingOrder: View {
         .navigationBarBackButtonHidden(true)
     }
     
-    
-    struct FormForAddingOrder_Previews: PreviewProvider {
-        static var previews: some View {
-            FormForAddingOrder()
-        }
-    }
 }
+//    struct FormForAddingOrder_Previews: PreviewProvider {
+//        static var previews: some View {
+//            FormForAddingOrder()
+//        }
+//    }
+

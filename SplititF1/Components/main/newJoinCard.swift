@@ -9,14 +9,16 @@ import SwiftUI
 
 struct newJoinCard: View {
     // published or state or binding
-    @State var appN = String()
-    @State var merN = String()
-    @State var delFe = String()
-    @State var payMS = String()
-    @State var payMB = String()
-    @State var cheP = String()
-    @State var status = String()
-    @State var notes = String()
+    @State var appN : String
+    @State var merN : String
+    @State var delFe : Int
+    @State var payMS : String
+    @State var payMB : String
+    @State var cheP :String
+    @State var status: String
+    @State var notes : String
+    
+    @State var orderID: UUID
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 0) {
@@ -43,7 +45,7 @@ struct newJoinCard: View {
                                 
                                 Image(systemName: "car")
                                     .foregroundColor(Color("Color1"))
-                                Text(delFe)
+                                Text("\(delFe)")
                                     .font(.caption)
                                     .frame(width: 80, height: 30)
                                     .scaledToFit()
@@ -63,7 +65,7 @@ struct newJoinCard: View {
                             HStack(spacing: 8) {
                                 Image(systemName: "dollarsign")
                                     .foregroundColor(Color("Color1"))
-                                Text("STC pay, Alrajhi")
+                                Text("STC pay, Alrajhi") // now is just for show
                                     .font(.caption)
                                     .frame(width: 90, height: 30)
                                     .scaledToFit()
@@ -71,7 +73,7 @@ struct newJoinCard: View {
                                     .lineLimit(1)
                                 Image(systemName: "location")
                                     .foregroundColor(Color("Color1"))
-                                Text("PNU-A4")
+                                Text(cheP)
                                     .font(.caption)
                                     .frame(width: 80, height: 30)
                                     .scaledToFit()
@@ -81,12 +83,22 @@ struct newJoinCard: View {
                         }
                     }
                     Spacer()
-                    VStack{ // col 2
-                        JoinButton()
+                    VStack{ // col 2 -- 1st bring the whole navigation link here!
+                            // 2nd  pass order id
+                        NavigationLink(destination: FormForAddingOrder(orderID: orderID)) {
+                            Text("Join")
+                                .font(.system(size: 14, weight: .semibold, design: .default))
+                                .foregroundColor(.black)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .foregroundColor(Color("Color1"))
+                                        .frame(width:70, height: 33)
+                                )
+                        }
+//                        JoinButton()
                     }
                 }
-//                .padding()
-                
             }
         }
             .padding()
@@ -98,8 +110,8 @@ struct newJoinCard: View {
     }
 }
 
-struct newJoinCard_Previews: PreviewProvider {
-    static var previews: some View {
-        newJoinCard()
-    }
-}
+//struct newJoinCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        newJoinCard( merN: Binding<String>)
+//    }
+//}
