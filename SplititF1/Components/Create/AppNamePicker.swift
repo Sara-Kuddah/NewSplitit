@@ -25,7 +25,9 @@ struct AppNamePicker: View {
                 }
             } .pickerStyle(.automatic)
                 .accentColor(.black)
-            
+                .onTapGesture {
+                 print("$selection \($selection)")
+                                                        }
             .frame(height: 50)
             .frame(maxWidth: .infinity)
                 .textFieldStyle(PlainTextFieldStyle())
