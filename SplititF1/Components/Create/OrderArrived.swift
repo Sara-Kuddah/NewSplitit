@@ -103,7 +103,7 @@ struct OrderArrived: View {
                 
                 VStack{
                     VStack{
-                        Order()
+                        OrderView()
                             .padding(.top, -270.0)
                         
                     }

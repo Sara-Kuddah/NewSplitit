@@ -65,6 +65,8 @@ struct SheetView: View {
                 Check1()
             }
             
+            Divider()
+            
             Button {
                 dismiss()
             }
@@ -79,6 +81,7 @@ struct SheetView: View {
                     .background(Color("Color1"))
                     .cornerRadius(10)
             }
+            
             //.font(.title)
             //            .padding()
             //            .bold()
@@ -88,6 +91,7 @@ struct SheetView: View {
             //            .background(Color.orange)
             //            .cornerRadius(10)
         }
+        .padding(.top, 10.0)
         }
     }
 }
@@ -212,7 +216,7 @@ struct OrderConfirmed__: View {
                 
                 VStack{
                     VStack{
-                        Order()
+                        OrderView()
                             .padding(.top, -270.0)
                         
                     }

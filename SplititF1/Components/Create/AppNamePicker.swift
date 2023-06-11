@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AppNamePicker: View {
+    
     @State public var selection: String
     let id = ["Jahez", "The Chefz", "Hunger Station", "Ninja", "Toyou", "Cari", "Shgardi", "Cofe", "Mr.Mandoob", "Mrsool"]
     
@@ -25,7 +26,10 @@ struct AppNamePicker: View {
                 }
             } .pickerStyle(.automatic)
                 .accentColor(.black)
-            
+                .onChange(of: selection) { _ in
+                        print(selection)
+                    self.selection = selection
+                    }
             .frame(height: 50)
             .frame(maxWidth: .infinity)
                 .textFieldStyle(PlainTextFieldStyle())

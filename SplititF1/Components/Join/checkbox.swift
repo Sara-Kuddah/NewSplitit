@@ -9,11 +9,11 @@ import SwiftUI
 
 struct checkbox: View {
     @State private var isPopoverPresented = false
-        
+    @State var orderID = UUID()
         var body: some View {
             ZStack {
                 // Background View
-                OrderStatusPage()
+                OrderStatusPage(orderID: orderID)
                 .blur(radius: isPopoverPresented ? 3 : 0)
                 .animation(.easeInOut)
                 

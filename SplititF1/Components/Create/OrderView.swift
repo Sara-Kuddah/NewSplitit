@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Order: View {
+struct OrderView: View {
     @State private var isDropdownExpanded = false
 
 
@@ -111,6 +111,6 @@ struct Order: View {
 
 struct Order_Previews: PreviewProvider {
     static var previews: some View {
-        Order()
+        OrderView()
     }
 }
