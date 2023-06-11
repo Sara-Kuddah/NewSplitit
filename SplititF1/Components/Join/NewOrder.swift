@@ -13,7 +13,7 @@ struct NewOrder: View {
             Button(action: {
                 // Handle button action
             }) {
-                NavigationLink(destination: Form()) {
+                NavigationLink(destination: Form( selection: "")) {
                     Text("New Order")
                         .font(.system(size: 13, weight: .semibold, design: .default))
                         .foregroundColor(.black)
