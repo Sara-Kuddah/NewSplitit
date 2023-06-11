@@ -22,7 +22,10 @@ struct ContentView: View {
     @State var orderID = UUID()
     @State var active = Bool()
     
-    @State var orders: [order] = []
+    @State var orders: [Order] = []
+    @State var userHasActiveOrder = false
+    
+    @State var isCreated = Bool()
     init() {
         UIScrollView.appearance().bounces = false
     }
@@ -60,7 +63,11 @@ struct ContentView: View {
                             .font(.title3)
                             .padding()
                         // if i don't have active order
-                        CardNewOrder()
+                        if userHasActiveOrder{
+                            CardActiveOrder(merN: merN, status: status, orderID: orderID, isCreated: isCreated)
+                        } else {
+                            CardNewOrder()
+                        }
                         // else show my order
                         
                         Text("Active Orders Near Me")
@@ -88,6 +95,35 @@ struct ContentView: View {
                             self.orders = success
                         case .failure(let failure):
                             print("failure orders around me",failure)
+                        }
+                    }
+                    WebAPI.getMyActiveOrder { res in
+                        switch res {
+                        case .success(let success):
+                            print(success)
+                            self.userHasActiveOrder = true
+                            self.status = success.status ?? "waiting"
+                            self.merN = success.merchant_name
+                            self.orderID = success.id
+//                            if success. == "created" {
+//                                self.isCreated = true
+//                            }
+                            // if joined go to checkbox
+                            // if created go to waiting1
+                        case .failure(let failure):
+                            print("mine ",failure)
+                            self.userHasActiveOrder = false
+                        }
+                    }
+                    WebAPI.getMyActiveOrder2 { res in
+                        switch res {
+                        case .success(let success):
+//                            self.merN = success.order.merchant_name
+                            print("try 2 success",success)
+//                            print(merN)
+                        case .failure(let failure):
+                            print("try 2 failure",failure)
+                            
                         }
                     }
                 } else { // unsigned user -- fix this function

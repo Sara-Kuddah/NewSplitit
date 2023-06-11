@@ -135,7 +135,7 @@ struct  OrderIsSent: View {
                 }
                     
                         VStack{
-                            Order()
+                            OrderView()
                                 .padding(.top, -410.0)
                             
                         }

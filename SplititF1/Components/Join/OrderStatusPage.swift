@@ -57,7 +57,7 @@ struct OrderStatusPage: View {
                     }
                     Divider()
                     
-                    Text("Order Status")
+                    Text("Order Status: \(status)")
                         .padding(.top, 30)
                         .padding(.trailing, 195)
                         .font(.system(size: 20, weight: .bold, design: .default))
@@ -68,7 +68,7 @@ struct OrderStatusPage: View {
                     
                     //TimelineTrack()
                     Spacer()
-                    myOrderSummary()
+                    myOrderSummary(orderID: orderID)
                     
                     VStack {
                         Spacer()
@@ -162,16 +162,7 @@ struct OrderStatusPage: View {
                     print(failure)
                 }
             }
-            WebAPI.getItemsInOrder(orderID: orderID) { res in
-                switch res {
-                case .success(let success):
-                    self.items = success
-                    print(success)
-                    
-                case .failure(let failure):
-                    print(failure)
-                }
-            }
+            
         }
         
     }

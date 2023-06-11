@@ -280,7 +280,7 @@ struct WebAPI {
     }
     
     // MARK: - GET MY ACTIVE ORDER
-    static func getMyActiveOrder(completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+    static func getMyActiveOrder(completion: @escaping (Result<Order, Error>) -> Void) {
         // update access token from userDefault value
         if ((self.accessToken?.isEmpty) == nil) {
             accessToken = UserDefaults.standard.string(forKey: "accessToken")
@@ -300,11 +300,43 @@ struct WebAPI {
 
         session.dataTask(with: request) { (data, response, error) in
             do {
-                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
+                let orderResponse: ActiveOrderOutput = try parseResponse(response, data: data, error: error)
                 
                 completion(.success(orderResponse.order))
             } catch {
                 completion(.failure(error))
+            }
+          }.resume()
+    }
+    
+    // MARK: - GET MY ACTIVE ORDER TRY 2
+    static func getMyActiveOrder2(completion: @escaping (Result<User_Order, Error>) -> Void) {
+        // update access token from userDefault value
+        if ((self.accessToken?.isEmpty) == nil) {
+            accessToken = UserDefaults.standard.string(forKey: "accessToken")
+        }
+        guard let accessToken = self.accessToken
+        else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/myactiveorder")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                let orderResponse: ActiveOrderResonse = try parseResponse(response, data: data, error: error)
+                print(orderResponse.user_order)
+                completion(.success(orderResponse.user_order))
+                print("??",orderResponse.user_order)
+            } catch {
+                completion(.failure(error))
+                print(error.localizedDescription)
             }
           }.resume()
     }
@@ -331,7 +363,7 @@ struct WebAPI {
     }
     
     // MARK: - GET ALL ORDERS AROUND ME
-    static func getOrdersAroundMe(completion: @escaping (Result<[order], Error>) -> Void) {
+    static func getOrdersAroundMe(completion: @escaping (Result<[Order], Error>) -> Void) {
         
         // update access token from userDefault value
         if ((self.accessToken?.isEmpty) == nil) {
@@ -361,7 +393,7 @@ struct WebAPI {
                     throw WebAPIError.httpError(statusCode: httpResponse.statusCode)
                   }
                   guard let data = data,
-                  let decoded = try? JSONDecoder().decode([order].self, from: data)
+                  let decoded = try? JSONDecoder().decode([Order].self, from: data)
                   else {
                     throw WebAPIError.unableToDecodeJSONData
                   }
@@ -427,6 +459,7 @@ struct WebAPI {
         }
         
         let orderID = orderID
+//        let body = OrderID(orderID: orderID)
         let session = URLSession.shared
         let url = URL(string: "\(baseURL)/api/items/\(orderID)")!
         var request = URLRequest(url: url)
@@ -457,9 +490,9 @@ struct WebAPI {
               return
         }
         
-        let orderID = orderID
+        let body = OrderID(orderID: orderID)
         let session = URLSession.shared
-        let url = URL(string: "\(baseURL)/api/items/\(orderID)")!
+        let url = URL(string: "\(baseURL)/api/items/\(body.orderID)")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
@@ -487,6 +520,60 @@ struct WebAPI {
             }
           }.resume()
     }
+    
+    
+    // MARK: - PATCH ORDER STATUS
+    static func changeStatus(id: UUID,
+                             location: Location,
+                             merchant_name: String,
+                             app_name: String,
+                             delivery_fee: Int,
+                             checkpoint: String,
+                             notes: String?,
+                             active: Bool?,
+                             status: String?,
+                             updatedAt: String?,
+                             createdAt: String?,
+                             completion: @escaping (Result<Order, Error>) -> Void) {
+        // update access token from userDefault value
+        if ((self.accessToken?.isEmpty) == nil) {
+            accessToken = UserDefaults.standard.string(forKey: "accessToken")
+        }
+        guard let accessToken = self.accessToken
+        else {
+              completion(.failure(WebAPIError.unauthorized))
+              return
+        }
+        
+        let body = Order(id: id, location: location, merchant_name: merchant_name, app_name: app_name, delivery_fee: delivery_fee, checkpoint: checkpoint, notes: notes, active: active, status: status, updatedAt: updatedAt, createdAt: createdAt)
+        guard let jsonBody = try? JSONEncoder().encode(body) else {
+          completion(.failure(WebAPIError.unableToEncodeJSONData))
+          return
+        }
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/changestatus")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse3 = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+        
+    }
+    
+    // MARK: - PATCH ORDER ACTIVE
+    
+    
+    // MARK: - PATCH DELIVERY FEE
     
     
     // MARK: - POST PAYMENT STC
@@ -849,7 +936,7 @@ struct OrderID: Codable {
     let orderID: UUID
 }
 
-struct order: Codable {
+struct Order: Codable {
     let id: UUID
     let location: Location
     let merchant_name: String
@@ -863,14 +950,16 @@ struct order: Codable {
     let createdAt: String?
 }
 
-// MARK: - Location
 struct Location: Codable{
     let id: String
 }
 
+struct User: Codable{
+    let id: String
+}
 struct OrderResponse2: Codable {
     let accessToken: String?
-    let order: [order]
+    let order: [Order]
 }
 
 struct Item: Codable {
@@ -881,4 +970,27 @@ struct Item: Codable {
 struct ItemResponse: Codable {
     let accessToken: String?
     let item: Item
+}
+
+struct ActiveOrderOutput: Codable {
+    let joinedAt: String
+    let id: String
+    let type: String
+    let order: Order
+}
+
+struct ActiveOrderResonse: Codable {
+    let accessToken: String?
+    let user_order: User_Order
+}
+
+struct User_Order: Codable {
+    let id: UUID
+    let type: String
+    let order: Order
+}
+
+struct OrderResponse3: Codable {
+    let accessToken: String?
+    let order: Order
 }
