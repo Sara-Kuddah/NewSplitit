@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AppNamePicker: View {
-    @State public var selection: String = "Jahez"
+    
+    @State public var selection: String
     let id = ["Jahez", "The Chefz", "Hunger Station", "Ninja", "Toyou", "Cari", "Shgardi", "Cofe", "Mr.Mandoob", "Mrsool"]
     
     var body: some View {
@@ -26,12 +27,10 @@ struct AppNamePicker: View {
             }
 //            .pickerStyle(.automatic)
                 .accentColor(.black)
-//                .onAppear() {
-//                    print("$selection \($selection.wrappedValue.description)")
-//                    selection = $selection.wrappedValue.description                               }
-                .onTapGesture {
-                    print("$selection \($selection.wrappedValue.description)")
-                }
+                .onChange(of: selection) { _ in
+                        print(selection)
+                    self.selection = selection
+                    }
             .frame(height: 50)
             .frame(maxWidth: .infinity)
                 .textFieldStyle(PlainTextFieldStyle())

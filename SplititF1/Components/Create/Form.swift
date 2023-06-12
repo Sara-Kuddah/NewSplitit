@@ -17,8 +17,9 @@ struct Form: View {
     @State var firstMarked = false
     @State var thirdMarked = false
     @State private var showOrder = false
-    @State var selection = String()
-    
+    //@State var selection = String()
+    @State public var selection: String
+    let id = ["Jahez", "The Chefz", "Hunger Station", "Ninja", "Toyou", "Cari", "Shgardi", "Cofe", "Mr.Mandoob", "Mrsool"]
     var body: some View {
         NavigationView {
             ScrollView{
@@ -45,10 +46,29 @@ struct Form: View {
                     }
                     Divider()
                 VStack {
-                        VStack{
-                            AppNamePicker(selection: selection)
-                            
-                        }
+                    VStack (alignment: .leading){
+                        // Picker
+                        Text("App Name")
+                            .font(.system(size: 18))
+                            .fontWeight(.medium)
+                        
+                        Picker("What App Are You Ordering From? ", selection: $selection){
+                            ForEach(id, id: \.self){
+                                Text($0).tag(id)
+                            }
+                        } .pickerStyle(.automatic)
+                            .accentColor(.black)
+                            .onChange(of: selection) { _ in
+                                    print(selection)
+                                self.selection = selection
+                                }
+                        .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color.orange))
+
+                        
+                    }
       
                     VStack(alignment: .leading){
                             Text("Restaurant Name")
@@ -118,9 +138,10 @@ struct Form: View {
                                 switch result {
                                 case .success(_):
                                     print("order sent")
-                                    
+                                    print(selection)
                                 case .failure(let failure):
                                     print("faill", failure)
+                                    print("selection",selection)
                                     showOrder = true
                                 }
                             }
@@ -143,6 +164,6 @@ struct Form: View {
 
 struct Form_Previews: PreviewProvider {
     static var previews: some View {
-        Form()
+        Form(selection: "Jahez")
     }
 }

@@ -43,7 +43,7 @@ struct AccountInfo: View {
                         Text("Phone Number")
                             .font(.system(size: 15))
                             .fontWeight(.medium)
-                        TextField("What App Are You Ordering From?", text: $PhoneN)
+                        TextField("Enter your Phone Number", text: $PhoneN)
                             .padding(.horizontal)
                             .font(.system(size: 15))
                             .frame(height: 50)
