@@ -938,6 +938,89 @@ struct WebAPI {
             
      
         }
+    // MARK: - PATCH BANK PAYMENT Iban
+    static func PatchBankpaymentsIban(
+     iban: String,
+     completion: @escaping (Result<BankpaymentsIban, Error>) -> Void) {
+            
+            // update access token from userDefault value
+            if ((self.accessToken?.isEmpty) == nil) {
+                accessToken = UserDefaults.standard.string(forKey: "accessToken")
+            }
+            guard let accessToken = self.accessToken
+            else {
+                          completion(.failure(WebAPIError.unauthorized))
+                          return
+            }
+            
+            let body = BankpaymentsIban( iban: iban)
+            
+            guard let jsonBody = try? JSONEncoder().encode(body) else {
+              completion(.failure(WebAPIError.unableToEncodeJSONData))
+              return
+            }
+            let session = URLSession.shared
+            let url = URL(string: "\(baseURL)/api/bankpayments/bankpayment")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+              do {
+                let bankpaymentsresponse: BankpaymentsresponseIban = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(bankpaymentsresponse.bankpaymentsIban))
+              } catch {
+                completion(.failure(error))
+              }
+            }
+            .resume()
+            
+     
+        }
+    
+    // MARK: - PATCH BANK PAYMENT bname
+    static func PatchBankpaymentsBname(
+     bname: String,
+     completion: @escaping (Result<BankpaymentsBname, Error>) -> Void) {
+            
+            // update access token from userDefault value
+            if ((self.accessToken?.isEmpty) == nil) {
+                accessToken = UserDefaults.standard.string(forKey: "accessToken")
+            }
+            guard let accessToken = self.accessToken
+            else {
+                          completion(.failure(WebAPIError.unauthorized))
+                          return
+            }
+            
+            let body = BankpaymentsBname( bname: bname)
+            
+            guard let jsonBody = try? JSONEncoder().encode(body) else {
+              completion(.failure(WebAPIError.unableToEncodeJSONData))
+              return
+            }
+            let session = URLSession.shared
+            let url = URL(string: "\(baseURL)/api/bankpayments/bankpayment")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+              do {
+                let bankpaymentsresponse: BankpaymentsresponseBname = try parseResponse(response, data: data, error: error)
+
+                  completion(.success(bankpaymentsresponse.bankpaymentsBname))
+              } catch {
+                completion(.failure(error))
+              }
+            }
+            .resume()
+            
+     
+        }
     // MARK: - PATCH BANK PAYMENT
     static func PatchBankpayments(
      phone: String?,
@@ -1055,6 +1138,20 @@ struct Bankpayments: Codable {
 struct Bankpaymentsresponse: Codable {
     let accessToken: String?
     let bankpayments: Bankpayments
+}
+struct BankpaymentsIban:  Codable {
+    let iban : String?
+}
+struct BankpaymentsresponseIban: Codable {
+    let accessToken: String?
+    let bankpaymentsIban: BankpaymentsIban
+}
+struct BankpaymentsBname:  Codable {
+    let bname : String?
+}
+struct BankpaymentsresponseBname: Codable {
+    let accessToken: String?
+    let bankpaymentsBname: BankpaymentsBname
 }
 
 struct Addphone: Codable {

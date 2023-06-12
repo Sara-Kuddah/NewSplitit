@@ -167,9 +167,9 @@ struct AccountInfo: View {
                                 WebAPI.PatchPhone(phone: PhoneN) { result in
                                     switch result {
                                     case .success(let success):
-                                        print("posted stc", success)
+                                        print("Done patch phone number", success)
                                     case .failure(let failure):
-                                        print("error stc", failure)
+                                        print("error patch phone number", failure)
                                     }
                                 }
                             }
