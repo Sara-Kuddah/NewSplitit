@@ -64,7 +64,7 @@ struct ContentView: View {
                             .padding()
                         // if i don't have active order
                         if userHasActiveOrder{
-                            CardActiveOrder(merN: merN, status: status, orderID: orderID, isCreated: isCreated)
+                            CardActiveOrder(merN: merN, status: status, orderID: orderID, isCreated: $isCreated)
                         } else {
                             CardNewOrder()
                         }
@@ -97,33 +97,52 @@ struct ContentView: View {
                             print("failure orders around me",failure)
                         }
                     }
-                    WebAPI.getMyActiveOrder { res in
+//                    WebAPI.getMyActiveOrder { res in
+//                        switch res {
+//                        case .success(let success):
+//                            print(success)
+//                            self.userHasActiveOrder = true
+//                            self.status = success.status ?? "waiting"
+//                            self.merN = success.merchant_name
+//                            self.orderID = success.id
+////                            if success. == "created" {
+////                                self.isCreated = true
+////                            }
+//                            // if joined go to checkbox
+//                            // if created go to waiting1
+//                        case .failure(let failure):
+//                            print("mine ",failure)
+//                            self.userHasActiveOrder = false
+//                        }
+//                    }
+//                    WebAPI.getMyActiveOrder2 { res in
+//                        switch res {
+//                        case .success(let success):
+////                            self.merN = success.order.merchant_name
+//                            print("try 2 success",success)
+////                            print(merN)
+//                        case .failure(let failure):
+//                            print("try 2 failure",failure)
+//
+//                        }
+//                    }
+                    WebAPI.getMyActiveOrder3 { res in
                         switch res {
                         case .success(let success):
-                            print(success)
                             self.userHasActiveOrder = true
-                            self.status = success.status ?? "waiting"
-                            self.merN = success.merchant_name
-                            self.orderID = success.id
-//                            if success. == "created" {
-//                                self.isCreated = true
-//                            }
-                            // if joined go to checkbox
-                            // if created go to waiting1
-                        case .failure(let failure):
-                            print("mine ",failure)
-                            self.userHasActiveOrder = false
-                        }
-                    }
-                    WebAPI.getMyActiveOrder2 { res in
-                        switch res {
-                        case .success(let success):
-//                            self.merN = success.order.merchant_name
-                            print("try 2 success",success)
+                            self.status = success.order.status ?? "waiting"
+                            self.merN = success.order.merchant_name
+                            self.orderID = success.order.id
+                            if success.type == "created"{
+                                self.isCreated = true
+                            } else {
+                                self.isCreated = false
+                            }
+                            print("try 3 success",success)
 //                            print(merN)
                         case .failure(let failure):
-                            print("try 2 failure",failure)
-                            
+                            print("try 3 failure",failure)
+                            self.userHasActiveOrder = false
                         }
                     }
                 } else { // unsigned user -- fix this function

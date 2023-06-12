@@ -199,6 +199,8 @@ struct Waiting1: View {
                         print("couldn't get bank info", failure)
                     }
                 }
+                // get joined users ?? do we have anything for it?
+                // get joined items
             }
         }
 //        .navigationBarBackButtonHidden(true)

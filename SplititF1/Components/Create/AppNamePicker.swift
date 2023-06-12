@@ -22,9 +22,10 @@ struct AppNamePicker: View {
             
             Picker("What App Are You Ordering From? ", selection: $selection){
                 ForEach(id, id: \.self){
-                    Text($0).tag(id)
-                }
-            } .pickerStyle(.automatic)
+                    Text($0)
+                }.tag(id)
+            }
+//            .pickerStyle(.automatic)
                 .accentColor(.black)
                 .onChange(of: selection) { _ in
                         print(selection)
@@ -37,6 +38,7 @@ struct AppNamePicker: View {
 
             
         }
+       // selection = selection.wrappedValue.description
     }
 }
 

@@ -12,7 +12,7 @@ struct CardActiveOrder: View {
     @State var status = String()
     @State var orderID = UUID()
 //    @State var isJoined = Bool()
-    @State var isCreated = Bool()
+    @Binding var isCreated: Bool
     @State var showWaiting = false
     @State var showCheckBox = false
     var body: some View {

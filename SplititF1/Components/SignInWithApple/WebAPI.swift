@@ -341,6 +341,49 @@ struct WebAPI {
           }.resume()
     }
     
+    // MARK: - GET MY ACTIVE ORDER TRY 3
+    static func getMyActiveOrder3(completion: @escaping (Result<User_Order, Error>) -> Void) {
+        // update access token from userDefault value
+        if ((self.accessToken?.isEmpty) == nil) {
+            accessToken = UserDefaults.standard.string(forKey: "accessToken")
+        }
+        guard let accessToken = self.accessToken
+        else {
+          completion(.failure(WebAPIError.unauthorized))
+          return
+        }
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/myactiveorder")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                if let error = error {
+                  throw error
+                }
+                  guard let httpResponse = response as? HTTPURLResponse else {
+                    throw WebAPIError.invalidResponse
+                  }
+                  if !(200...299).contains(httpResponse.statusCode) {
+                    throw WebAPIError.httpError(statusCode: httpResponse.statusCode)
+                  }
+                  guard let data = data,
+                  let decoded = try? JSONDecoder().decode(User_Order.self, from: data)
+                  else {
+                    throw WebAPIError.unableToDecodeJSONData
+                  }
+                completion(.success(decoded))
+                
+            } catch {
+                completion(.failure(error))
+            }
+          }.resume()
+    }
+    
     // MARK: - GET RANDOM ORDERS - 10 - NEEDS A FIX
     static func getRandomOrders(completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
         
@@ -571,10 +614,100 @@ struct WebAPI {
     }
     
     // MARK: - PATCH ORDER ACTIVE
+    static func changeActive(id: UUID,
+                             location: Location,
+                             merchant_name: String,
+                             app_name: String,
+                             delivery_fee: Int,
+                             checkpoint: String,
+                             notes: String?,
+                             active: Bool?,
+                             status: String?,
+                             updatedAt: String?,
+                             createdAt: String?,
+                             completion: @escaping (Result<Order, Error>) -> Void) {
+        // update access token from userDefault value
+        if ((self.accessToken?.isEmpty) == nil) {
+            accessToken = UserDefaults.standard.string(forKey: "accessToken")
+        }
+        guard let accessToken = self.accessToken
+        else {
+              completion(.failure(WebAPIError.unauthorized))
+              return
+        }
+        
+        let body = Order(id: id, location: location, merchant_name: merchant_name, app_name: app_name, delivery_fee: delivery_fee, checkpoint: checkpoint, notes: notes, active: active, status: status, updatedAt: updatedAt, createdAt: createdAt)
+        guard let jsonBody = try? JSONEncoder().encode(body) else {
+          completion(.failure(WebAPIError.unableToEncodeJSONData))
+          return
+        }
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/falseactive")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse3 = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+        
+    }
     
     
     // MARK: - PATCH DELIVERY FEE
-    
+    static func changeDelivery(id: UUID,
+                             location: Location,
+                             merchant_name: String,
+                             app_name: String,
+                             delivery_fee: Int,
+                             checkpoint: String,
+                             notes: String?,
+                             active: Bool?,
+                             status: String?,
+                             updatedAt: String?,
+                             createdAt: String?,
+                               completion: @escaping (Result<Order, Error>) -> Void) {
+        // update access token from userDefault value
+        if ((self.accessToken?.isEmpty) == nil) {
+            accessToken = UserDefaults.standard.string(forKey: "accessToken")
+        }
+        guard let accessToken = self.accessToken
+        else {
+            completion(.failure(WebAPIError.unauthorized))
+            return
+        }
+        
+        let body = Order(id: id, location: location, merchant_name: merchant_name, app_name: app_name, delivery_fee: delivery_fee, checkpoint: checkpoint, notes: notes, active: active, status: status, updatedAt: updatedAt, createdAt: createdAt)
+        guard let jsonBody = try? JSONEncoder().encode(body) else {
+            completion(.failure(WebAPIError.unableToEncodeJSONData))
+            return
+        }
+        
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/orders/deliveryFeeUpdate")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        session.uploadTask(with: request, from: jsonBody) { (data, response, error) in
+            do {
+                let orderResponse: OrderResponse3 = try parseResponse(response, data: data, error: error)
+                
+                completion(.success(orderResponse.order))
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
     
     // MARK: - POST PAYMENT STC
     
@@ -979,18 +1112,22 @@ struct ActiveOrderOutput: Codable {
     let order: Order
 }
 
-struct ActiveOrderResonse: Codable {
-    let accessToken: String?
-    let user_order: User_Order
-}
-
-struct User_Order: Codable {
-    let id: UUID
-    let type: String
-    let order: Order
-}
-
 struct OrderResponse3: Codable {
     let accessToken: String?
     let order: Order
+}
+
+
+struct User_Order: Codable {
+    let id: UUID
+    let user: User
+    let order: Order
+    let type: String
+    let joinedAt: String?
+}
+
+
+struct ActiveOrderResonse: Codable {
+    let accessToken: String?
+    let user_order: User_Order
 }
