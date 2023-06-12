@@ -141,7 +141,7 @@ struct AccountInfo: View {
                                 let longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
                                 let latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
                                 
-                                        WebAPI.postLocation(discription: "Alaa",
+                                        WebAPI.postLocation(discription: "My Location",
                                                             long: longitude ,
                                                             lat: latitude ,
                                                             completion: { result in
@@ -163,7 +163,16 @@ struct AccountInfo: View {
                             default:
                                 break
                             }
-                            
+                            if !PhoneN.isEmpty {
+                                WebAPI.PatchPhone(phone: PhoneN) { result in
+                                    switch result {
+                                    case .success(let success):
+                                        print("posted stc", success)
+                                    case .failure(let failure):
+                                        print("error stc", failure)
+                                    }
+                                }
+                            }
                             if !STCp.isEmpty {
                                 WebAPI.postStcPayments(phone: STCp) { result in
                                     switch result {
