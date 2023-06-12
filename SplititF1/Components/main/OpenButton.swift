@@ -17,7 +17,7 @@ struct OpenButton: View {
                 .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color("Color1"))
+                        .foregroundColor(Color("Mycolor"))
                         .frame(width: 210, height: 33)
                 )
         }

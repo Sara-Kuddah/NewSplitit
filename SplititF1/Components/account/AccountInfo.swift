@@ -49,7 +49,7 @@ struct AccountInfo: View {
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                         CheckP()
                     }
                     
@@ -72,7 +72,7 @@ struct AccountInfo: View {
                             .textFieldStyle(PlainTextFieldStyle())
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                             .padding(.bottom)
                     }
                     VStack(alignment: .leading){
@@ -88,7 +88,7 @@ struct AccountInfo: View {
                         
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                             .padding(.bottom)
                     }
                     VStack(alignment: .leading) {
@@ -103,7 +103,7 @@ struct AccountInfo: View {
                             .textFieldStyle(PlainTextFieldStyle())
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                             .padding(.bottom)
                     }
                     
@@ -127,7 +127,7 @@ struct AccountInfo: View {
                             .textFieldStyle(PlainTextFieldStyle())
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                     }
                 }
                 .padding()

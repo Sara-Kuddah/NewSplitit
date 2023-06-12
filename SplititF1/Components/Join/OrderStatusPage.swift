@@ -37,7 +37,7 @@ struct OrderStatusPage: View {
                             NavigationLink(destination: TabBar()) {
                                 Image(systemName: "chevron.left")
                                     .padding(.leading, 15)
-                                    .foregroundColor(Color("Color1"))
+                                    .foregroundColor(Color("Mycolor"))
                             }
                         }
                         Spacer()
@@ -100,7 +100,7 @@ struct OrderStatusPage: View {
                     .font(.system(size: 16, weight: .bold, design: .default))
                 
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color("Color1"), lineWidth: 1)
+                    .stroke(Color("Mycolor"), lineWidth: 1)
                     .frame(width: 342, height: 221)
                     .overlay(
                         VStack {
@@ -111,7 +111,7 @@ struct OrderStatusPage: View {
                                         .font(.system(size: 14, weight: .bold, design: .default))
                                     Text("35 Riyals")
                                         .font(.system(size: 25, weight: .bold, design: .default))
-                                        .foregroundColor(Color("Color1"))
+                                        .foregroundColor(Color("Mycolor"))
                                         .padding(.top, 10)
                                     
                                     

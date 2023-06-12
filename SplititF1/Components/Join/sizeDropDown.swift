@@ -25,7 +25,7 @@ struct sizeDropDown: View {
                            .fill(Color.white)
                            .frame(width: 146, height: 52)
                            .overlay( RoundedRectangle(cornerRadius: 11)
-                            .stroke(Color("Color1"))  )
+                            .stroke(Color("Mycolor"))  )
                    }
                    
                    HStack {

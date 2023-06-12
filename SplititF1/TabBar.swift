@@ -28,7 +28,7 @@ struct TabBar: View {
                     Text("My Account")
                 }.tag(2)
             }
-            .accentColor(Color("Color1"))
+            .accentColor(Color("Mycolor"))
             //        .ignoresSafeArea()
             .onAppear {
                 let tabBarAppearance = UITabBarAppearance()

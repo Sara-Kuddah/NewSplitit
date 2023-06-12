@@ -78,6 +78,8 @@
 		F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */; };
 		F5D03D242A2F1F3000636E12 /* Privacy and Policy .swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D03D232A2F1F3000636E12 /* Privacy and Policy .swift */; };
 		F5D03D262A2F8E0D00636E12 /* helpandsupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D03D252A2F8E0D00636E12 /* helpandsupport.swift */; };
+		F5E16DE72A370CB5006A7AFC /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E16DE62A370CB5006A7AFC /* Notifications.swift */; };
+		F5E16DE92A370D00006A7AFC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E16DE82A370D00006A7AFC /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +159,8 @@
 		F5C7BBDA2A1B548E007AEB3A /* sizeDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sizeDropDown.swift; sourceTree = "<group>"; };
 		F5D03D232A2F1F3000636E12 /* Privacy and Policy .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Privacy and Policy .swift"; sourceTree = "<group>"; };
 		F5D03D252A2F8E0D00636E12 /* helpandsupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpandsupport.swift; sourceTree = "<group>"; };
+		F5E16DE62A370CB5006A7AFC /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		F5E16DE82A370D00006A7AFC /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,8 @@
 				231174332A0AB5FB003916F0 /* SplititF1App.swift */,
 				F50523D42A2B5405005BC1AC /* Location.swift */,
 				59ABF6692A2F1FC1005CE373 /* getLocation.swift */,
+				F5E16DE62A370CB5006A7AFC /* Notifications.swift */,
+				F5E16DE82A370D00006A7AFC /* File.swift */,
 				F50523D62A2B5807005BC1AC /* ContentView2.swift */,
 				23CD7CCD2A1A147800260B15 /* ContentView.swift */,
 				23CD7CA32A1A11F000260B15 /* TabBar.swift */,
@@ -512,6 +518,7 @@
 				F5C7BBDB2A1B548E007AEB3A /* sizeDropDown.swift in Sources */,
 				23CD7CC32A1A130300260B15 /* copyButton.swift in Sources */,
 				23CA5FC82A1E006200289A3B /* OrderConfirmed  .swift in Sources */,
+				F5E16DE92A370D00006A7AFC /* File.swift in Sources */,
 				23FC80FB2A14B7800001853B /* Onboarding.swift in Sources */,
 				23568BA72A30EC110063C061 /* Check1.swift in Sources */,
 				23EDEB662A0FDFB70096DA21 /* Waiting1.swift in Sources */,
@@ -524,6 +531,7 @@
 				23CD7CBA2A1A12EA00260B15 /* joinCard.swift in Sources */,
 				23CD7CA62A1A120C00260B15 /* OrderHistory .swift in Sources */,
 				23CD7CB42A1A129E00260B15 /* SendButton.swift in Sources */,
+				F5E16DE72A370CB5006A7AFC /* Notifications.swift in Sources */,
 				59A0B4E22A21E70800250403 /* newSizeDropDown.swift in Sources */,
 				F57B08A02A1F3CC3002A8913 /* NewOrder.swift in Sources */,
 				590B929A2A2CF0F00026B132 /* EnvironmentWindowKey.swift in Sources */,
@@ -668,7 +676,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = F3J9926XAP;
+				DEVELOPMENT_TEAM = T6KTATRLDG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location data to tell you your location";
@@ -683,7 +691,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sarakuddah.splitit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dina.splitit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -701,7 +709,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SplititF1/Preview Content\"";
-				DEVELOPMENT_TEAM = F3J9926XAP;
+				DEVELOPMENT_TEAM = T6KTATRLDG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location data to tell you your location";
@@ -716,7 +724,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sarakuddah.splitit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dina.splitit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

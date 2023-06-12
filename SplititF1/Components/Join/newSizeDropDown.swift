@@ -29,7 +29,7 @@ struct newSizeDropDown: View {
                 .frame(width: 146, height: 52)
 //                .frame(maxWidth: .infinity)
                 .textFieldStyle(PlainTextFieldStyle())
-                .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color("Color1")))
+                .overlay(RoundedRectangle(cornerRadius: 11).stroke(Color("Mycolor")))
         }
     }
 }

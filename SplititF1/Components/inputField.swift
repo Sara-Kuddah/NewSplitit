@@ -18,7 +18,7 @@ struct inputField: View {
             .frame(height: 50)
         
             .overlay( RoundedRectangle(cornerRadius: 11)
-                .stroke(Color("Color1"))
+                .stroke(Color("Mycolor"))
             )
     }
 }

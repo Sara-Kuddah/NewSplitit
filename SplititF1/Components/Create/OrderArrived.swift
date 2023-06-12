@@ -20,7 +20,7 @@ struct OrderArrived: View {
                     }) {
                         NavigationLink(destination:  TabBar()) {
                             Image(systemName: "chevron.left")
-                                .foregroundColor(Color("Color1"))
+                                .foregroundColor(Color("Mycolor"))
                                 .padding(.leading)
                         }
                     }
@@ -77,7 +77,7 @@ struct OrderArrived: View {
                                 .foregroundColor(.black)
                                 .frame(width: 200)
                                 .frame(height: 50)
-                                .background(Color("Color1"))
+                                .background(Color("Mycolor"))
                                 .cornerRadius(10)
                             
                         }

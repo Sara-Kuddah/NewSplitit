@@ -17,7 +17,7 @@ struct copyButton: View {
                     Image(systemName: "doc.on.doc")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(Color("Color1"))
+                        .foregroundColor(Color("Mycolor"))
                 }
             }
         

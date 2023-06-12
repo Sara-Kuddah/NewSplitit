@@ -37,7 +37,7 @@ struct OrderView: View {
                    Image(systemName: isDropdownExpanded ? "chevron.up" : "chevron.down")
                        .font(.system(size: 15, weight: .semibold, design: .default))
                        .padding(.trailing, 10)
-                       .foregroundColor(Color("Color1"))
+                       .foregroundColor(Color("Mycolor"))
                        .onTapGesture {
                            isDropdownExpanded.toggle()
                        }

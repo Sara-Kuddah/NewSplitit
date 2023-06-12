@@ -121,7 +121,7 @@ struct Waiting1: View {
                             .foregroundColor(.black)
                             .frame(width: 200)
                             .frame(height: 50)
-                            .background(Color("Color1"))
+                            .background(Color("Mycolor"))
                             .cornerRadius(10)
                         
                         
