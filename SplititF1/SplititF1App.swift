@@ -12,8 +12,8 @@ struct SplititF1App: App {
     var body: some Scene {
         WindowGroup {
 //            OrderStatusPage()
-            NotificationsView()
-           //Splash()
+  //          NotificationsView()
+           Splash()
 //            Mapp().environmentObject(LocalSearchService())
 //            getLocation()
 //            ContentView2()
