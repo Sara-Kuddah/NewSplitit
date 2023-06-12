@@ -17,6 +17,8 @@ struct Form: View {
     @State var firstMarked = false
     @State var thirdMarked = false
     @State private var showOrder = false
+    @State var selection = String()
+    
     var body: some View {
         NavigationView {
             ScrollView{
@@ -44,7 +46,7 @@ struct Form: View {
                     Divider()
                 VStack {
                         VStack{
-                            AppNamePicker(selection: "Jahez")
+                            AppNamePicker(selection: selection)
                             
                         }
       
