@@ -352,7 +352,7 @@ struct WebAPI {
           completion(.failure(WebAPIError.unauthorized))
           return
         }
-        
+        print(accessToken)
         let session = URLSession.shared
         let url = URL(string: "\(baseURL)/api/orders/myactiveorder")!
         var request = URLRequest(url: url)
@@ -377,7 +377,6 @@ struct WebAPI {
                     throw WebAPIError.unableToDecodeJSONData
                   }
                 completion(.success(decoded))
-                
             } catch {
                 completion(.failure(error))
             }
@@ -521,8 +520,8 @@ struct WebAPI {
           }.resume()
         
     }
-    // MARK: - GET ITEMS IN AN Order
-    static func getItemsInOrder(orderID: UUID, completion: @escaping (Result<[Item], Error>) -> Void) {
+    // MARK: - GET MY ITEMS IN AN Order
+    static func getMyItemsInOrder(orderID: UUID, completion: @escaping (Result<[Item], Error>) -> Void) {
         // update access token from userDefault value
         if ((self.accessToken?.isEmpty) == nil) {
             accessToken = UserDefaults.standard.string(forKey: "accessToken")
@@ -536,6 +535,53 @@ struct WebAPI {
         let body = OrderID(orderID: orderID)
         let session = URLSession.shared
         let url = URL(string: "\(baseURL)/api/items/\(body.orderID)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        session.dataTask(with: request) { (data, response, error) in
+            do {
+                    if let error = error {
+                      throw error
+                    }
+                      guard let httpResponse = response as? HTTPURLResponse else {
+                        throw WebAPIError.invalidResponse
+                      }
+                      if !(200...299).contains(httpResponse.statusCode) {
+                        throw WebAPIError.httpError(statusCode: httpResponse.statusCode)
+                      }
+                      guard let data = data,
+                      let decoded = try? JSONDecoder().decode([Item].self, from: data)
+                      else {
+                        throw WebAPIError.unableToDecodeJSONData
+                      }
+                    completion(.success(decoded))
+            } catch {
+                completion(.failure(error))
+            }
+          }.resume()
+    }
+    
+    
+    // MARK: - GET ALL ITEMS IN AN Order
+    static func getAllItemsInOrder(orderID: UUID, completion: @escaping (Result<[Item], Error>) -> Void) {
+        // update access token from userDefault value
+        if ((self.accessToken?.isEmpty) == nil) {
+            accessToken = UserDefaults.standard.string(forKey: "accessToken")
+        }
+        guard let accessToken = self.accessToken
+        else {
+              completion(.failure(WebAPIError.unauthorized))
+              return
+        }
+        
+        let body = OrderID(orderID: orderID)
+        let body2 = orderID.description
+        print(body2)
+        print("order id in web api",body.orderID)
+        let session = URLSession.shared
+        let url = URL(string: "\(baseURL)/api/items/getAll/\(body.orderID)")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")

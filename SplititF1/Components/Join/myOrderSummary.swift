@@ -97,7 +97,7 @@ struct myOrderSummary: View {
                     .stroke(Color.gray, lineWidth: 1)
             )
             .onAppear{
-                WebAPI.getItemsInOrder(orderID: orderID) { res in
+                WebAPI.getMyItemsInOrder(orderID: orderID) { res in
                     switch res {
                     case .success(let success):
                         self.items = success

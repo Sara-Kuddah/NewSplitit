@@ -17,8 +17,9 @@ struct Form: View {
     @State var firstMarked = false
     @State var thirdMarked = false
     @State private var showOrder = false
-    //@State var selection = String()
-    @State public var selection: String
+    @State var orderID = UUID()
+    @State public var selection: String = "Jahez"
+    @State var sel3 = ""
     let id = ["Jahez", "The Chefz", "Hunger Station", "Ninja", "Toyou", "Cari", "Shgardi", "Cofe", "Mr.Mandoob", "Mrsool"]
     var body: some View {
         NavigationView {
@@ -36,11 +37,11 @@ struct Form: View {
                         }
                         Spacer()
                         VStack(alignment: .center, spacing: 2) {
-                            Text("McDonald's")
+                            Text("Create Order")
                                 .font(.system(size: 25, weight: .bold, design: .default))
-                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
-                                .font(.system(size: 13, weight: .regular, design: .default))
-                                .foregroundColor(.secondary)
+//                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+//                                .font(.system(size: 13, weight: .regular, design: .default))
+//                                .foregroundColor(.secondary)
                         }
                         Spacer()
                     }
@@ -61,6 +62,7 @@ struct Form: View {
                             .onChange(of: selection) { _ in
                                     print(selection)
                                 self.selection = selection
+                                sel3 = selection
                                 }
                         .frame(height: 50)
                         .frame(maxWidth: .infinity)
@@ -129,7 +131,7 @@ struct Form: View {
                             guard !DeliveryF.isEmpty else { return }
                             let deliveryFeeInt = Int(DeliveryF)
                             WebAPI.postOrder(merchantName: restaurantN,
-                                             appName: appN,
+                                             appName: sel3,
                                              deliveryFee: deliveryFeeInt ?? 0,
                                              checkpoint: checkP,
                                              notes: Notes,
@@ -142,13 +144,22 @@ struct Form: View {
                                 case .failure(let failure):
                                     print("faill", failure)
                                     print("selection",selection)
+                                    
                                     showOrder = true
+                                }
+                                WebAPI.getMyActiveOrder3 { res in
+                                    switch res {
+                                    case .success(let success):
+                                        self.orderID = success.order.id
+                                    case .failure(let failure):
+                                        print("here",failure)
+                                    }
                                 }
                             }
                             
                         }
                         .fullScreenCover(isPresented: $showOrder) {
-                            Waiting1()
+                            Waiting1(orderID: orderID)
                         }
                         
                     }

@@ -85,7 +85,7 @@ struct newJoinCard: View {
                     Spacer()
                     VStack{ // col 2 -- 1st bring the whole navigation link here!
                             // 2nd  pass order id
-                        NavigationLink(destination: FormForAddingOrder(orderID: orderID)) {
+                        NavigationLink(destination: FormForAddingOrder(appN: appN, merN: merN, delFe: delFe, payMS: payMS, payMB: payMB, cheP: cheP, orderID: orderID)) {
                             Text("Join")
                                 .font(.system(size: 14, weight: .semibold, design: .default))
                                 .foregroundColor(.black)

@@ -33,6 +33,8 @@ struct Waiting1: View {
     @State var payMB = String()
     @State var cheP = String()
     @State var status = String()
+    @State var orderID : UUID
+    @State var items: [Item] = []
     var body: some View {
         NavigationView {
             VStack {
@@ -48,18 +50,18 @@ struct Waiting1: View {
                     }
                     Spacer()
                     VStack(alignment: .center, spacing: 2) {
-                        Text(!merN.isEmpty ? "\(merN)" : "McDonald's")
+                        Text(!merN.isEmpty ? "\(merN)" : "Resturant Name")
                             .font(.system(size: 25, weight: .bold, design: .default))
                         HStack {
-                            Text(!delFe.isEmpty ? "\(delFe)SR" : "20SR")
+                            Text(!delFe.isEmpty ? "\(delFe)SR" : "Riyal")
                                 .font(.system(size: 13, weight: .regular, design: .default))
                                 .foregroundColor(.secondary)
                             
-                            Text(!appN.isEmpty ? "\(appN)" : "Jahez")
+                            Text(!appN.isEmpty ? "\(appN)" : "App Name")
                                 .font(.system(size: 13, weight: .regular, design: .default))
                                 .foregroundColor(.secondary)
                             
-                            Text(!payMB.isEmpty ? "\(payMB)" : "Al rajhi")
+                            Text(!payMB.isEmpty ? "\(payMB)" : "Bank Name")
                                 .font(.system(size: 13, weight: .regular, design: .default))
                                 .foregroundColor(.secondary)
                             
@@ -67,7 +69,7 @@ struct Waiting1: View {
 //                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
                                 .font(.system(size: 13, weight: .regular, design: .default))
                                 .foregroundColor(.secondary)
-                            Text(!cheP.isEmpty ? "\(cheP)" : "PNU A4")
+                            Text(!cheP.isEmpty ? "\(cheP)" : "Checkpoint")
                                 .font(.system(size: 13, weight: .regular, design: .default))
                                 .foregroundColor(.secondary)
                         }
@@ -95,25 +97,18 @@ struct Waiting1: View {
                                     _ in
                                     timeRemaining -= 1
                                 }
-                            
-                            
                         }
                         .padding(.top, -20)
                     } //.padding(.top, -120.0)
-                
+                    
                     Text("You only can cancel announcement when no one  joined yet")
                         .font(.system(size:12))
                         .fontWeight(.semibold)
                         .padding(.leading, -10.0)
-                        
-                       
                     VStack{
                         TimelineTrack()
                             .padding(.top, 10.0)
                     }
-                    
-                    
-                    
                     NavigationLink(destination: TabBar()) {
                         Text("Cancel")
                             .padding(.all)
@@ -122,30 +117,27 @@ struct Waiting1: View {
                             .frame(width: 200)
                             .frame(height: 50)
                             .background(Color("Color1"))
-                            .cornerRadius(10)
+                        .cornerRadius(10)                    }
+                    //                    .navigationBarBackButtonHidden(true)
+                    
+                    .padding(.trailing, -170.0)
+                    .padding(.top, -70.0)
+                    
+                    Divider()
+                    VStack {
+                        
+                        
+                        Text(status == "waiting" ? "Waiting for others to join :" : "Completed")
+                            .font(.system(size:20))
+                            .fontWeight(.bold)
+                            .padding(.leading, -130.0)
+                            .padding(.top, 10.0)
                         
                         
                     }
                     
-                    
-//                    .navigationBarBackButtonHidden(true)
-                    
-                .padding(.trailing, -170.0)
-                   .padding(.top, -70.0)
-                   
-                        Divider()
-                   
-                    Text(status == "waiting" ? "Waiting for others to join :" : "Completed")
-                        .font(.system(size:20))
-                        .fontWeight(.bold)
-                        .padding(.leading, -130.0)
-                        .padding(.top, 10.0)
-                    
-                    
-                    
-                    
+                    .padding(.top, 10.0)
                 }
-                .padding(.top, 10.0)
 //                .navigationBarTitleDisplayMode(.inline)
 //                .toolbar {
 //                    ToolbarItem(placement: .principal) { // <3>
@@ -163,26 +155,10 @@ struct Waiting1: View {
 //                }
                 
                 
-                
-                
-                
-                
             }
             .padding(.bottom, 400.0)
             .onAppear{
-                WebAPI.getMyActiveOrder { res in
-                    switch res {
-                    case .success(let success):
-                        self.merN = success.merchant_name
-                        self.appN = success.app_name
-                        self.delFe = String(success.delivery_fee)
-                        self.cheP = success.checkpoint
-                        self.status = success.status ?? "waiting"
-                        print("waiting works!")
-                    case .failure(let failure):
-                        print("couldn't get my active order", failure)
-                    }
-                }
+                print("on appear",orderID)
                 WebAPI.getstcpayments { res in
                     switch res {
                     case .success(let success):
@@ -199,16 +175,57 @@ struct Waiting1: View {
                         print("couldn't get bank info", failure)
                     }
                 }
+                WebAPI.getMyActiveOrder3 { res in
+                    switch res {
+                    case .success(let success):
+                        self.merN = success.order.merchant_name
+                        self.appN = success.order.app_name
+                        self.delFe = String(success.order.delivery_fee)
+                        self.cheP = success.order.checkpoint
+                        self.status = success.order.status ?? "waiting"
+                        self.orderID = success.order.id
+                        print("get my function",orderID)
+                    case .failure(let failure):
+                        print("couldn't get my active order", failure)
+                    }
+                }
                 // get joined users ?? do we have anything for it?
                 // get joined items
+                WebAPI.getAllItemsInOrder(orderID: orderID) { res in
+                    switch res {
+                    case .success(let success):
+                        print("success get items", success.self)
+                        self.items = success
+                        print(items)
+                        print("order id in view",orderID)
+                    case .failure(let failure):
+                        print("fail", failure)
+                    }
+                }
+//                WebAPI.getMyActiveOrder { res in
+//                    switch res {
+//                    case .success(let success):
+//                        self.merN = success.merchant_name
+//                        self.appN = success.app_name
+//                        self.delFe = String(success.delivery_fee)
+//                        self.cheP = success.checkpoint
+//                        self.status = success.status ?? "waiting"
+//                        self.orderID = success.id
+//                        print("get my function",success.id)
+//                        print("waiting works!")
+//                    case .failure(let failure):
+//                        print("couldn't get my active order", failure)
+//                    }
+//                }
+                
             }
         }
 //        .navigationBarBackButtonHidden(true)
     }
 }
 
-struct Waiting1_Previews: PreviewProvider {
-    static var previews: some View {
-        Waiting1()
-    }
-}
+//struct Waiting1_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Waiting1()
+//    }
+//}

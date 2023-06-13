@@ -15,7 +15,12 @@ struct FormForAddingOrder: View {
     //    @State private var isShowingOptions: Bool = false
     @State private var showOrderIsSent = false
     //    @State private var isPresentedFullScreenCover = false
-    
+    @State var appN : String
+    @State var merN : String
+    @State var delFe : Int
+    @State var payMS : String
+    @State var payMB : String
+    @State var cheP :String
     @State var orderID: UUID
     var body: some View {
         NavigationView {
@@ -32,9 +37,9 @@ struct FormForAddingOrder: View {
                     }
                     Spacer()
                     VStack(spacing: 2) {
-                        Text("McDonald's")
+                        Text(merN)
                             .font(.system(size: 25, weight: .bold, design: .default))
-                        Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+                        Text("\(delFe), \(appN), \(payMS)-\(payMB), \(cheP)")
                             .font(.system(size: 13, weight: .regular, design: .default))
                             .foregroundColor(.secondary)
                     }

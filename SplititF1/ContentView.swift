@@ -93,6 +93,7 @@ struct ContentView: View {
                         switch res {
                         case .success(let success):
                             self.orders = success
+                        
                         case .failure(let failure):
                             print("failure orders around me",failure)
                         }
@@ -139,6 +140,7 @@ struct ContentView: View {
                                 self.isCreated = false
                             }
                             print("try 3 success",success)
+                            print("content view", orderID)
 //                            print(merN)
                         case .failure(let failure):
                             print("try 3 failure",failure)

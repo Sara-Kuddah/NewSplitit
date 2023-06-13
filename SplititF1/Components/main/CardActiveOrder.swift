@@ -10,7 +10,7 @@ import SwiftUI
 struct CardActiveOrder: View {
     @State var merN = String()
     @State var status = String()
-    @State var orderID = UUID()
+    @State var orderID : UUID
 //    @State var isJoined = Bool()
     @Binding var isCreated: Bool
     @State var showWaiting = false
@@ -29,7 +29,7 @@ struct CardActiveOrder: View {
                     Text("Show Order")
                 }
                 .fullScreenCover(isPresented: $showWaiting) {
-                    Waiting1()
+                    Waiting1(orderID: orderID)
                 }
 
             } else {
@@ -50,7 +50,12 @@ struct CardActiveOrder: View {
         .cornerRadius(14)
         .shadow(color: .black.opacity(0.1), radius: 10)
         .padding([.trailing, .leading])
+        
+        .onAppear {
+            print("card active order", orderID)
+        }
     }
+        
 }
 //
 //struct CardActiveOrder_Previews: PreviewProvider {
