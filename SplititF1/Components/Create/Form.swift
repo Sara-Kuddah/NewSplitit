@@ -31,7 +31,7 @@ struct Form: View {
                         }) {
                             NavigationLink(destination:  TabBar()) {
                                 Image(systemName: "chevron.left")
-                                    .foregroundColor(Color("Color1"))
+                                    .foregroundColor(Color("Mycolor"))
                                     .padding(.leading)
                             }
                         }
@@ -82,7 +82,7 @@ struct Form: View {
                                 .textFieldStyle(PlainTextFieldStyle())
                             
                                 .overlay( RoundedRectangle(cornerRadius: 11)
-                                    .stroke(Color("Color1"))  )
+                                    .stroke(Color("Mycolor"))  )
 
                         }
                     VStack(alignment: .leading){
@@ -95,7 +95,7 @@ struct Form: View {
                                 .frame(height: 50)
                                 .textFieldStyle(PlainTextFieldStyle())
                                 .overlay( RoundedRectangle(cornerRadius: 11)
-                                    .stroke(Color("Color1"))  )
+                                    .stroke(Color("Mycolor"))  )
                         }
                     VStack(alignment: .leading){
                             Text("Check Point")
@@ -108,19 +108,19 @@ struct Form: View {
                                 .textFieldStyle(PlainTextFieldStyle())
                             
                                 .overlay( RoundedRectangle(cornerRadius: 11)
-                                    .stroke(Color("Color1"))  )
+                                    .stroke(Color("Mycolor"))  )
                                 
                         }
                         
                         VStack{
                             PaymentCard()
-                                .padding(.vertical, 10.0)
+                               // .padding(.vertical, 10.0)
                         }
                         VStack(alignment: .leading) {
                             Text("Notes")
                                 .font(.system(size: 18))
                                 .fontWeight(.medium)
-                                .padding()
+                                //.padding()
                             inputField(placeholder: "", text: Notes)
                         }
                         

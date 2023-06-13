@@ -49,7 +49,7 @@ struct AccountInfo: View {
                             .frame(height: 50)
                             .textFieldStyle(PlainTextFieldStyle())
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                         CheckP()
                     }
                     
@@ -72,7 +72,7 @@ struct AccountInfo: View {
                             .textFieldStyle(PlainTextFieldStyle())
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                             .padding(.bottom)
                     }
                     VStack(alignment: .leading){
@@ -88,7 +88,7 @@ struct AccountInfo: View {
                         
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                             .padding(.bottom)
                     }
                     VStack(alignment: .leading) {
@@ -103,7 +103,7 @@ struct AccountInfo: View {
                             .textFieldStyle(PlainTextFieldStyle())
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                             .padding(.bottom)
                     }
                     
@@ -127,7 +127,7 @@ struct AccountInfo: View {
                             .textFieldStyle(PlainTextFieldStyle())
                         
                             .overlay( RoundedRectangle(cornerRadius: 11)
-                                .stroke(Color("Color1"))  )
+                                .stroke(Color("Mycolor"))  )
                     }
                 }
                 .padding()
@@ -141,7 +141,7 @@ struct AccountInfo: View {
                                 let longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
                                 let latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
                                 
-                                        WebAPI.postLocation(discription: "Alaa",
+                                        WebAPI.postLocation(discription: "My Location",
                                                             long: longitude ,
                                                             lat: latitude ,
                                                             completion: { result in
@@ -163,7 +163,16 @@ struct AccountInfo: View {
                             default:
                                 break
                             }
-                            
+                            if !PhoneN.isEmpty {
+                                WebAPI.PatchPhone(phone: PhoneN) { result in
+                                    switch result {
+                                    case .success(let success):
+                                        print("Done patch phone number", success)
+                                    case .failure(let failure):
+                                        print("error patch phone number", failure)
+                                    }
+                                }
+                            }
                             if !STCp.isEmpty {
                                 WebAPI.postStcPayments(phone: STCp) { result in
                                     switch result {

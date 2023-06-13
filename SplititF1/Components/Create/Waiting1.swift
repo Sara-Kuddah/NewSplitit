@@ -116,22 +116,8 @@ struct Waiting1: View {
                             .foregroundColor(.black)
                             .frame(width: 200)
                             .frame(height: 50)
-                            .background(Color("Color1"))
-                        .cornerRadius(10)                    }
-                    //                    .navigationBarBackButtonHidden(true)
-                    
-                    .padding(.trailing, -170.0)
-                    .padding(.top, -70.0)
-                    
-                    Divider()
-                    VStack {
-                        
-                        
-                        Text(status == "waiting" ? "Waiting for others to join :" : "Completed")
-                            .font(.system(size:20))
-                            .fontWeight(.bold)
-                            .padding(.leading, -130.0)
-                            .padding(.top, 10.0)
+                            .background(Color("Mycolor"))
+                            .cornerRadius(10)
                         
                         
                     }

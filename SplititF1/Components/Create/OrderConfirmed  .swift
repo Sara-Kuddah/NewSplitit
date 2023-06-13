@@ -29,7 +29,7 @@ struct SheetView: View {
             //
             HStack{
                 Text ("Reem")
-                    .foregroundColor(Color("Color1"))
+                    .foregroundColor(Color("Mycolor"))
                     .padding(.trailing, 90.0)
                 Text ("38 SR")
                     .foregroundColor(Color.black)
@@ -38,7 +38,7 @@ struct SheetView: View {
             }
             HStack{
                 Text ("Sarah")
-                    .foregroundColor(Color("Color1"))
+                    .foregroundColor(Color("Mycolor"))
                     .padding(.trailing, 90.0)
                 Text ("38 SR")
                     .padding(.trailing, 50.0)
@@ -47,7 +47,7 @@ struct SheetView: View {
             }
             HStack{
                 Text ("Noura")
-                    .foregroundColor(Color("Color1"))
+                    .foregroundColor(Color("Mycolor"))
                     .padding(.trailing, 90.0)
                 
                 Text ("38 SR")
@@ -57,7 +57,7 @@ struct SheetView: View {
             }
             HStack{
                 Text ("Nada")
-                    .foregroundColor(Color("Color1"))
+                    .foregroundColor(Color("Mycolor"))
                     .padding(.trailing, 90.0)
                 Text ("38 SR")
                     .foregroundColor(Color.black)
@@ -78,7 +78,7 @@ struct SheetView: View {
                     .foregroundColor(.black)
                     .frame(width: 200)
                     .frame(height: 50)
-                    .background(Color("Color1"))
+                    .background(Color("Mycolor"))
                     .cornerRadius(10)
             }
             
@@ -110,7 +110,7 @@ struct OrderConfirmed__: View {
                     }) {
                         NavigationLink(destination:  TabBar()) {
                             Image(systemName: "chevron.left")
-                                .foregroundColor(Color("Color1"))
+                                .foregroundColor(Color("Mycolor"))
                                 .padding(.leading)
                         }
                     }
@@ -186,7 +186,7 @@ struct OrderConfirmed__: View {
                                 .foregroundColor(.black)
                                 .frame(width: 200)
                                 .frame(height: 50)
-                                .background(Color("Color1"))
+                                .background(Color("Mycolor"))
                                 .cornerRadius(10)
                                 .sheet(isPresented: $showingSheet) {
                                     SheetView()

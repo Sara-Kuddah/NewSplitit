@@ -31,7 +31,7 @@ struct FormForAddingOrder: View {
                     }) {
                         NavigationLink(destination:  TabBar()) {
                             Image(systemName: "chevron.left")
-                                .foregroundColor(Color("Color1"))
+                                .foregroundColor(Color("Mycolor"))
                                 .padding(.leading)
                         }
                     }
@@ -68,7 +68,7 @@ struct FormForAddingOrder: View {
                         
                             .overlay(
                                 RoundedRectangle(cornerRadius: 11)
-                                    .stroke(Color("Color1"))
+                                    .stroke(Color("Mycolor"))
                             )
                     }
                 }
@@ -86,7 +86,7 @@ struct FormForAddingOrder: View {
                                 .frame(width: 146, height: 52)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color("Color1"))                        )}
+                                        .stroke(Color("Mycolor"))                        )}
                         .padding(.trailing, -40)
                         
                         newSizeDropDown()
@@ -100,14 +100,14 @@ struct FormForAddingOrder: View {
                     }) {
                         Text("+")
                             .font(.title)
-                            .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Mycolor"))
                             .font(.title)
                             .frame(width: 150, height: 50, alignment: .leading)
                             .padding(.top, 40)
                     }
                     Text("Add New Item")
                         .font(.system(size: 18, weight: .semibold, design: .default))
-                        .foregroundColor(Color("Color1"))
+                        .foregroundColor(Color("Mycolor"))
                         .frame(width: 150, height: 50, alignment: .leading)
                         .offset(x: -120)
                         .offset(y: 22)

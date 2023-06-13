@@ -44,7 +44,7 @@ struct newJoinCard: View {
                             HStack(spacing: 8) {
                                 
                                 Image(systemName: "car")
-                                    .foregroundColor(Color("Color1"))
+                                    .foregroundColor(Color("Mycolor"))
                                 Text("\(delFe)")
                                     .font(.caption)
                                     .frame(width: 80, height: 30)
@@ -52,7 +52,7 @@ struct newJoinCard: View {
                                     .minimumScaleFactor(0.01)
                                     .lineLimit(1)
                                 Image(systemName: "apps.iphone")
-                                    .foregroundColor(Color("Color1"))
+                                    .foregroundColor(Color("Mycolor"))
                                 Text(appN)
                                     .font(.caption)
                                     .frame(width: 80, height: 30)
@@ -64,7 +64,7 @@ struct newJoinCard: View {
                         VStack{ // row 2 col 1
                             HStack(spacing: 8) {
                                 Image(systemName: "dollarsign")
-                                    .foregroundColor(Color("Color1"))
+                                    .foregroundColor(Color("Mycolor"))
                                 Text("STC pay, Alrajhi") // now is just for show
                                     .font(.caption)
                                     .frame(width: 90, height: 30)
@@ -72,7 +72,7 @@ struct newJoinCard: View {
                                     .minimumScaleFactor(0.01)
                                     .lineLimit(1)
                                 Image(systemName: "location")
-                                    .foregroundColor(Color("Color1"))
+                                    .foregroundColor(Color("Mycolor"))
                                 Text(cheP)
                                     .font(.caption)
                                     .frame(width: 80, height: 30)
@@ -92,7 +92,7 @@ struct newJoinCard: View {
                                 .padding()
                                 .background(
                                     RoundedRectangle(cornerRadius: 7)
-                                        .foregroundColor(Color("Color1"))
+                                        .foregroundColor(Color("Mycolor"))
                                         .frame(width:70, height: 33)
                                 )
                         }

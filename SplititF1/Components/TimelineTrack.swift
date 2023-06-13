@@ -55,7 +55,7 @@ struct TimelineTrack: View {
     func getCircleColor(index: Int) -> Color {
         
         if let activeIndex = activeIndex, index == activeIndex {
-            return Color("Color1")
+            return Color("Mycolor")
         } else {
             return Color.gray
         }
@@ -64,7 +64,7 @@ struct TimelineTrack: View {
     func getLineColor(index: Int) -> Color {
         // Customize line colors based on index or any other condition
         if let activeIndex = activeIndex, index < activeIndex {
-            return Color("Color1")
+            return Color("Mycolor")
         } else {
             return Color.gray
         }

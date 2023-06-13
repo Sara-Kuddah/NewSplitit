@@ -19,7 +19,7 @@ struct CheckP: View {
                     Image(systemName: isChecked ? "checkmark.square.fill" : "square")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(Color("Color1"))
+                        .foregroundColor(Color("Mycolor"))
                     
                     Text("Use this Number for STC Pay")
                         .font(.system(size: 14, weight: .regular, design: .default))

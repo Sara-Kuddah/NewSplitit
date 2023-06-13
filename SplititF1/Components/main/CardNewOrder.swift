@@ -29,7 +29,7 @@ struct CardNewOrder: View {
         .padding()
         .frame(maxWidth: .infinity)
         .frame(height: 150)
-        .background(Color("Color1"))
+        .background(Color("Mycolor"))
         .cornerRadius(14)
         .padding([.trailing, .leading])
     }

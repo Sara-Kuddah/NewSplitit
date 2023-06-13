@@ -17,7 +17,7 @@ struct editButton: View {
             Image(systemName: "square.and.pencil")
                 .resizable()
                 .frame(width: 20, height: 20)
-                .foregroundColor(Color("Color1"))
+                .foregroundColor(Color("Mycolor"))
         }
     }
 }

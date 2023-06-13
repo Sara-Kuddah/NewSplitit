@@ -44,7 +44,7 @@ struct ContentView: View {
                         .padding(.trailing, 1)
                     
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                        .foregroundColor(Color("Color1"))
+                        .foregroundColor(Color("Mycolor"))
                         .onTapGesture {
                             self.isExpanded.toggle()
                         }
@@ -168,6 +168,7 @@ struct ContentView: View {
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
+        
         }
     }
 

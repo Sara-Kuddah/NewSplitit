@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MyAccountP: View {
-    @State private var Name: String = ""
+   // @State private var Name: String = ""
     @State private var Phone: String = ""
-    @State private var Email: String = ""
+    //@State private var Email: String = ""
     @State private var showTabBar = false
     var body: some View {
         VStack {
@@ -39,20 +39,30 @@ struct MyAccountP: View {
             Divider()
             VStack(alignment: .leading, spacing: 15) {
                 //Divider()
-                Text("Name")
-                    .font(.system(size: 17, weight: .semibold, design: .default))
-                inputField(placeholder: "Enter Your Name", text: Name)
+//                Text("Name")
+//                    .font(.system(size: 17, weight: .semibold, design: .default))
+//                inputField(placeholder: "Enter Your Name", text: Name)
                 Text("Phone ")
                     .font(.system(size: 17, weight: .semibold, design: .default))
                 inputField(placeholder: "056XXXXXX", text: Phone)
-                Text("Email")
-                    .font(.system(size: 17, weight: .semibold, design: .default))
-                inputField(placeholder: "Enter Your Email", text: Email)
+//                Text("Email")
+//                    .font(.system(size: 17, weight: .semibold, design: .default))
+//                inputField(placeholder: "Enter Your Email", text: Email)
                 
             }
             .padding()
             LargeButton(title: "Save"){
                 showTabBar = true
+                if !Phone.isEmpty {
+                    WebAPI.PatchPhone(phone: Phone) { result in
+                        switch result {
+                        case .success(let success):
+                            print("Done patch phone number", success)
+                        case .failure(let failure):
+                            print("error patch phone number", failure)
+                        }
+                    }
+                }
             }
             .fullScreenCover(isPresented: $showTabBar) {
                 TabBar()

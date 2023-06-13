@@ -54,7 +54,7 @@ struct checkbox: View {
                 Image(systemName: isChecked ? "checkmark.square.fill" : "square")
                     .resizable()
                     .frame(width: 20, height: 20)
-                    .foregroundColor(Color("Color1"))
+                    .foregroundColor(Color("Mycolor"))
                 Text("Payment Completed")
                     .font(.system(size: 14, weight: .regular, design: .default))
                     .foregroundColor(.black)
@@ -91,10 +91,10 @@ struct checkbox: View {
                                 //.padding()
                     HStack {
                         Text("15")
-                            .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Mycolor"))
                             .font(.system(size: 80, weight: .semibold, design: .default))
                             //.padding()
-                        Text("SR").foregroundColor(Color("Color1"))
+                        Text("SR").foregroundColor(Color("Mycolor"))
                             .font(.system(size: 24, weight: .semibold, design: .default))
                             //.padding()
                         

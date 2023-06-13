@@ -64,7 +64,44 @@ struct PaymentProfile: View {
                 .padding()
                 LargeButton(title: "Save") {
                     // add your functions here -- store data --
+                    //patch bankName
                     showTabBar = true
+                    if !bankName.isEmpty {
+                        WebAPI.PatchBankpaymentsBname(bname: bankName) { result in
+                            switch result {
+                            case .success(let success):
+                                print("Done patch bankName", success)
+                            case .failure(let failure):
+                                print("error patch bankName", failure)
+                            }
+                        }
+                    }
+                    //patch Iban
+                    if !Iban.isEmpty {
+                        WebAPI.PatchBankpaymentsIban(iban: Iban) { result in
+                            switch result {
+                            case .success(let success):
+                                print("Done patch Iban", success)
+                            case .failure(let failure):
+                                print("error patch Iban", failure)
+                            }
+                        }
+                    }
+
+                    //patch STCPay
+                    if !STCPay.isEmpty {
+                        WebAPI.PatchStcpayments(phone: STCPay) { result in
+                            switch result {
+                            case .success(let success):
+                                print("Done patch STCPay", success)
+                            case .failure(let failure):
+                                print("error patch STCPay", failure)
+                            }
+                        }
+                    }
+
+                    
+
                 }
                 .fullScreenCover(isPresented: $showTabBar) {
                     TabBar()
