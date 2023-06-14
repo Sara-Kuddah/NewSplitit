@@ -15,6 +15,7 @@ struct OrderView: View {
     @State var firstName = String()
     @State var phone = String()
     @Binding var allItems: [allItem]
+    @State var totalPrice = 0.0
     var body: some View {
         VStack {
             // for each person
@@ -77,7 +78,7 @@ struct OrderView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading) // Align additional info text on the left
                                 Spacer() // Add spacer
                                 
-                                Text("\(item.price) Riyals")
+                                Text("\(String(format: "%.1f", item.price)) Riyals")
                                     .foregroundColor(.gray)
                                     .font(.system(size: 13, weight: .medium, design: .default))
                                     .padding(.trailing, 10)
@@ -94,7 +95,7 @@ struct OrderView: View {
                             
                             
                             
-                            Text("30 Riyals ")
+                            Text("\(String(format: "%.1f",self.totalPrice + item.price)) Riyals ")
                                 .font(.body)
                                 .padding(.trailing, 10)
                                 .frame(maxWidth: .infinity, alignment: .trailing) // Align text 2 on the right

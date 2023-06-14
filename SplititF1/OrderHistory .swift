@@ -8,74 +8,68 @@
 import SwiftUI
 
 struct OrderHistory: View {
+    // mer name, createdat, active
+    @State var merN = String()
+    @State var crAt = String()
+    @State var active = Bool()
+    @State var orders: [Order] = []
     var body: some View {
             VStack(alignment: .leading) {
                         Text("My Orders")
                     .font(.system(size: 24, weight: .semibold, design: .default))
                     .frame(maxWidth: .infinity, alignment: .center)
                         Divider()
-                VStack{
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4.0) {
-                            
-                            Text("McDonald's")
-                                .font(.system(size: 18, weight: .semibold, design: .default))
-                            
-                            Text("13/04/2023")
-                                .font(.system(size:12, weight: .regular, design: .default))
-                            
-                            Text("Active Order")
-                                .font(.system(size: 15, weight: .semibold, design: .default))
-                                .foregroundColor(Color("ourgreen"))
-                            
-                        }
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            // Button action here
-                        }) {
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray)
-                                .font(.title)
-                        }
-                    }
+                // for each
+                ForEach(orders, id: \.id) { order in
                     
-                    Divider()
-                }
-                VStack{
-                    HStack {
-                        VStack {
-                            Text("McDonald's")
-                                .font(.system(size: 18, weight: .semibold, design: .default))
+                
+                    VStack{
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4.0) {
+                                
+                                Text(order.merchant_name)
+                                    .font(.system(size: 18, weight: .semibold, design: .default))
+                                
+                                Text(order.createdAt ?? "")
+                                    .font(.system(size:12, weight: .regular, design: .default))
+                                
+                                Text(order.active! ? "Active Order" : "inactive")
+                                    .font(.system(size: 15, weight: .semibold, design: .default))
+                                    .foregroundColor(Color("ourgreen"))
+                                
+                            }
                             
-                            Text("13/04/2023")
-                                .font(.system(size:12, weight: .regular, design: .default))
+                            Spacer()
                             
-                            Text("Inactive Order")
-                                .font(.system(size: 15, weight: .semibold, design: .default))
-                                .foregroundColor(Color.black.opacity(0.5))
-                            
+                            Button(action: {
+                                // Button action here
+                            }) {
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.gray)
+                                    .font(.title)
+                            }
                         }
                         
-                        Spacer()
-                        
-                        Button(action: {
-                            // Button action here
-                        }) {
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray)
-                                .font(.title)
-                        }
+                        Divider()
                     }
-                    
-                    Divider()
                 }
+                
                 Spacer()
                     }
                     .padding()
+        // on appear get all my orders
+                    .onAppear {
+                        WebAPI.getAllMyOrders { res in
+                            switch res {
+                            case .success(let success):
+                                self.orders = success
+                                print("get all mine succ", success)
+                            case .failure(let failure):
+                                print("get all my orders", failure)
+                            }
+                        }
+                    }
                 }
             }
 

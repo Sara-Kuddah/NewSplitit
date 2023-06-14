@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Waiting1: View {
+    // add presentation mode
+    // delivery fee updates? calculattions 
     @State var timeRemaining = 900
     
     let timer = Timer.publish(every:1, on: .main,
@@ -115,6 +117,7 @@ struct Waiting1: View {
                             .padding(.top, 10.0)
                     }
                     HStack {
+                        // add button to change status
                         Button {
                             // update -- change to get joined?
                             WebAPI.getAllItemsInOrder(orderID: orderID) { res in
@@ -141,7 +144,7 @@ struct Waiting1: View {
                                 .cornerRadius(10)
                         }
 
-                        
+                        // change to button - add dismiss
                         NavigationLink(destination: TabBar()) {
                             Text("Cancel")
                                 .padding(.all)

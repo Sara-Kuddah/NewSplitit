@@ -47,7 +47,7 @@ struct myOrderSummary: View {
                                     .frame(maxWidth: .infinity, alignment: .leading) // Align additional info text on the left
                                 Spacer() // Add spacer
                                 
-                                Text("\(item.price)")
+                                Text("\(String(format: "%.1f", item.price)) Riyals")
                                     .foregroundColor(.gray)
                                     .font(.system(size: 13, weight: .medium, design: .default))
                                     .padding(.trailing, 10)
@@ -78,7 +78,7 @@ struct myOrderSummary: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             // Align text 1 on the left
                             
-                            Text("\(totalPrice) Riyals ")
+                            Text("\(String(format: "%.1f",totalPrice)) Riyals ")
                                 .font(.body)
                                 .padding(.trailing, 10)
                                 .frame(maxWidth: .infinity, alignment: .trailing)

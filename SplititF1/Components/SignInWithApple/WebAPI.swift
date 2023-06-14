@@ -485,7 +485,7 @@ struct WebAPI {
     
     // MARK: - GET ALL MY ORDERS - NEEDS A FIX
     
-    static func getAllMyOrders(completion: @escaping (Result<OrderReqBody, Error>) -> Void) {
+    static func getAllMyOrders(completion: @escaping (Result<[Order], Error>) -> Void) {
         // update access token from userDefault value
         if ((self.accessToken?.isEmpty) == nil) {
             accessToken = UserDefaults.standard.string(forKey: "accessToken")
@@ -504,9 +504,21 @@ struct WebAPI {
 
         session.dataTask(with: request) { (data, response, error) in
             do {
-                let orderResponse: OrderResponse = try parseResponse(response, data: data, error: error)
-                
-                completion(.success(orderResponse.order))
+                if let error = error {
+                  throw error
+                }
+                  guard let httpResponse = response as? HTTPURLResponse else {
+                    throw WebAPIError.invalidResponse
+                  }
+                  if !(200...299).contains(httpResponse.statusCode) {
+                    throw WebAPIError.httpError(statusCode: httpResponse.statusCode)
+                  }
+                  guard let data = data,
+                  let decoded = try? JSONDecoder().decode([Order].self, from: data)
+                  else {
+                    throw WebAPIError.unableToDecodeJSONData
+                  }
+                completion(.success(decoded))
             } catch {
                 completion(.failure(error))
             }
