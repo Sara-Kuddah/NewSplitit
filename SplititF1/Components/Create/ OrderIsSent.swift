@@ -9,7 +9,7 @@ import SwiftUI
 
 struct  OrderIsSent: View {
     @State var timeRemaining = 900
-    
+    @State var items : [Item] = []
     let timer = Timer.publish(every:1, on: .main,
                               in:
             .common)
@@ -135,8 +135,8 @@ struct  OrderIsSent: View {
                 }
                     
                         VStack{
-                            OrderView()
-                                .padding(.top, -410.0)
+//                            OrderView(items: items)
+//                                .padding(.top, -410.0)
                             
                         }
                         

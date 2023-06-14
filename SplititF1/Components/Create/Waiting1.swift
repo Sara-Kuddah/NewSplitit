@@ -25,7 +25,7 @@ struct Waiting1: View {
         return String(format: "%02i:%02i" , minutes,
                       seconds)
     }
-//    @State private var isPresentedFullScreenCover = false
+
     @State var appN = String()
     @State var merN = String()
     @State var delFe = String()
@@ -35,6 +35,11 @@ struct Waiting1: View {
     @State var status = String()
     @State var orderID : UUID
     @State var items: [Item] = []
+    @State var allItems: [allItem] = []
+    @State var userID = UUID()
+    @State var firstName = ""
+    @State var phone = ""
+    @State var itemViews: [itemView] = []
     var body: some View {
         NavigationView {
             VStack {
@@ -66,7 +71,7 @@ struct Waiting1: View {
                                 .foregroundColor(.secondary)
                             
                             Text(payMS.isEmpty ? "" : "STC Pay")
-//                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4")
+
                                 .font(.system(size: 13, weight: .regular, design: .default))
                                 .foregroundColor(.secondary)
                             Text(!cheP.isEmpty ? "\(cheP)" : "Checkpoint")
@@ -99,7 +104,7 @@ struct Waiting1: View {
                                 }
                         }
                         .padding(.top, -20)
-                    } //.padding(.top, -120.0)
+                    }
                     
                     Text("You only can cancel announcement when no one  joined yet")
                         .font(.system(size:12))
@@ -109,42 +114,55 @@ struct Waiting1: View {
                         TimelineTrack()
                             .padding(.top, 10.0)
                     }
-                    NavigationLink(destination: TabBar()) {
-                        Text("Cancel")
-                            .padding(.all)
-                            .bold()
-                            .foregroundColor(.black)
-                            .frame(width: 200)
-                            .frame(height: 50)
-                            .background(Color("Mycolor"))
-                            .cornerRadius(10)
+                    HStack {
+                        Button {
+                            // update -- change to get joined?
+                            WebAPI.getAllItemsInOrder(orderID: orderID) { res in
+                                print("order id in items", orderID)
+                                print("items in items", items)
+                                switch res {
+                                case .success(let success):
+                                    print("success get items", success.self)
+                                    self.items = success
+                                    print("iiii",items)
+                                    print("order id in view",orderID)
+                                case .failure(let failure):
+                                    print("fail in items", failure.localizedDescription)
+                                }
+                            }
+                        } label: {
+                            Text("update")
+                                .padding(.all)
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: 200)
+                                .frame(height: 50)
+                                .background(Color("Mycolor"))
+                                .cornerRadius(10)
+                        }
+
                         
-                        
+                        NavigationLink(destination: TabBar()) {
+                            Text("Cancel")
+                                .padding(.all)
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: 200)
+                                .frame(height: 50)
+                                .background(Color("Mycolor"))
+                                .cornerRadius(10)
+                            
+                        }
                     }
-                    
+//                    OrderView(items: $items, allItems: $allItems)
+                    OrderView(items: $items, firstName: firstName, phone: phone, allItems: $allItems)
                     .padding(.top, 10.0)
                 }
-//                .navigationBarTitleDisplayMode(.inline)
-//                .toolbar {
-//                    ToolbarItem(placement: .principal) { // <3>
-//                        VStack {
-//                            Text("McDonald's").font(.title).fontWeight(.bold)
-//                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
-//                            Divider()
-//
-//
-//
-//                        }
-//                        .padding(.top)
-//                    }
-//
-//                }
-                
-                
+
             }
             .padding(.bottom, 400.0)
             .onAppear{
-                print("on appear",orderID)
+                print("on appear",userID)
                 WebAPI.getstcpayments { res in
                     switch res {
                     case .success(let success):
@@ -170,7 +188,7 @@ struct Waiting1: View {
                         self.cheP = success.order.checkpoint
                         self.status = success.order.status ?? "waiting"
                         self.orderID = success.order.id
-                        print("get my function",orderID)
+//                        print("get my function",orderID)
                     case .failure(let failure):
                         print("couldn't get my active order", failure)
                     }
@@ -178,32 +196,50 @@ struct Waiting1: View {
                 // get joined users ?? do we have anything for it?
                 // get joined items
                 WebAPI.getAllItemsInOrder(orderID: orderID) { res in
+//                    print("order id in items", orderID)
+//                    print("items in items", items)
                     switch res {
                     case .success(let success):
-                        print("success get items", success.self)
+//                        print("success get items", success.self)
                         self.items = success
-                        print(items)
-                        print("order id in view",orderID)
+                        print("oold items", success)
+//                        print("iiii",items)
+//                        print("order id in view",orderID)
                     case .failure(let failure):
-                        print("fail", failure)
+                        print("fail in items", failure.localizedDescription)
                     }
                 }
-//                WebAPI.getMyActiveOrder { res in
-//                    switch res {
-//                    case .success(let success):
-//                        self.merN = success.merchant_name
-//                        self.appN = success.app_name
-//                        self.delFe = String(success.delivery_fee)
-//                        self.cheP = success.checkpoint
-//                        self.status = success.status ?? "waiting"
-//                        self.orderID = success.id
-//                        print("get my function",success.id)
-//                        print("waiting works!")
-//                    case .failure(let failure):
-//                        print("couldn't get my active order", failure)
-//                    }
-//                }
-                
+                WebAPI.getAllItemsWithJoined(orderID: orderID) { res in
+                    switch res {
+                    case .success(let success):
+                        self.allItems = success
+                        print("all",success)
+                        for i in success {
+                            self.userID = i.joined_user.id
+//                            print("user in loop",userID)
+                            
+                            WebAPI.getUserByID(userID: i.joined_user.id) { res in
+                                print("user in another function", userID)
+                                switch res {
+                                case .success(let success):
+        //                        print("success get items", success.self)
+                                    self.firstName = success.firstName ?? ""
+                                    print("first try 2", success.firstName ?? "")
+                                    print("ss",success)
+                                    print(i.joined_user.id, success.firstName, success.phone)
+                                    // add it to item view??
+//                                    itemViews += [success.firstName, success.phone, [allItems]]
+                                    //                        print("iiii",items)
+                                    //                        print("order id in view",orderID)
+                                case .failure(let failure):
+                                    print("fail in items12", failure.localizedDescription)
+                                }
+                            }
+                        }
+                                            case .failure(let failure):
+                                                print("all items",failure)
+                                            }
+                    }
             }
         }
 //        .navigationBarBackButtonHidden(true)
@@ -215,3 +251,9 @@ struct Waiting1: View {
 //        Waiting1()
 //    }
 //}
+
+struct itemView: Codable {
+    let firstName: String?
+    let phone: String?
+    let item: [Item]
+}

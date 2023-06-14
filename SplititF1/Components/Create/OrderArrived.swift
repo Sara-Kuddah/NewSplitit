@@ -10,6 +10,7 @@ import SwiftUI
 struct OrderArrived: View {
     @State private var showingAlert = false
     @State private var isPresentedFullScreenCover = false
+    @State var items : [Item] = []
     var body: some View {
         NavigationView {
             VStack{
@@ -103,8 +104,8 @@ struct OrderArrived: View {
                 
                 VStack{
                     VStack{
-                        OrderView()
-                            .padding(.top, -270.0)
+//                        OrderView(items: items)
+//                            .padding(.top, -270.0)
                         
                     }
                     

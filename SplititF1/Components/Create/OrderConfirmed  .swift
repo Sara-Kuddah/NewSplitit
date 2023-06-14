@@ -100,7 +100,7 @@ struct OrderConfirmed__: View {
     @State private var showingAlert = false
     @State var isPresented = false
     @State private var showingSheet = false
-
+    @State var items : [Item] = []
     var body: some View {
         NavigationView {
             VStack{
@@ -216,36 +216,12 @@ struct OrderConfirmed__: View {
                 
                 VStack{
                     VStack{
-                        OrderView()
-                            .padding(.top, -270.0)
+//                        OrderView(items: items)
+//                            .padding(.top, -270.0)
                         
                     }
-                    
-                    
-                    
-                    
                 }
-//                .navigationBarTitleDisplayMode(.inline)
-//                .toolbar {
-//                    ToolbarItem(placement: .principal) { // <3>
-//                        VStack {
-//                            Text("McDonald's").font(.title).fontWeight(.bold)
-//                            Text("20 SR, Jahez, STC Pay-Al Rajhi, PNU-A4 ")
-//                            Divider()
-//
-//
-//
-//                        }
-//                        .padding(.top)
-//                    }
-//
-//                }
-                
-                
-                
-                
-                
-                
+//             
             }
             .padding(.bottom, 150.0)
         }

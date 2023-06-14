@@ -10,7 +10,7 @@ import SwiftUI
 struct CardActiveOrder: View {
     @State var merN = String()
     @State var status = String()
-    @State var orderID : UUID
+    @Binding var orderID: UUID
 //    @State var isJoined = Bool()
     @Binding var isCreated: Bool
     @State var showWaiting = false

@@ -1077,9 +1077,9 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1154"
-            endingLineNumber = "1154"
-            landmarkName = "ActiveOrderOutput"
+            startingLineNumber = "1268"
+            endingLineNumber = "1268"
+            landmarkName = "OrderReqBody"
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1093,41 +1093,9 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1165"
-            endingLineNumber = "1165"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3E86DA44-BE2D-424A-8015-B11E68E009A6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1118"
-            endingLineNumber = "1118"
-            landmarkName = "Order"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "24955F38-4F48-4B00-8942-9251887DE07A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1117"
-            endingLineNumber = "1117"
-            landmarkName = "Order"
+            startingLineNumber = "1279"
+            endingLineNumber = "1279"
+            landmarkName = "OrderResponse"
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1141,10 +1109,10 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1071"
-            endingLineNumber = "1071"
-            landmarkName = "OrderReqBody"
-            landmarkType = "14">
+            startingLineNumber = "1188"
+            endingLineNumber = "1188"
+            landmarkName = "PatchBankpayments(phone:bname:iban:account:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1157,10 +1125,10 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1072"
-            endingLineNumber = "1072"
-            landmarkName = "OrderReqBody"
-            landmarkType = "14">
+            startingLineNumber = "1189"
+            endingLineNumber = "1189"
+            landmarkName = "PatchBankpayments(phone:bname:iban:account:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1253,8 +1221,8 @@
             filePath = "SplititF1/Components/SignInWithApple/WebAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "559"
-            endingLineNumber = "559"
+            startingLineNumber = "594"
+            endingLineNumber = "594"
             landmarkName = "getMyItemsInOrder(orderID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
