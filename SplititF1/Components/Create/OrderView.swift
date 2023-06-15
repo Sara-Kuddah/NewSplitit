@@ -15,12 +15,13 @@ struct OrderView: View {
     @State var firstName = String()
     @State var phone = String()
     @Binding var allItems: [allItem]
+//    @State var allInfos: [itemView] = []
     @State var totalPrice = 0.0
     var body: some View {
         VStack {
             // for each person
             ForEach(allItems, id: \.id) { item in
-                    
+                Text("test")
 //                WebAPI.getUserByID(userID: item.joined_user.id) { res in
 //                    switch res {
 //                    case .success(let success):

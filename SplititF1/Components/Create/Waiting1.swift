@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Waiting1: View {
     // add presentation mode
-    // delivery fee updates? calculattions 
+    // delivery fee updates? calculattions
     @State var timeRemaining = 900
     
     let timer = Timer.publish(every:1, on: .main,
@@ -42,6 +42,8 @@ struct Waiting1: View {
     @State var firstName = ""
     @State var phone = ""
     @State var itemViews: [itemView] = []
+    @State var item_name = ""
+    @State var price = ""
     var body: some View {
         NavigationView {
             VStack {
@@ -219,8 +221,11 @@ struct Waiting1: View {
                         print("all",success)
                         for i in success {
                             self.userID = i.joined_user.id
-//                            print("user in loop",userID)
                             
+//                            print("user in loop",userID)
+       print("self.itemViews :==========" , self.itemViews)
+                            print("i : ======" , i)
+                            print("success ")
                             WebAPI.getUserByID(userID: i.joined_user.id) { res in
                                 print("user in another function", userID)
                                 switch res {
@@ -234,6 +239,8 @@ struct Waiting1: View {
 //                                    itemViews += [success.firstName, success.phone, [allItems]]
                                     //                        print("iiii",items)
                                     //                        print("order id in view",orderID)
+//    =====
+//                                    itemViews = [(success.firstName, success.phone,(item_name, price))]
                                 case .failure(let failure):
                                     print("fail in items12", failure.localizedDescription)
                                 }
@@ -258,5 +265,5 @@ struct Waiting1: View {
 struct itemView: Codable {
     let firstName: String?
     let phone: String?
-    let item: [Item]
+    let item: [allItem]
 }
